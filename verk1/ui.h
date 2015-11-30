@@ -15,7 +15,8 @@ public:
     void start();
     void ChooseSort();
     void ChooseSearch();
-    void SortData(vector<Scientist>Sorted);
+    void PrintData(vector<Scientist>Sorted);
+
 };
 
 #endif // UI_H

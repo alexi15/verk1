@@ -9,11 +9,11 @@
 class Service{
 public:
     Service();
-    void SortFirstNames();
-    void SortGender();
-    void SortDeath();
-    void SortBirth();
-    void SortLastNames();
+    vector<Scientist> SortFirstNames();
+    vector<Scientist> SortGender();
+    vector<Scientist> SortDeath();
+    vector<Scientist> SortBirth();
+    vector<Scientist> SortLastNames();
     void add();
     vector<Scientist> SearchFirst(string name);
 };

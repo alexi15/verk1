@@ -10,6 +10,11 @@ Data::Data()
     int Death;
     ifstream File1;
     File1.open("Prufa.txt");
+    if(File1.fail()){
+        cout << "Did not Happen";
+        exit(1);
+
+    }
     string temp;
     while(File1 >> Nam >> Last >> Gender >> Born >> Death){
         Scientist P(Nam,Last,Gender,Born,Death);

@@ -8,12 +8,13 @@ Service::Service()
 
 }
 
-void Service::SortBirth(){
+vector<Scientist>Service::SortBirth(){
 
     Scientist temp;
     Data Vec;
     vector<Scientist>SortList = Vec.getVector();
     int j;
+
 
     for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
@@ -25,13 +26,13 @@ void Service::SortBirth(){
             j--;
         }
     }
-    UI Ret;
-    Ret.SortData(SortList);
-
-
+    return SortList;
 }
 
-void Service::SortDeath(){
+
+
+
+vector<Scientist>Service::SortDeath(){
 
     Scientist temp;
     Data Vec;
@@ -48,10 +49,12 @@ void Service::SortDeath(){
             j--;
         }
     }
+    return SortList;
+
 }
 
 
-void Service::SortFirstNames(){
+vector<Scientist>Service::SortFirstNames(){
 
     Scientist temp;
     Data Vec;
@@ -67,9 +70,11 @@ void Service::SortFirstNames(){
             SortList[j-1] = temp;
             j--;
         }
+
     }
+     return SortList;
 }
-void Service::SortLastNames(){
+vector<Scientist>Service::SortLastNames(){
 
     Scientist temp;
     Data Vec;
@@ -86,10 +91,10 @@ void Service::SortLastNames(){
             j--;
         }
     }
-
+     return SortList;
 
 }
-void Service::SortGender(){
+vector<Scientist>Service::SortGender(){
     Scientist temp;
     Data Vec;
     vector<Scientist>SortList = Vec.getVector();
@@ -104,11 +109,12 @@ void Service::SortGender(){
             j--;
         }
     }
+     return SortList;
 }
 
 void Service::add(){
     Data Vec;
-   // vector<Scientist>addvec = Vec.getVector();
+    vector<Scientist>addvec = Vec.getVector();
     string sName;
     string sLast;
     string sGender;
@@ -123,7 +129,7 @@ void Service::add(){
 
     Scientist temp(sName, sLast, sGender, sBorn, sDeath);
 
-    Vec.getVector().push_back(temp);
+    addvec.push_back(temp);
 
 }
 

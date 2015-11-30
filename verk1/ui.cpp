@@ -5,7 +5,10 @@ UI::UI()
 
 }
 
-void UI::SortData(vector<Scientist>Sorted){
+
+
+void UI::PrintData(vector<Scientist>Sorted){
+
     for(unsigned int i = 0; i < Sorted.size(); i++){
         cout << "Name: " << Sorted[i].getFirstName() << endl;
         cout << "Lastname: " << Sorted[i].getLastName() << endl;
@@ -46,6 +49,7 @@ void UI::start()
 }
 void UI::ChooseSort()
 {
+    vector<Scientist>Data;
     int input;
     Service temp;
     cout << "Press 1 to sort by first name " << endl;
@@ -58,19 +62,24 @@ void UI::ChooseSort()
     switch(input)
     {
         case 1:
-            temp.SortFirstNames();
+            Data = temp.SortFirstNames();
+            PrintData(Data);
             break;
         case 2:
             temp.SortLastNames();
+            PrintData(Data);
             break;
         case 3:
             temp.SortGender();
+            PrintData(Data);
             break;
         case 4:
             temp.SortBirth();
+            PrintData(Data);
             break;
         case 5:
             temp.SortDeath();
+            PrintData(Data);
             break;
         default:
            cout << "Error in input" << endl;
