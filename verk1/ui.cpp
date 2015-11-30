@@ -20,6 +20,7 @@ void UI::SortData(vector<Scientist>Sorted){
 void UI::start()
 {
     int number;
+    Service temp;
     cout << "-------What do you want to do-------" << endl;
     cout << "Do you want to add, sort or search? " << endl;
     cout << "Press 1 to add" << endl;
@@ -29,13 +30,13 @@ void UI::start()
 
     switch(number)
     {
-        case '1':
-            ;
+        case 1:
+            temp.add();
             break;
-        case '2':
+        case 2:
             ChooseSort();
             break;
-        case '3': ;
+        case 3:
             break;
         default:
            cout << "Error in input" << endl;
@@ -46,6 +47,7 @@ void UI::start()
 void UI::ChooseSort()
 {
     int input;
+    Service temp;
     cout << "Press 1 to sort by first name " << endl;
     cout << "Press 2 to sort by gender" << endl;
     cout << "Press 3 to sort by death" << endl;
@@ -55,15 +57,20 @@ void UI::ChooseSort()
 
     switch(input)
     {
-        case '1':  ;
+        case 1:
+            temp.SortFirstNames();
             break;
-        case '2': ;
+        case 2:
+            temp.SortLastNames();
             break;
-        case '3': ;
+        case 3:
+            temp.SortGender();
             break;
-        case '4': ;
+        case 4:
+            temp.SortBirth();
             break;
-        case '5': ;
+        case 5:
+            temp.SortDeath();
             break;
         default:
            cout << "Error in input" << endl;

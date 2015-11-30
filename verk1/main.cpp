@@ -7,20 +7,8 @@
 void PrintScientist(Scientist P);
 
 int main(){
- /*
-    Service Call;
-    Call.SortGender();
-
-
-
-  for (unsigned int i = 0; i < Call.scientist.size(); i++){
-
-        Scientist Test = Call.scientist[i];
-        PrintScientist(Test);
-    }
-
-    Call.SaveFile();
-*/
+    UI temp;
+    temp.start();
 }
 void PrintScientist(Scientist P){
 
