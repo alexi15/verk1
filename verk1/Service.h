@@ -7,7 +7,7 @@
 #include "Scientist.h"
 
 
-class Service: public Scientist{
+class Service{
 public:
     Service();
     void SortFirstNames();
@@ -15,17 +15,12 @@ public:
     void SortDeath();
     void SortBirth();
     void SortLastNames();
-    vector<Scientist> getVector();
-    void SaveFile();
+    vector<Scientist>getVector();
+
+private:
+    vector<Scientist>scien;
 
 
-
-
-
-
-//private:
-
-    vector<Scientist>scientist;
 };
 
 #endif // READFILES

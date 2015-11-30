@@ -7,6 +7,7 @@
 void PrintScientist(Scientist P);
 
 int main(){
+ /*
     Service Call;
     Call.SortGender();
 
@@ -19,7 +20,7 @@ int main(){
     }
 
     Call.SaveFile();
-
+*/
 }
 void PrintScientist(Scientist P){
 

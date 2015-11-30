@@ -7,8 +7,10 @@
 class Data: public Scientist{
 public:
     Data();
+    void SaveFile();
 
 private:
+    vector<Scientist>scientist;
 };
 
 #endif // Data_H
