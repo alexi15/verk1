@@ -160,8 +160,6 @@ vector<Scientist> Service::Search(string toSearch)
             }
         }
     }
-
     return temp;
-
 }
 

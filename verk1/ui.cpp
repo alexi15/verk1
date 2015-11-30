@@ -40,6 +40,7 @@ void UI::start()
             ChooseSort();
             break;
         case 3:
+            search();
             break;
         default:
            cout << "Error in input" << endl;
@@ -116,5 +117,15 @@ void UI::add()
 
 }
 
+void UI::search()
+{
+    vector<Scientist> temp;
+    Service s;
+    string word;
+    cout << "Search for: ";
+    cin >> word;
+    temp = s.Search(word);
+    PrintData(temp);
+}
 
 

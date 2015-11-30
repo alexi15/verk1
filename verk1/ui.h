@@ -17,6 +17,7 @@ public:
     void ChooseSearch();
     void add();
     void PrintData(vector<Scientist>Sorted);
+    void search();
 
 };
 

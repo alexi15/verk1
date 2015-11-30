@@ -15,7 +15,7 @@ public:
     vector<Scientist> SortBirth();
     vector<Scientist> SortLastNames();
     void add(Scientist temp);
-    vector<Scientist> SearchFirst(string name);
+    vector<Scientist> Search(string toSearch);
 };
 
 #endif // READFILES
