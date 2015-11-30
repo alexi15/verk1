@@ -18,10 +18,8 @@ Service::Service(){
    File1.close();
 }
 
-<<<<<<< HEAD:verk1/Service.cpp
-void Service::SortBirth(){
-=======
-void ReadScientist::SaveFile(){
+
+void Service::SaveFile(){
     string temp;
     cout << "Name of the file you want to save: ";
     cin >> temp;
@@ -39,8 +37,7 @@ void ReadScientist::SaveFile(){
 
 }
 
-void ReadScientist::SortBirth(){
->>>>>>> 8e1c746d0dcc8489bebf10aeed5b93308d4fa68d:verk1/ReadScientist.cpp
+void Service::SortBirth(){
 
     Scientist temp;
     int j;

@@ -7,13 +7,8 @@
 void PrintScientist(Scientist P);
 
 int main(){
-<<<<<<< HEAD
     Service Call;
     Call.SortGender();
-=======
-    ReadScientist Call;
-    Call.SortLastNames();
->>>>>>> 8e1c746d0dcc8489bebf10aeed5b93308d4fa68d
 
 
 
@@ -23,13 +18,8 @@ int main(){
         PrintScientist(Test);
     }
 
-<<<<<<< HEAD
-=======
-
     Call.SaveFile();
 
-
->>>>>>> 8e1c746d0dcc8489bebf10aeed5b93308d4fa68d
 }
 void PrintScientist(Scientist P){
 
