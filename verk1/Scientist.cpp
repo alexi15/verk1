@@ -21,8 +21,6 @@ Scientist::Scientist(){
 
 }
 
-
-
 string Scientist::getFirstName(){
 
     return name;

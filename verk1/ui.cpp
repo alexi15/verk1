@@ -34,7 +34,7 @@ void UI::start()
     switch(number)
     {
         case 1:
-            temp.add();
+            add();
             break;
         case 2:
             ChooseSort();
@@ -88,6 +88,31 @@ void UI::ChooseSort()
            cout << "Please choose a number between 1 to 5"<< endl;
 
     }
+
+}
+void UI::add()
+{
+    Service s;
+
+    string sName;
+    string sLast;
+    string sGender;
+    int sBorn;
+    int sDeath;
+
+    cout << "First name: ";
+    cin >> sName;
+    cout << "Last name: ";
+    cin >> sLast;
+    cout << "Gender: ";
+    cin >> sGender;
+    cout << "Born: ";
+    cin >> sBorn;
+    cout << "Death: ";
+    cin >> sDeath;
+
+    Scientist temp(sName, sLast, sGender, sBorn, sDeath);
+    s.add(temp);
 
 }
 

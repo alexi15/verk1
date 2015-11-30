@@ -112,10 +112,10 @@ vector<Scientist>Service::SortGender(){
      return SortList;
 }
 
-void Service::add(){
+void Service::add(Scientist temp){
     Data Vec;
     vector<Scientist>addvec = Vec.getVector();
-    string sName;
+    /*string sName;
     string sLast;
     string sGender;
     int sBorn;
@@ -127,7 +127,7 @@ void Service::add(){
     cin >> sBorn;
     cin >> sDeath;
 
-    Scientist temp(sName, sLast, sGender, sBorn, sDeath);
+    Scientist temp(sName, sLast, sGender, sBorn, sDeath);*/
 
     addvec.push_back(temp);
 

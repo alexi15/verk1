@@ -14,7 +14,7 @@ public:
     vector<Scientist> SortDeath();
     vector<Scientist> SortBirth();
     vector<Scientist> SortLastNames();
-    void add();
+    void add(Scientist temp);
     vector<Scientist> SearchFirst(string name);
 };
 
