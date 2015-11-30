@@ -10,7 +10,7 @@ Data::Data()
     int Born;
     int Death;
     ifstream File1;
-    File1.open("No.txt");
+    File1.open("YEs.txt");
     if(File1.fail()){
         cout << "Error Opening File" << endl;
         exit(1);
@@ -26,11 +26,8 @@ Data::Data()
 
 }
 void Data::SaveFile(){
-    string temp;
-    cout << "Name of the file you want to save: ";
-    cin >> temp;
     ofstream output;
-    output.open(temp.c_str());
+    output.open("YEs.txt");
     for (unsigned int i = 0; i < scientist.size(); i++){
 
         output << "First Name: " << scientist[i].getFirstName() << endl;

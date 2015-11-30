@@ -163,3 +163,12 @@ vector<Scientist> Service::Search(string toSearch)
     return temp;
 
 }
+
+
+void Service::SaveFile(){
+
+    Data temp;
+    temp.SaveFile();
+
+
+}

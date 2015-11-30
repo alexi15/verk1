@@ -25,12 +25,16 @@ void UI::PrintData(vector<Scientist>Sorted){
 void UI::start()
 {
     int number;
+    char Continue;
     Service temp;
+    do{
+
     cout << "-------What do you want to do-------" << endl;
-    cout << "Do you want to add, sort or search? " << endl;
+    cout << "Do you want to add, sort, save or search? " << endl;
     cout << "Press 1 to add" << endl;
     cout << "Press 2 to sort" << endl;
     cout << "Press 3 to search" << endl;
+    cout << "Press 4 to save" << endl;
     cin >> number;
 
     switch(number)
@@ -44,13 +48,23 @@ void UI::start()
         case 3:
             search();
             break;
+        case 4:
+            SaveFile();
+            break;
         default:
            cout << "Error in input" << endl;
            cout << "Please choose a number between 1 to 3"<< endl;
-
+        }
+    cout << "Do you want to continue ? " << endl;
+    cout << "y or n " << endl;
+    cin >> Continue;
+    if (Continue == 'N' || Continue == 'n'){
+        break;
     }
-
+    }while(Continue != 'N' || Continue != 'n');
 }
+
+
 void UI::ChooseSort()
 {
     vector<Scientist>Data;
@@ -136,6 +150,11 @@ void UI::search()
     PrintData(temp);
 }
 
+void UI::SaveFile(){
+    Service temp;
+    temp.SaveFile();
 
+
+}
 
 
