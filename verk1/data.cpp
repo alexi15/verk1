@@ -36,3 +36,10 @@ void Data::SaveFile(){
 
 }
 
+vector<Scientist>Data::getVector(){
+
+    return scientist;
+
+
+
+}

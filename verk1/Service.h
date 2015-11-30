@@ -3,7 +3,7 @@
 #include<iostream>
 #include <fstream>
 #include <cstdlib>
-#include <algorithm>
+#include <vector>
 #include "Scientist.h"
 
 
@@ -15,10 +15,10 @@ public:
     void SortDeath();
     void SortBirth();
     void SortLastNames();
-    vector<Scientist>getVector();
+    void add();
 
 private:
-    vector<Scientist>scien;
+    vector<Scientist>Sci;
 
 
 };
