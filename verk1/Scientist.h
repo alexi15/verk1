@@ -2,7 +2,6 @@
 #define PERSONUR
 #include <iostream>
 #include <vector>
-#include <fstream>
 using namespace std;
 
 class Scientist

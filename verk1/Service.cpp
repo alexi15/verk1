@@ -11,35 +11,39 @@ void Service::SortBirth(){
 
     Scientist temp;
     Data Vec;
-    vector<Scientist>Temp1 = Vec.getVector();
+    vector<Scientist>SortList = Vec.getVector();
     int j;
 
-    for(unsigned int i = 0; i < Sci.size(); i++){
+    for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
 
-        while (j > 0 && Temp1[j].getYearBorn() < Temp1[j-1].getYearBorn()){
-            temp = Sci[j];
-            Sci[j] = Sci[j-1];
-            Sci[j-1] = temp;
+        while (j > 0 && SortList[j].getYearBorn() < SortList[j-1].getYearBorn()){
+            temp = SortList[j];
+            SortList[j] = SortList[j-1];
+            SortList[j-1] = temp;
             j--;
         }
     }
+    UI Ret;
+    Ret.SortData(SortList);
+
+
 }
 
 void Service::SortDeath(){
 
     Scientist temp;
     Data Vec;
-    vector<Scientist>Temp1 = Vec.getVector();
+    vector<Scientist>SortList = Vec.getVector();
     int j;
 
-    for(unsigned int i = 0; i < Sci.size(); i++){
+    for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
 
-        while (j > 0 && Sci[j].getYearDead() < Sci[j-1].getYearDead()){
-            temp = Sci[j];
-            Sci[j] = Sci[j-1];
-            Sci[j-1] = temp;
+        while (j > 0 && SortList[j].getYearDead() < SortList[j-1].getYearDead()){
+            temp = SortList[j];
+            SortList[j] = SortList[j-1];
+            SortList[j-1] = temp;
             j--;
         }
     }
@@ -50,16 +54,16 @@ void Service::SortFirstNames(){
 
     Scientist temp;
     Data Vec;
-    vector<Scientist>Temp1 = Vec.getVector();
+    vector<Scientist>SortList = Vec.getVector();
     int j;
 
-    for(unsigned int i = 0; i < Sci.size(); i++){
+    for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
 
-        while (j > 0 && Sci[j].getFirstName() < Sci[j-1].getFirstName()){
-            temp = Sci[j];
-            Sci[j] = Sci[j-1];
-            Sci[j-1] = temp;
+        while (j > 0 && SortList[j].getFirstName() < SortList[j-1].getFirstName()){
+            temp = SortList[j];
+            SortList[j] = SortList[j-1];
+            SortList[j-1] = temp;
             j--;
         }
     }
@@ -68,16 +72,16 @@ void Service::SortLastNames(){
 
     Scientist temp;
     Data Vec;
-    vector<Scientist>Temp1 = Vec.getVector();
+    vector<Scientist>SortList = Vec.getVector();
     int j;
 
-    for(unsigned int i = 0; i < Sci.size(); i++){
+    for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
 
-        while (j > 0 && Sci[j].getLastName() < Sci[j-1].getLastName()){
-            temp = Sci[j];
-            Sci[j] = Sci[j-1];
-            Sci[j-1] = temp;
+        while (j > 0 && SortList[j].getLastName() < SortList[j-1].getLastName()){
+            temp = SortList[j];
+            SortList[j] = SortList[j-1];
+            SortList[j-1] = temp;
             j--;
         }
     }
@@ -87,15 +91,15 @@ void Service::SortLastNames(){
 void Service::SortGender(){
     Scientist temp;
     Data Vec;
-    vector<Scientist>Temp1 = Vec.getVector();
+    vector<Scientist>SortList = Vec.getVector();
     int j;
-    for(unsigned int i = 0; i < Sci.size(); i++){
+    for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
 
-        while (j > 0 && Sci[j].getSex() < Sci[j-1].getSex()){
-            temp = Sci[j];
-            Sci[j] = Sci[j-1];
-            Sci[j-1] = temp;
+        while (j > 0 && SortList[j].getSex() < SortList[j-1].getSex()){
+            temp = SortList[j];
+            SortList[j] = SortList[j-1];
+            SortList[j-1] = temp;
             j--;
         }
     }

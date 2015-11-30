@@ -1,8 +1,7 @@
 #ifndef READFILES
 #define READFILES
 #include<iostream>
-#include <fstream>
-#include <cstdlib>
+#include "ui.h"
 #include <vector>
 #include "Scientist.h"
 
@@ -16,10 +15,6 @@ public:
     void SortBirth();
     void SortLastNames();
     void add();
-
-private:
-    vector<Scientist>Sci;
-
 
 };
 

@@ -2,6 +2,7 @@
 #define Data_H
 #include "Service.h"
 #include <iostream>
+#include <fstream>
 
 
 class Data: public Scientist{
