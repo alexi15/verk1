@@ -3,6 +3,8 @@
 UI::UI()
 {
 
+
+
 }
 
 
@@ -46,6 +48,7 @@ void UI::start()
            cout << "Please choose a number between 1 to 3"<< endl;
 
     }
+
 }
 void UI::ChooseSort()
 {
@@ -99,7 +102,11 @@ void UI::add()
     string sGender;
     int sBorn;
     int sDeath;
+    int number;
+    cout << "How many scientist you wan to add ? ";
+    cin >> number;
 
+    for (int i = 0; i < number; i++){
     cout << "First name: ";
     cin >> sName;
     cout << "Last name: ";
@@ -113,8 +120,11 @@ void UI::add()
 
     Scientist temp(sName, sLast, sGender, sBorn, sDeath);
     s.add(temp);
+    }
 
 }
+
+
 
 
 

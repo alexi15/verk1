@@ -1,6 +1,7 @@
 #include "data.h"
 #include "Service.h"
 
+
 Data::Data()
 {
     string Nam;
@@ -9,9 +10,9 @@ Data::Data()
     int Born;
     int Death;
     ifstream File1;
-    File1.open("Prufa.txt");
+    File1.open("No.txt");
     if(File1.fail()){
-        cout << "Did not Happen";
+        cout << "Error Opening File" << endl;
         exit(1);
 
     }
@@ -21,8 +22,9 @@ Data::Data()
         scientist.push_back(P);
     }
    File1.close();
-}
 
+
+}
 void Data::SaveFile(){
     string temp;
     cout << "Name of the file you want to save: ";

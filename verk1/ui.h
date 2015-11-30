@@ -18,6 +18,8 @@ public:
     void add();
     void PrintData(vector<Scientist>Sorted);
 
+private:
+    string FileName;
 };
 
 #endif // UI_H

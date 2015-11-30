@@ -4,6 +4,7 @@
 #include "ui.h"
 #include <vector>
 #include "Scientist.h"
+#include <data.h>
 
 
 class Service{
@@ -16,6 +17,7 @@ public:
     vector<Scientist> SortLastNames();
     void add(Scientist temp);
     vector<Scientist> SearchFirst(string name);
+    void LoadFile(string FileName);
 };
 
 #endif // READFILES
