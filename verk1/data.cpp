@@ -40,6 +40,4 @@ vector<Scientist>Data::getVector(){
 
     return scientist;
 
-
-
 }

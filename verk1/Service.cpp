@@ -3,9 +3,10 @@
 #include <data.h>
 using namespace std;
 
+Service::Service()
+{
 
-
-
+}
 
 void Service::SortBirth(){
 
@@ -118,10 +119,9 @@ void Service::add(){
     cin >> sBorn;
     cin >> sDeath;
 
+    Scientist temp(sName, sLast, sGender, sBorn, sDeath);
 
-
-
-
+    Sci.push_back(temp);
 
 }
 
