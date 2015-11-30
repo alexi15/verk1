@@ -53,10 +53,12 @@ void UI::ChooseSort()
     int input;
     Service temp;
     cout << "Press 1 to sort by first name " << endl;
-    cout << "Press 2 to sort by gender" << endl;
-    cout << "Press 3 to sort by death" << endl;
+    cout << "Press 2 to sort by last name" << endl;
+    cout << "Press 3 to sort by gender" << endl;
     cout << "Press 4 to sort by birth" << endl;
-    cout << "Press 5 to sort by last name" << endl;
+    cout << "Press 5 to sort by death" << endl;
+
+
     cin >> input;
 
     switch(input)
@@ -66,19 +68,19 @@ void UI::ChooseSort()
             PrintData(Data);
             break;
         case 2:
-            temp.SortLastNames();
+            Data = temp.SortLastNames();
             PrintData(Data);
             break;
         case 3:
-            temp.SortGender();
+            Data = temp.SortGender();
             PrintData(Data);
             break;
         case 4:
-            temp.SortBirth();
+            Data = temp.SortBirth();
             PrintData(Data);
             break;
         case 5:
-            temp.SortDeath();
+            Data = temp.SortDeath();
             PrintData(Data);
             break;
         default:
