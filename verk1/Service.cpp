@@ -61,7 +61,6 @@ vector<Scientist>Service::SortFirstNames(){
     Data Vec;
     vector<Scientist>SortList = Vec.getVector();
     int j;
-
     for(unsigned int i = 0; i < SortList.size(); i++){
         j = i;
 
@@ -164,4 +163,3 @@ vector<Scientist> Service::Search(string toSearch)
     return temp;
 
 }
-

@@ -19,6 +19,8 @@ public:
     void PrintData(vector<Scientist>Sorted);
     void search();
 
+private:
+    string FileName;
 };
 
 #endif // UI_H
