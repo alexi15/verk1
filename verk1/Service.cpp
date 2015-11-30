@@ -127,4 +127,19 @@ void Service::add(){
 
 }
 
+vector<Scientist> Service::SearchFirst(string name)
+{
+    vector<Scientist> temp;
+    Data vec;
+    vector<Scientist>SearchList = vec.getVector();
+/*
+    for(unsigned int i = 0; i < SearchList.size(); i++)
+    {
+        if(SearchList[i].getFirstName == name)
+            temp.push_back(SearchList[i]);
+    }
+    */
+    return temp;
+
+}
 

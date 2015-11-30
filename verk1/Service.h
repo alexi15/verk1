@@ -15,7 +15,7 @@ public:
     void SortBirth();
     void SortLastNames();
     void add();
-
+    vector<Scientist> SearchFirst(string name);
 };
 
 #endif // READFILES
