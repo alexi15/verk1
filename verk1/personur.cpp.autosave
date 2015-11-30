@@ -1,0 +1,27 @@
+#include <QCoreApplication>
+#include <iostream>
+#include "personur.h"
+#include "readfiles.h"
+
+using namespace std;
+
+
+personur::personur(string File){
+    
+    ifstream File1;
+    File1.open(File);
+    
+    string Lines;
+    
+    while(File1.eof()){
+        
+        getline(File1, Lines);
+        
+        readfiles Temp(Lines);
+    }
+    
+    
+    
+}
+
+

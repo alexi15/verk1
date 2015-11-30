@@ -1,0 +1,13 @@
+Jon Sigmundsson Male 1954 2005 
+Jon Sigmundsson Male 1992 2002 
+Elin Gudbjartsdottir Women 1998 2003 
+Jon Sigmundsson Male 1992 2012 
+Jon Sigmundsson Male 1954 2032 
+Gudridur bjartardottir Women 1998 2032 
+Jon Sigmundsson Male 1959 2999
+Jon Sigmundsson Male 1910 1998 
+Jon Sigmundsson Male 1954 1983 
+Elin Eirsdottir Women 1932 1848 
+Jon Sigmundsson Male 1933 1982 
+Jon Sigmundsson Male 1999 2040 
+Jon Sigmundsson Women 2000 1983 
