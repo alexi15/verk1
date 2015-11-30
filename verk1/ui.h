@@ -11,6 +11,9 @@ class UI
 {
 public:
     UI();
+    void start();
+    void ChooseSort();
+    void ChooseSearch();
     void SortData(vector<Scientist>Sorted);
 };
 

@@ -107,6 +107,8 @@ void Service::SortGender(){
 }
 
 void Service::add(){
+    Data Vec;
+    vector<Scientist>addvec = Vec.getVector();
     string sName;
     string sLast;
     string sGender;
@@ -121,7 +123,7 @@ void Service::add(){
 
     Scientist temp(sName, sLast, sGender, sBorn, sDeath);
 
-    Sci.push_back(temp);
+    addvec.push_back(temp);
 
 }
 
