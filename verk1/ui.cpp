@@ -30,7 +30,13 @@ void UI::start()
     cout << "Press 3 to search" << endl;
     cout << "Press 4 to save" << endl;
     cout << "Press 5 to exit" << endl;
-    cin >> number;
+
+    while(!(cin >> number)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number between 1 to 5"<< endl;
+    }
 
     switch(number)
     {
@@ -70,7 +76,12 @@ void UI::ChooseSort()
     cout << "Press 4 to sort by birth" << endl;
     cout << "Press 5 to sort by death" << endl;
 
-    cin >> input;
+    while(!(cin >> input)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number between 1 to 5"<< endl;
+    }
 
     switch(input)
     {
@@ -123,7 +134,7 @@ void UI::add()
     cout << "Death(if not dead input 0): ";
     while(!(cin >> sDeath)){
         cin.clear();
-        cin.ignore(3000, '\n');
+        cin.ignore(0, '\n');
         cout << "Invalid input, try again" << endl << "Dead: ";
     }
     Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
