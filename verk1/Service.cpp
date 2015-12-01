@@ -47,28 +47,10 @@ vector<Scientist>Service::SortStringList(int tala){
 
 }
 
-void Service::add(Scientist temp){
-    Data Vec;
-    Vec.load();
-    //vector<Scientist>addvec = Vec.getVector();
-/*
-    string sName;
-    string sLast;
-    string sGender;
-    int sBorn;
-    int sDeath;
+void Service::add(Scientist number){
 
-    cin >> sName;
-    cin >> sLast;
-    cin >> sGender;
-    cin >> sBorn;
-    cin >> sDeath;
+    list.push_back(number);
 
-    Scientist temp(sName, sLast, sGender, sBorn, sDeath);
-*/
-    //addvec.push_back(temp);
-    Vec.getVector().push_back(temp);
-    Vec.SaveFile();
 }
 
 vector<Scientist> Service::Search(string toSearch)

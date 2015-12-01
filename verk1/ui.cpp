@@ -126,16 +126,15 @@ void UI::add()
     cin >> sBorn;
     cout << "Death: ";
     cin >> sDeath;
-
     Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
     temp.add(tempSci);
+    cout << endl;
     }
 
 }
 
 void UI::search()
 {
-    //vector<Scientist> Vec;
     string word;
     cout << "Search for: ";
     cin >> word;
