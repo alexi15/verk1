@@ -6,7 +6,6 @@ UI::UI()
 }
 
 
-
 void UI::PrintData(vector<Scientist>Sorted){
 
     for(unsigned int i = 0; i < Sorted.size(); i++){
@@ -16,16 +15,14 @@ void UI::PrintData(vector<Scientist>Sorted){
         cout << "YearBorn: " << Sorted[i].getYearBorn() << endl;
         cout << "Death: " << Sorted[i].getYearDead() << endl;
         cout << endl;
-
     }
 }
 
 void UI::start()
 {
     int number;
-    char Continue;
 
-    do{
+    while(true){
     cout << "-------What do you want to do-------" << endl;
     cout << "Do you want to add, sort, save or search? " << endl;
     cout << "Press 1 to add" << endl;
@@ -57,12 +54,7 @@ void UI::start()
            cout << "Error in input" << endl;
            cout << "Please choose a number between 1 to 5"<< endl;
         }
-    cout << "Do you want to continue ? " << endl;
-    cout << "y or n " << endl;
-    cin >> Continue;
-    if (Continue == 'N' || Continue == 'n')
-        break;
-    }while(1<2);
+    }
 }
 
 
@@ -71,12 +63,12 @@ void UI::ChooseSort()
 
     vector<Scientist>Data;
     int input;
+    do{
     cout << "Press 1 to sort by first name " << endl;
     cout << "Press 2 to sort by last name" << endl;
     cout << "Press 3 to sort by gender" << endl;
     cout << "Press 4 to sort by birth" << endl;
     cout << "Press 5 to sort by death" << endl;
-
 
     cin >> input;
 
@@ -100,8 +92,8 @@ void UI::ChooseSort()
         default:
            cout << "Error in input" << endl;
            cout << "Please choose a number between 1 to 5"<< endl;
-
     }
+    }while(input > 5 || input < 1);
 
 }
 void UI::add()
@@ -140,7 +132,6 @@ void UI::add()
         cout << "Error, could not add scientist";
     cout << endl;
     }
-
 }
 
 void UI::search()
@@ -151,12 +142,13 @@ void UI::search()
     if(!temp.Search(word).size())
         cout << "Could not find " << word << " in file" << endl;
     else
-        cout << "Scientist found: " << endl;
+        cout << "Scientists found: " << endl;
         PrintData(temp.Search(word));
 }
 
 void UI::SaveFile(){
     temp.SaveFile();
+    cout << "File was saved" << endl;
 }
 
 

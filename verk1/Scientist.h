@@ -25,8 +25,6 @@ private:
     string Gender;
     int yearBorn;
     int yearDead;
-
-
 };
 
 #endif // PERSONUR

@@ -5,7 +5,6 @@
 using namespace std;
 
 
-
 Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead){
     name = Nam;
     lastname = Last;

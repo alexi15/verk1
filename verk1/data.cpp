@@ -1,10 +1,7 @@
 #include "data.h"
 
-
-
 Data::Data()
 {
-
 }
 
 void Data::load(){
@@ -14,11 +11,7 @@ void Data::load(){
     int Born;
     int Death;
     ifstream File1;
-    File1.open("No.txt");
-    if(File1.fail()){
-        cout << "Error Opening File" << endl;
-        //exit(1);
-    }
+    File1.open("fraedingar.txt");
     string temp;
     while(File1 >> Nam >> Last >> Gender >> Born >> Death){
         Scientist P(Nam,Last,Gender,Born,Death);
@@ -29,7 +22,7 @@ void Data::load(){
 
 void Data::SaveFile(vector<Scientist>VecSave){
     ofstream output;
-    output.open("No.txt");
+    output.open("fraedingar.txt");
     for (unsigned int i = 0; i < VecSave.size(); i++){
 
         output << VecSave[i].getFirstName() << " ";

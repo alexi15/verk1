@@ -5,7 +5,6 @@
 using namespace std;
 
 
-
 Service::Service()
 {
     Data temp;
@@ -45,7 +44,6 @@ vector<Scientist>Service::SortStringList(int tala){
         }
     }
     return list;
-
 }
 
 bool Service::add(Scientist number){
@@ -58,7 +56,6 @@ bool Service::add(Scientist number){
         list.push_back(number);
         return true;
     }
-
 }
 
 vector<Scientist> Service::Search(string toSearch)
@@ -85,14 +82,11 @@ vector<Scientist> Service::Search(string toSearch)
             }
         }
     }
-
     return temp;
-
 }
 
 
 void Service::SaveFile(){
     Data temp;
     temp.SaveFile(list);
-
 }
