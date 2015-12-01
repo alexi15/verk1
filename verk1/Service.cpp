@@ -11,6 +11,7 @@ Service::Service()
     Data temp;
     temp.load();
     list = temp.getVector();
+
 }
 vector<Scientist>Service::SortNumbersList(int tala){
     int j;
@@ -87,7 +88,7 @@ vector<Scientist> Service::Search(string toSearch)
 
 
 void Service::SaveFile(){
-
-   // temp.SaveFile();
+    Data temp;
+    temp.SaveFile(list);
 
 }

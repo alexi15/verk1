@@ -8,7 +8,7 @@
 class Data: public Scientist{
 public:
     Data();
-    void SaveFile();
+    void SaveFile(vector<Scientist>VecSave);
     vector<Scientist>getVector();
     void load();
 private:
