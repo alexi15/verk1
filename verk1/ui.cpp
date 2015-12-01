@@ -101,7 +101,6 @@ void UI::ChooseSort()
 }
 void UI::add()
 {
-    Service temp;
     string sName;
     string sLast;
     string sGender;
@@ -122,16 +121,15 @@ void UI::add()
     cin >> sBorn;
     cout << "Death: ";
     cin >> sDeath;
-
     Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
     temp.add(tempSci);
+    cout << endl;
     }
 
 }
 
 void UI::search()
 {
-    Service temp;
     vector<Scientist> Vec;
     string word;
     cout << "Search for: ";
@@ -141,7 +139,6 @@ void UI::search()
 }
 
 void UI::SaveFile(){
-    Service temp;
     temp.SaveFile();
 }
 
