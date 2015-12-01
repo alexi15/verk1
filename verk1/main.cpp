@@ -1,7 +1,7 @@
 #include <QCoreApplication>
 #include <iostream>
-#include "Service.h"
 #include "Scientist.h"
+#include "ui.h"
 
 
 

@@ -1,7 +1,6 @@
 #ifndef READFILES
 #define READFILES
 #include<iostream>
-#include "ui.h"
 #include <vector>
 #include "Scientist.h"
 #include <data.h>
