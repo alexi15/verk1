@@ -13,6 +13,7 @@ vector<Scientist>Service::SortBirth(){
 
     Scientist temp;
     Data Vec;
+    Vec.load();
     vector<Scientist>SortList = Vec.getVector();
     int j;
 
@@ -37,6 +38,7 @@ vector<Scientist>Service::SortDeath(){
 
     Scientist temp;
     Data Vec;
+    Vec.load();
     vector<Scientist>SortList = Vec.getVector();
     int j;
 
@@ -59,6 +61,7 @@ vector<Scientist>Service::SortFirstNames(){
 
     Scientist temp;
     Data Vec;
+    Vec.load();
     vector<Scientist>SortList = Vec.getVector();
     int j;
     for(unsigned int i = 0; i < SortList.size(); i++){
@@ -78,6 +81,7 @@ vector<Scientist>Service::SortLastNames(){
 
     Scientist temp;
     Data Vec;
+    Vec.load();
     vector<Scientist>SortList = Vec.getVector();
     int j;
 
@@ -97,6 +101,7 @@ vector<Scientist>Service::SortLastNames(){
 vector<Scientist>Service::SortGender(){
     Scientist temp;
     Data Vec;
+    Vec.load();
     vector<Scientist>SortList = Vec.getVector();
     int j;
     for(unsigned int i = 0; i < SortList.size(); i++){
@@ -114,6 +119,7 @@ vector<Scientist>Service::SortGender(){
 
 void Service::add(Scientist temp){
     Data Vec;
+    Vec.load();
     vector<Scientist>addvec = Vec.getVector();
     /*string sName;
     string sLast;
@@ -137,6 +143,7 @@ vector<Scientist> Service::Search(string toSearch)
 {
     vector<Scientist> temp;
     Data vec;
+    vec.load();
     vector<Scientist>SearchList = vec.getVector();
     Scientist current;
 
@@ -168,7 +175,7 @@ vector<Scientist> Service::Search(string toSearch)
 void Service::SaveFile(){
 
     Data temp;
+    temp.load();
     temp.SaveFile();
-
 
 }

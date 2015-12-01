@@ -27,8 +27,8 @@ void UI::start()
     int number;
     char Continue;
     Service temp;
-    do{
 
+    do{
     cout << "-------What do you want to do-------" << endl;
     cout << "Do you want to add, sort, save or search? " << endl;
     cout << "Press 1 to add" << endl;
@@ -58,10 +58,9 @@ void UI::start()
     cout << "Do you want to continue ? " << endl;
     cout << "y or n " << endl;
     cin >> Continue;
-    if (Continue == 'N' || Continue == 'n'){
+    if (Continue == 'N' || Continue == 'n')
         break;
-    }
-    }while(Continue != 'N' || Continue != 'n');
+    }while(1<2);
 }
 
 

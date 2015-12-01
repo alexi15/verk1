@@ -10,6 +10,7 @@ public:
     Data();
     void SaveFile();
     vector<Scientist>getVector();
+    void load();
 private:
     vector<Scientist>scientist;
 };

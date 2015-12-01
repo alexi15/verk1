@@ -4,17 +4,38 @@
 
 Data::Data()
 {
+    /*
     string Nam;
     string Last;
     string Gender;
     int Born;
     int Death;
     ifstream File1;
-    File1.open("YEs.txt");
+    File1.open("Alex.txt");
     if(File1.fail()){
         cout << "Error Opening File" << endl;
-        exit(1);
+        //exit(1);
+    }
+    string temp;
+    while(File1 >> Nam >> Last >> Gender >> Born >> Death){
+        Scientist P(Nam,Last,Gender,Born,Death);
+        scientist.push_back(P);
+    }
+   File1.close();
+*/
+}
 
+void Data::load(){
+    string Nam;
+    string Last;
+    string Gender;
+    int Born;
+    int Death;
+    ifstream File1;
+    File1.open("Prufa.txt");
+    if(File1.fail()){
+        cout << "Error Opening File" << endl;
+        //exit(1);
     }
     string temp;
     while(File1 >> Nam >> Last >> Gender >> Born >> Death){
@@ -23,11 +44,11 @@ Data::Data()
     }
    File1.close();
 
-
 }
+
 void Data::SaveFile(){
     ofstream output;
-    output.open("YEs.txt");
+    output.open("Prufa.txt");
     for (unsigned int i = 0; i < scientist.size(); i++){
 
         output << "First Name: " << scientist[i].getFirstName() << endl;
