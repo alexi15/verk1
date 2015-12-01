@@ -1,51 +1,11 @@
-Blaise Pascal
-Male
-1623
-1662
-
-Charles Babbage
-Male
-1791
-1871
-
-Augusta King
-Female
-1815
-1852
-
-George Boole
-Male
-1815
-1864
-
-Brewster Hopper
-Female
-1906
-1992
-
 Alan Turing
 Male
 1912
 1954
 
-John Backus
-Male
-1924
-2007
-
-Edsger Dijkstra
-Male
-1930
-2002
-
-Niklaus Wirth
-Male
-1934
-0
-
-Donald Knuth
-Male
-1938
+Alex Ivarsson
+male
+1994
 0
 
 Anita Borg
@@ -53,18 +13,63 @@ Female
 1949
 2003
 
+Augusta King
+Female
+1815
+1852
+
+Blaise Pascal
+Male
+1623
+1662
+
+Brewster Hopper
+Female
+1906
+1992
+
+Charles Babbage
+Male
+1791
+1871
+
+Donald Knuth
+Male
+1938
+0
+
+Edsger Dijkstra
+Male
+1930
+2002
+
+George Boole
+Male
+1815
+1864
+
 Guido Rossum
 Male
 1956
 0
+
+John Backus
+Male
+1924
+2007
 
 Jon Sigmundsson
 male
 1989
 0
 
-Alex Ivarsson
+Niklaus Wirth
+Male
+1934
+0
+
+Hilmar Bjarnason
 male
-1994
+1991
 0
 
