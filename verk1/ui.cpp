@@ -127,7 +127,9 @@ void UI::add()
     cout << "Death: ";
     cin >> sDeath;
     Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
-    temp.add(tempSci);
+
+    if(!(temp.add(tempSci)))
+        cout << "Error, could not add scientist";
     cout << endl;
     }
 

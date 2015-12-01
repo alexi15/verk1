@@ -12,7 +12,7 @@ public:
     Service();
     vector<Scientist> SortStringList(int tala);
     vector<Scientist> SortNumbersList(int tala);
-    void add(Scientist number);
+    bool add(Scientist number);
     vector<Scientist> Search(string toSearch);
     vector<Scientist> SearchFirst(string name);
     void SaveFile();

@@ -47,9 +47,15 @@ vector<Scientist>Service::SortStringList(int tala){
 
 }
 
-void Service::add(Scientist number){
-
-    list.push_back(number);
+bool Service::add(Scientist number){
+    if (number.getSex() != "male" || number.getSex() != "female"){
+        cout << "villa";
+         return false;
+    }
+    else{
+        list.push_back(number);
+        return true;
+    }
 
 }
 
