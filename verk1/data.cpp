@@ -28,16 +28,16 @@ void Data::load(){
 
 }
 
-void Data::SaveFile(){
+void Data::SaveFile(vector<Scientist>VecSave){
     ofstream output;
     output.open("No.txt");
-    for (unsigned int i = 0; i < scientist.size(); i++){
+    for (unsigned int i = 0; i < VecSave.size(); i++){
 
-        output << scientist[i].getFirstName() << " ";
-        output << scientist[i].getLastName() << endl;
-        output << scientist[i].getSex() << endl;
-        output << scientist[i].getYearBorn() << endl;
-        output << scientist[i].getYearDead() << endl;
+        output << VecSave[i].getFirstName() << " ";
+        output << VecSave[i].getLastName() << endl;
+        output << VecSave[i].getSex() << endl;
+        output << VecSave[i].getYearBorn() << endl;
+        output << VecSave[i].getYearDead() << endl;
         output << endl;
     }
     output.close();

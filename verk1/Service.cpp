@@ -11,6 +11,7 @@ Service::Service()
     Data temp;
     temp.load();
     list = temp.getVector();
+
 }
 vector<Scientist>Service::SortNumbersList(int tala){
     int j;
@@ -62,27 +63,24 @@ bool Service::add(Scientist number){
 vector<Scientist> Service::Search(string toSearch)
 {
     vector<Scientist> temp;
-    Data vec;
-    vec.load();
-    vector<Scientist>SearchList = vec.getVector();
     Scientist current;
 
-    for(unsigned int i = 0; i < SearchList.size(); i++)
+    for(unsigned int i = 0; i < list.size(); i++)
     {
-        current = SearchList[i];
+        current = list[i];
         if(isdigit(toSearch[1]) == 1){
             int intToSearch;
             std::stringstream ss(toSearch);
             ss >> intToSearch;
             int searchInt[2] = {current.getYearBorn(), current.getYearDead()};
             if(searchInt[0] == intToSearch || searchInt[1] == intToSearch)
-                temp.push_back(SearchList[i]);
+                temp.push_back(list[i]);
         }
         else{
              string searchWord = current.getFirstName() + current.getLastName();
 
             if (searchWord.find(toSearch) != string::npos){
-                temp.push_back(SearchList[i]);
+                temp.push_back(list[i]);
             }
         }
     }
@@ -93,7 +91,7 @@ vector<Scientist> Service::Search(string toSearch)
 
 
 void Service::SaveFile(){
-
-   // temp.SaveFile();
+    Data temp;
+    temp.SaveFile(list);
 
 }
