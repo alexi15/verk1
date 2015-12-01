@@ -110,7 +110,7 @@ void UI::add()
     string sLast;
     string sGender;
     int sBorn;
-    int sDeath = 0;
+    int sDeath;
     int number;
     cout << "How many scientist you wan to add ? ";
     cin >> number;

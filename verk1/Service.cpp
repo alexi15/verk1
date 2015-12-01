@@ -49,10 +49,11 @@ vector<Scientist>Service::SortStringList(int tala){
 }
 
 bool Service::add(Scientist number){
-    if (number.getSex() != "male" || number.getSex() != "female"){
-        cout << "villa";
+    string sex = number.getSex();
+    if (sex != "male" && sex != "female"){
          return false;
     }
+
     else{
         list.push_back(number);
         return true;
