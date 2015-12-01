@@ -136,7 +136,6 @@ void Service::add(Scientist temp){
     Scientist temp(sName, sLast, sGender, sBorn, sDeath);*/
 
     addvec.push_back(temp);
-
 }
 
 vector<Scientist> Service::Search(string toSearch)

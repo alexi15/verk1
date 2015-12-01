@@ -1,78 +1,65 @@
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1954
-Year of death: 2005
+Jon Sigmundsson
+Male
+1998
+2005
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1992
-Year of death: 2002
+Jon Sigmundsson
+Male
+1998
+2002
 
-First Name: Elin
-Last Name: Gudbjartsdottir
-Gender: Women
-Year born: 1998
-Year of death: 2003
+Elin Gudbjartsdottir
+Women
+1998
+2003
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1992
-Year of death: 2012
+Jon Sigmundsson
+Male
+1998
+2012
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1954
-Year of death: 2032
+Jon Sigmundsson
+Male
+1998
+2032
 
-First Name: Gudridur
-Last Name: bjartardottir
-Gender: Women
-Year born: 1998
-Year of death: 2032
+Gudridur bjartardottir
+Women
+1998
+2032
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1959
-Year of death: 2999
+Jon Sigmundsson
+Male
+1998
+2999
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1910
-Year of death: 1998
+Jon Sigmundsson
+Male
+1998
+1998
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1954
-Year of death: 1983
+Jon Sigmundsson
+Male
+1998
+1983
 
-First Name: Elin
-Last Name: Eirsdottir
-Gender: Women
-Year born: 1932
-Year of death: 1848
+Elin Eirsdottir
+Women
+1998
+1848
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1933
-Year of death: 1982
+Jon Sigmundsson
+Male
+1998
+1982
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Male
-Year born: 1999
-Year of death: 2040
+Jon Sigmundsson
+Male
+1998
+2040
 
-First Name: Jon
-Last Name: Sigmundsson
-Gender: Women
-Year born: 2000
-Year of death: 1983
+Jon Sigmundsson
+Women
+1998
+1983
 

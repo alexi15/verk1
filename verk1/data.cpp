@@ -32,7 +32,7 @@ void Data::load(){
     int Born;
     int Death;
     ifstream File1;
-    File1.open("Prufa.txt");
+    File1.open("No.txt");
     if(File1.fail()){
         cout << "Error Opening File" << endl;
         //exit(1);
@@ -48,17 +48,17 @@ void Data::load(){
 
 void Data::SaveFile(){
     ofstream output;
-    output.open("Prufa.txt");
+    output.open("No.txt");
     for (unsigned int i = 0; i < scientist.size(); i++){
 
-        output << "First Name: " << scientist[i].getFirstName() << endl;
-        output << "Last Name: " << scientist[i].getLastName() << endl;
-        output << "Gender: " << scientist[i].getSex() << endl;
-        output << "Year born: " << scientist[i].getYearBorn() << endl;
-        output << "Year of death: " << scientist[i].getYearDead() << endl;
+        output << scientist[i].getFirstName() << " ";
+        output << scientist[i].getLastName() << endl;
+        output << scientist[i].getSex() << endl;
+        output << scientist[i].getYearBorn() << endl;
+        output << scientist[i].getYearDead() << endl;
+        output << endl;
     }
     output.close();
-
 }
 
 vector<Scientist>Data::getVector(){
