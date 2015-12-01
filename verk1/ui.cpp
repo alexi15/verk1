@@ -110,9 +110,9 @@ void UI::add()
     string sLast;
     string sGender;
     int sBorn;
-    int sDeath = 0;
+    int sDeath;
     int number;
-    cout << "How many scientist you wan to add ? ";
+    cout << "How many scientist do you want to add ? ";
     cin >> number;
 
     for (int i = 0; i < number; i++){
@@ -123,9 +123,17 @@ void UI::add()
     cout << "Gender: ";
     cin >> sGender;
     cout << "Born: ";
-    cin >> sBorn;
-    cout << "Death: ";
-    cin >> sDeath;
+    while(!(cin >> sBorn)){
+        cin.clear();
+        cin.ignore(3000, '\n');
+        cout << "Invalid input, try again" << endl << "Born: ";
+    }
+    cout << "Death(if not dead input 0): ";
+    while(!(cin >> sDeath)){
+        cin.clear();
+        cin.ignore(3000, '\n');
+        cout << "Invalid input, try again" << endl << "Dead: ";
+    }
     Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
 
     if(!(temp.add(tempSci)))

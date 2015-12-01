@@ -25,7 +25,6 @@ void Data::load(){
         scientist.push_back(P);
     }
    File1.close();
-
 }
 
 void Data::SaveFile(vector<Scientist>VecSave){

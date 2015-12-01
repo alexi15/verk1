@@ -11,13 +11,8 @@ Service::Service()
     Data temp;
     temp.load();
     list = temp.getVector();
-
-
-
-
-
-
 }
+
 vector<Scientist>Service::SortNumbersList(int tala){
     int j;
     Scientist temp;
