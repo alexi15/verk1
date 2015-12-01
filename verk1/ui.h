@@ -21,6 +21,7 @@ public:
     void SaveFile();
 
 private:
+    Service temp;
 };
 
 #endif // UI_H

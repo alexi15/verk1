@@ -114,14 +114,15 @@ vector<Scientist>Service::SortGender(){
             j--;
         }
     }
-     return SortList;
+    return SortList;
 }
 
 void Service::add(Scientist temp){
     Data Vec;
     Vec.load();
-    vector<Scientist>addvec = Vec.getVector();
-    /*string sName;
+    //vector<Scientist>addvec = Vec.getVector();
+/*
+    string sName;
     string sLast;
     string sGender;
     int sBorn;
@@ -133,9 +134,11 @@ void Service::add(Scientist temp){
     cin >> sBorn;
     cin >> sDeath;
 
-    Scientist temp(sName, sLast, sGender, sBorn, sDeath);*/
-
-    addvec.push_back(temp);
+    Scientist temp(sName, sLast, sGender, sBorn, sDeath);
+*/
+    //addvec.push_back(temp);
+    Vec.getVector().push_back(temp);
+    Vec.SaveFile();
 }
 
 vector<Scientist> Service::Search(string toSearch)

@@ -3,8 +3,6 @@
 UI::UI()
 {
 
-
-
 }
 
 
@@ -26,7 +24,6 @@ void UI::start()
 {
     int number;
     char Continue;
-    Service temp;
 
     do{
     cout << "-------What do you want to do-------" << endl;
@@ -68,7 +65,6 @@ void UI::ChooseSort()
 {
     vector<Scientist>Data;
     int input;
-    Service temp;
     cout << "Press 1 to sort by first name " << endl;
     cout << "Press 2 to sort by last name" << endl;
     cout << "Press 3 to sort by gender" << endl;
@@ -109,7 +105,6 @@ void UI::ChooseSort()
 }
 void UI::add()
 {
-    Service s;
 
     string sName;
     string sLast;
@@ -132,28 +127,24 @@ void UI::add()
     cout << "Death: ";
     cin >> sDeath;
 
-    Scientist temp(sName, sLast, sGender, sBorn, sDeath);
-    s.add(temp);
+    Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
+    temp.add(tempSci);
     }
 
 }
 
 void UI::search()
 {
-    vector<Scientist> temp;
-    Service s;
+    vector<Scientist> Vec;
     string word;
     cout << "Search for: ";
     cin >> word;
-    temp = s.Search(word);
-    PrintData(temp);
+    Vec = temp.Search(word);
+    PrintData(Vec);
 }
 
 void UI::SaveFile(){
-    Service temp;
     temp.SaveFile();
-
-
 }
 
 
