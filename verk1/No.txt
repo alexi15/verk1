@@ -1,65 +1,15 @@
-Jon Sigmundsson
-Male
-1998
-2005
+Jon Sigmundsson Male 1998 2005 
+Jon Sigmundsson Male 1998 2002 
+Elin Gudbjartsdottir Women 1998 2003 
+Jon Sigmundsson Male 1998 2012 
+Jon Sigmundsson Male 1998 2032 
+Gudridur bjartardottir Women 1998 2032 
+Jon Sigmundsson Male 1998 2999
+Jon Sigmundsson Male 1998 1998 
+Jon Sigmundsson Male 1998 1983 
+Elin Eirsdottir Women 1998 1848 
+Jon Sigmundsson Male 1998 1982 
+Jon Sigmundsson Male 1998 2040 
+Jon Sigmundsson Women 1998 1983 
 
-Jon Sigmundsson
-Male
-1998
-2002
-
-Elin Gudbjartsdottir
-Women
-1998
-2003
-
-Jon Sigmundsson
-Male
-1998
-2012
-
-Jon Sigmundsson
-Male
-1998
-2032
-
-Gudridur bjartardottir
-Women
-1998
-2032
-
-Jon Sigmundsson
-Male
-1998
-2999
-
-Jon Sigmundsson
-Male
-1998
-1998
-
-Jon Sigmundsson
-Male
-1998
-1983
-
-Elin Eirsdottir
-Women
-1998
-1848
-
-Jon Sigmundsson
-Male
-1998
-1982
-
-Jon Sigmundsson
-Male
-1998
-2040
-
-Jon Sigmundsson
-Women
-1998
-1983
 

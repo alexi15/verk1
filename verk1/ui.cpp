@@ -63,6 +63,7 @@ void UI::start()
 
 void UI::ChooseSort()
 {
+
     vector<Scientist>Data;
     int input;
     cout << "Press 1 to sort by first name " << endl;
@@ -105,7 +106,7 @@ void UI::ChooseSort()
 }
 void UI::add()
 {
-
+    Service temp;
     string sName;
     string sLast;
     string sGender;
@@ -135,6 +136,7 @@ void UI::add()
 
 void UI::search()
 {
+    Service temp;
     vector<Scientist> Vec;
     string word;
     cout << "Search for: ";
@@ -144,6 +146,7 @@ void UI::search()
 }
 
 void UI::SaveFile(){
+    Service temp;
     temp.SaveFile();
 }
 

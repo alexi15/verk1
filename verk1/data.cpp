@@ -1,5 +1,5 @@
 #include "data.h"
-#include "Service.h"
+
 
 
 Data::Data()
@@ -66,3 +66,4 @@ vector<Scientist>Data::getVector(){
     return scientist;
 
 }
+

@@ -10,6 +10,7 @@
 class Service{
 public:
     Service();
+    Service(vector<Scientist> scientist);
     vector<Scientist> SortFirstNames();
     vector<Scientist> SortGender();
     vector<Scientist> SortDeath();
@@ -19,6 +20,8 @@ public:
     vector<Scientist> Search(string toSearch);
     vector<Scientist> SearchFirst(string name);
     void SaveFile();
+private:
+    vector<Scientist> list;
 };
 
 #endif // READFILES
