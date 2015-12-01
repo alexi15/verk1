@@ -4,25 +4,7 @@
 
 Data::Data()
 {
-    /*
-    string Nam;
-    string Last;
-    string Gender;
-    int Born;
-    int Death;
-    ifstream File1;
-    File1.open("Alex.txt");
-    if(File1.fail()){
-        cout << "Error Opening File" << endl;
-        //exit(1);
-    }
-    string temp;
-    while(File1 >> Nam >> Last >> Gender >> Born >> Death){
-        Scientist P(Nam,Last,Gender,Born,Death);
-        scientist.push_back(P);
-    }
-   File1.close();
-*/
+
 }
 
 void Data::load(){

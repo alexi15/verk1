@@ -10,12 +10,8 @@
 class Service{
 public:
     Service();
-    Service(vector<Scientist> scientist);
-    vector<Scientist> SortFirstNames();
-    vector<Scientist> SortGender();
-    vector<Scientist> SortDeath();
-    vector<Scientist> SortBirth();
-    vector<Scientist> SortLastNames();
+    vector<Scientist> SortStringList(int tala);
+    vector<Scientist> SortNumbersList(int tala);
     void add(Scientist temp);
     vector<Scientist> Search(string toSearch);
     vector<Scientist> SearchFirst(string name);

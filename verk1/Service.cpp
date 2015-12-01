@@ -4,53 +4,22 @@
 #include <data.h>
 using namespace std;
 
+
+
 Service::Service()
 {
     Data temp;
     temp.load();
     list = temp.getVector();
 }
-
-Service::Service(vector<Scientist> scientist)
-{
-    Data temp;
-    temp.load();
-    list = temp.getVector();
-}
-
-vector<Scientist>Service::SortBirth(){
-
-    Scientist temp;
-
+vector<Scientist>Service::SortNumbersList(int tala){
     int j;
-
+    Scientist temp;
 
     for(unsigned int i = 0; i < list.size(); i++){
         j = i;
 
-        while (j > 0 && list[j].getYearBorn() < list[j-1].getYearBorn()){
-            temp = list[j];
-            list[j] = list[j-1];
-            list[j-1] = temp;
-            j--;
-        }
-    }
-    return list;
-}
-
-
-
-
-vector<Scientist>Service::SortDeath(){
-
-    Scientist temp;
-
-    int j;
-
-    for(unsigned int i = 0; i < list.size(); i++){
-        j = i;
-
-        while (j > 0 && list[j].getYearDead() < list[j-1].getYearDead()){
+        while (j > 0 && list[j].GetNumbers(tala) < list[j-1].GetNumbers(tala)){
             temp = list[j];
             list[j] = list[j-1];
             list[j-1] = temp;
@@ -61,52 +30,13 @@ vector<Scientist>Service::SortDeath(){
 
 }
 
-
-vector<Scientist>Service::SortFirstNames(){
-
-    Scientist temp;
-
+vector<Scientist>Service::SortStringList(int tala){
     int j;
+    Scientist temp;
     for(unsigned int i = 0; i < list.size(); i++){
         j = i;
 
-        while (j > 0 && list[j].getFirstName() < list[j-1].getFirstName()){
-            temp = list[j];
-            list[j] = list[j-1];
-            list[j-1] = temp;
-            j--;
-        }
-
-    }
-     return list;
-}
-vector<Scientist>Service::SortLastNames(){
-
-    Scientist temp;
-
-    int j;
-
-    for(unsigned int i = 0; i < list.size(); i++){
-        j = i;
-
-        while (j > 0 && list[j].getLastName() < list[j-1].getLastName()){
-            temp = list[j];
-            list[j] = list[j-1];
-            list[j-1] = temp;
-            j--;
-        }
-    }
-     return list;
-
-}
-vector<Scientist>Service::SortGender(){
-    Scientist temp;
-
-    int j;
-    for(unsigned int i = 0; i < list.size(); i++){
-        j = i;
-
-        while (j > 0 && list[j].getSex() < list[j-1].getSex()){
+        while (j > 0 && list[j].GetStrings(tala) < list[j-1].GetStrings(tala)){
             temp = list[j];
             list[j] = list[j-1];
             list[j-1] = temp;
@@ -114,6 +44,7 @@ vector<Scientist>Service::SortGender(){
         }
     }
     return list;
+
 }
 
 void Service::add(Scientist temp){
@@ -175,8 +106,6 @@ vector<Scientist> Service::Search(string toSearch)
 
 void Service::SaveFile(){
 
-    Data temp;
-    temp.load();
-    temp.SaveFile();
+   // temp.SaveFile();
 
 }

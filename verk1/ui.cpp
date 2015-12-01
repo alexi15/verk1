@@ -78,24 +78,19 @@ void UI::ChooseSort()
     switch(input)
     {
         case 1:
-            Data = temp.SortFirstNames();
-            PrintData(Data);
+            PrintData(temp.SortStringList(input));
             break;
         case 2:
-            Data = temp.SortLastNames();
-            PrintData(Data);
+           PrintData(temp.SortStringList(input));
             break;
         case 3:
-            Data = temp.SortGender();
-            PrintData(Data);
+           PrintData(temp.SortStringList(input));
             break;
         case 4:
-            Data = temp.SortBirth();
-            PrintData(Data);
+           PrintData(temp.SortNumbersList(input));
             break;
         case 5:
-            Data = temp.SortDeath();
-            PrintData(Data);
+            PrintData(temp.SortNumbersList(input));
             break;
         default:
            cout << "Error in input" << endl;
