@@ -5,7 +5,7 @@ UI::UI()
 
 }
 
-
+//display function
 void UI::PrintData(vector<Scientist>Sorted){
 
     for(unsigned int i = 0; i < Sorted.size(); i++){
@@ -17,7 +17,7 @@ void UI::PrintData(vector<Scientist>Sorted){
         cout << endl;
     }
 }
-
+//This function asks the user what he wants the program to do
 void UI::start()
 {
     int number;
@@ -63,7 +63,7 @@ void UI::start()
     }
 }
 
-
+//This function asks the user how he wants to sort the data
 void UI::ChooseSort()
 {
 
@@ -107,6 +107,7 @@ void UI::ChooseSort()
     }while(input > 5 || input < 1);
 
 }
+//This function allows the user to add information to the database
 void UI::add()
 {
     string sName;
@@ -144,7 +145,7 @@ void UI::add()
     cout << endl;
     }
 }
-
+//This function allows the user to search in the database
 void UI::search()
 {
     string word;

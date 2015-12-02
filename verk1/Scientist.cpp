@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+//constructor
 Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead){
     name = Nam;
     lastname = Last;
@@ -12,6 +12,7 @@ Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead){
     yearBorn = year;
     yearDead = dead;
 }
+//default constructor
 Scientist::Scientist(){
     name = "";
     lastname = "";
@@ -20,7 +21,7 @@ Scientist::Scientist(){
     yearDead = 0;
 
 }
-
+//These get functions return private parameters
 string Scientist::getFirstName(){
 
     return name;

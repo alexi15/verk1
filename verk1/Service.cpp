@@ -4,14 +4,14 @@
 #include <data.h>
 using namespace std;
 
-
+//default constructor
 Service::Service()
 {
     Data temp;
     temp.load();
     list = temp.getVector();
 }
-
+//This function sorts the data by birth or by death
 vector<Scientist>Service::SortNumbersList(int tala){
     int j;
     Scientist temp;
@@ -29,7 +29,7 @@ vector<Scientist>Service::SortNumbersList(int tala){
     return list;
 
 }
-
+//This function sorts the data by first name, by last name or by gender
 vector<Scientist>Service::SortStringList(int tala){
     int j;
     Scientist temp;
@@ -45,7 +45,7 @@ vector<Scientist>Service::SortStringList(int tala){
     }
     return list;
 }
-
+//This function returns variables into the vector form UI
 bool Service::add(Scientist number){
     string sex = number.getSex();
     if (sex != "male" && sex != "female"){
@@ -57,7 +57,7 @@ bool Service::add(Scientist number){
         return true;
     }
 }
-
+//This function searches for the string in data which the user has put in
 vector<Scientist> Service::Search(string toSearch)
 {
     vector<Scientist> temp;
@@ -85,7 +85,7 @@ vector<Scientist> Service::Search(string toSearch)
     return temp;
 }
 
-
+//This function connects the domain layer(Servise) to data layer to save the file
 void Service::SaveFile(){
     Data temp;
     temp.SaveFile(list);

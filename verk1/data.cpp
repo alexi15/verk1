@@ -1,9 +1,10 @@
 #include "data.h"
 
+//default constructor
 Data::Data()
 {
 }
-
+//This function loads the file fraedingar.txt into a vector
 void Data::load(){
     string Nam;
     string Last;
@@ -19,7 +20,7 @@ void Data::load(){
     }
    File1.close();
 }
-
+//This function saves the information into the file fraedingar.txt
 void Data::SaveFile(vector<Scientist>VecSave){
     ofstream output;
     output.open("fraedingar.txt");
@@ -34,7 +35,7 @@ void Data::SaveFile(vector<Scientist>VecSave){
     }
     output.close();
 }
-
+//A get function that returns a vector with scientist
 vector<Scientist>Data::getVector(){
 
     return scientist;
