@@ -5,9 +5,8 @@
 Database::Database()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbName = "Computers.sqlite";
+    QString dbName = "Scientist_db.sqlite";
     db.setDatabaseName(dbName);
-
 
 }
 
@@ -54,4 +53,32 @@ void Database::ComputerToVector()
     }
 }
 
+bool Database::AddScientist(Scientist add)
+{
+
+    bool Added = false;
+
+    QSqlQuery Insert;
+
+    Insert.prepare("INSERT INTO Scientist (id, First name, Last name, Gender, Year Born, Year Died) VALUES (:id,:First name, :Last name,"
+                   ":Gender, :Year Born,:Year Died)");
+
+
+    Insert.bindValue(":First name",add.getFirstName().c_str());
+    Insert.bindValue(":Last name",add.getLastName().c_str());
+    Insert.bindValue(":Gender",add.getSex().c_str());
+    Insert.bindValue(":Year born",add.getYearBorn());
+    Insert.bindValue(":Year Died",add.getYearDead());
+
+    if (Insert.exec())
+    {
+        Added = true;
+    }
+
+    return Added;
+
+
+
+
+}
 
