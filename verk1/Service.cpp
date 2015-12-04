@@ -30,10 +30,12 @@ vector<Scientist>Service::SortNumbersList(int tala){
 
 }
 //This function sorts the data by first name, by last name or by gender
-vector<Scientist>Service::SortStringList(int tala){
+vector<Scientist>Service::SortStringList(int tala)
+{
     int j;
     Scientist temp;
-    for(unsigned int i = 0; i < list.size(); i++){
+    for(unsigned int i = 0; i < list.size(); i++)
+    {
         j = i;
 
         while (j > 0 && list[j].GetStrings(tala) < list[j-1].GetStrings(tala)){
@@ -46,7 +48,8 @@ vector<Scientist>Service::SortStringList(int tala){
     return list;
 }
 //This function returns variables into the vector form UI
-bool Service::add(Scientist number){
+bool Service::add(Scientist number)
+{
     string sex = number.getSex();
     if (sex != "male" && sex != "female"){
          return false;

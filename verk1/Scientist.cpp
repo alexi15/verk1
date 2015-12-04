@@ -5,7 +5,8 @@
 using namespace std;
 
 //constructor
-Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead){
+Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead)
+{
     name = Nam;
     lastname = Last;
     Gender = Sex;
@@ -13,7 +14,8 @@ Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead){
     yearDead = dead;
 }
 //default constructor
-Scientist::Scientist(){
+Scientist::Scientist()
+{
     name = "";
     lastname = "";
     Gender = "";
@@ -22,31 +24,37 @@ Scientist::Scientist(){
 
 }
 //These get functions return private parameters
-string Scientist::getFirstName(){
+string Scientist::getFirstName()
+{
 
     return name;
 }
 
-string Scientist::getLastName(){
+string Scientist::getLastName()
+{
 
     return lastname;
 }
 
-string Scientist::getSex(){
+string Scientist::getSex()
+{
 
     return Gender;
 }
 
-int Scientist::getYearBorn(){
+int Scientist::getYearBorn()
+{
 
     return yearBorn;
 }
-int Scientist::getYearDead(){
+int Scientist::getYearDead()
+{
 
     return yearDead;
 }
 
-string Scientist::GetStrings(int tala){
+string Scientist::GetStrings(int tala)
+{
       if (tala == 1){
           return getFirstName();
       }
@@ -59,7 +67,8 @@ string Scientist::GetStrings(int tala){
       return 0;
 }
 
-int Scientist::GetNumbers(int tala){
+int Scientist::GetNumbers(int tala)
+{
     if (tala == 4){
         return getYearBorn();
     }
