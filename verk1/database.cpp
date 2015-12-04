@@ -76,6 +76,30 @@ bool Database::AddScientist(Scientist add)
     }
 
     return Added;
+}
+
+bool Database::Addcomputers(Computers add)
+{
+
+    bool Added = false;
+
+    QSqlQuery Insert;
+
+    Insert.prepare("INSERT INTO Scientist (id, Name, Build Year, Type, Made) VALUES (:id,:Name, :Build Year,"
+                   ":Type,:Made)");
+
+
+    Insert.bindValue(":Name",add.getName().c_str());
+    Insert.bindValue(":Build Year",add.getBuildYear());
+    Insert.bindValue(":Type",add.getType().c_str());
+    Insert.bindValue(":Made",add.getType().c_str());
+
+    if (Insert.exec())
+    {
+        Added = true;
+    }
+
+    return Added;
 
 
 
