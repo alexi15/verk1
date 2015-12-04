@@ -13,14 +13,16 @@ SOURCES += main.cpp \
     Service.cpp \
     data.cpp \
     ui.cpp \
-    database.cpp
+    database.cpp \
+    computers.cpp
 
 HEADERS += \
     Scientist.h \
     Service.h \
     data.h \
     ui.h \
-    database.h
+    database.h \
+    computers.h
 
 DISTFILES +=
 
