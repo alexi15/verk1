@@ -5,8 +5,9 @@
 Database::Database()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbName = "Scientist_db.sqlite";
+    QString dbName = "Computers.sqlite";
     db.setDatabaseName(dbName);
+
 
 }
 
