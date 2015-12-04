@@ -1,4 +1,5 @@
 QT += core
+QT += sql
 QT -= gui
 
 TARGET = verk1
@@ -11,13 +12,15 @@ SOURCES += main.cpp \
     Scientist.cpp \
     Service.cpp \
     data.cpp \
-    ui.cpp
+    ui.cpp \
+    database.cpp
 
 HEADERS += \
     Scientist.h \
     Service.h \
     data.h \
-    ui.h
+    ui.h \
+    database.h
 
 DISTFILES +=
 

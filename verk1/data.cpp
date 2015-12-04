@@ -1,4 +1,6 @@
 #include "data.h"
+#include <QtSql>
+#include <QtDebug>
 
 //default constructor
 Data::Data()
