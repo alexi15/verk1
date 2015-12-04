@@ -44,6 +44,6 @@ string Computers::getStrings(int tala){
     else if (tala == 4){
         return getMade();
     }
-
+    return 0;
 
 }

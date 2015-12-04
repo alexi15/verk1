@@ -56,6 +56,7 @@ string Scientist::GetStrings(int tala){
       else if (tala == 3){
           return getSex();
       }
+      return 0;
 }
 
 int Scientist::GetNumbers(int tala){
@@ -65,6 +66,7 @@ int Scientist::GetNumbers(int tala){
     else if (tala == 5){
         return getYearDead();
     }
+    return 0;
 }
 
 
