@@ -67,7 +67,7 @@ void UI::start()
 void UI::ChooseSort()
 {
 
-    vector<Scientist>Database;
+    vector<Scientist>Data;
     int input;
     do{
     cout << "Press 1 to sort by first name " << endl;

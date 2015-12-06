@@ -7,6 +7,7 @@ Database::Database()
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "Computers.sqlite";
     db.setDatabaseName(dbName);
+    db.open();
 
 }
 
@@ -29,10 +30,12 @@ void Database::ScientistToVector()
         string LastName = query.value("Last Name").toString().toStdString();
         string Gender = query.value("Gender").toString().toStdString();
         int Born = query.value("Year Born").toUInt();
-        int Died = query.value("Died").toUInt();
+        int Died = query.value("Death").toUInt();
         Scientist P(name,LastName,Gender,Born,Died);
         scientist.push_back(P);
     }
+
+
 }
 
 
@@ -101,8 +104,10 @@ bool Database::Addcomputers(Computers add)
 
     return Added;
 
+}
 
-
-
+vector<Scientist> Database::getSciVector()
+{
+    return scientist;
 }
 
