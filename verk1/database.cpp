@@ -51,7 +51,7 @@ void Database::ComputerToVector()
         int BuildYear = query.value("BuildYear").toUInt();
         string Type = query.value("Type").toString().toStdString();
         string made = query.value("Made").toString().toStdString();
-        Computer P(name,BuildYear,Type,made);
+        Computers P(name,BuildYear,Type,made);
         computers.push_back(P);
     }
 }
@@ -81,7 +81,7 @@ bool Database::AddScientist(Scientist add)
     return Added;
 }
 
-bool Database::Addcomputers(Computer add)
+bool Database::Addcomputers(Computers add)
 {
 
     bool Added = false;

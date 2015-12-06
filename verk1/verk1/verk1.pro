@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     computers.cpp \
     ScientistService.cpp \
     ComputerData.cpp \
-    ScientistData.cpp
+    ScientistData.cpp \
+    ComputerService.cpp
 
 HEADERS += \
     Scientist.h \

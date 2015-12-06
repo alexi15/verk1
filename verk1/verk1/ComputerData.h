@@ -13,11 +13,11 @@ public:
     ScientistData();
     bool IsOpen()const;
     void ComputerToVector();
-    bool Addcomputers(Computers add);
+    bool Addcomputers(Computer add);
     vector<Scientist> getCompVector();
 private:
     QSqlDatabase db;
-    vector<Computers>computers;
+    vector<Computer>computers;
 };
 
 

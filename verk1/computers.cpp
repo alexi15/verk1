@@ -1,11 +1,11 @@
 #include "computers.h"
 
-Computer::Computer()
+Computers::Computers()
 {
 
 }
 
-Computer::Computer(string nam, int year, string Type, string Made){
+Computers::Computers(string nam, int year, string Type, string Made){
 
     name = nam;
     BuildYear = year;
@@ -15,26 +15,26 @@ Computer::Computer(string nam, int year, string Type, string Made){
 
 }
 
-string Computer::getName(){
+string Computers::getName(){
 
     return name;
 }
 
-int Computer::getBuildYear(){
+int Computers::getBuildYear(){
 
     return BuildYear;
 }
 
-string Computer::getType(){
+string Computers::getType(){
 
     return type;
 }
 
-string Computer::getMade(){
+string Computers::getMade(){
 
     return made;
 }
-string Computer::getStrings(int tala){
+string Computers::getStrings(int tala){
     if (tala == 1){
         return getName();
     }

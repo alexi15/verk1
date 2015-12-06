@@ -31,13 +31,13 @@ void ComputerDatabase::ComputerToVector()
         int BuildYear = query.value("BuildYear").toUInt();
         string Type = query.value("Type").toString().toStdString();
         string made = query.value("Made").toString().toStdString();
-        Computers P(name,BuildYear,Type,made);
+        Computer P(name,BuildYear,Type,made);
         computers.push_back(P);
     }
 }
 
 
-bool ComputerDatabase::Addcomputers(Computers add)
+bool ComputerDatabase::Addcomputers(Computer add)
 {
 
     bool Added = false;

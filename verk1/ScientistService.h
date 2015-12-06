@@ -18,8 +18,7 @@ public:
     void SaveFile();
 private:
     Database temp;
-    vector<Scientist> sci;
-    vector<Computer> comp;
+    vector<Computers> sci;
 };
 
 #endif // READFILES

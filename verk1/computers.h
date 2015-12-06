@@ -3,11 +3,11 @@
 #include <iostream>
 using namespace std;
 
-class Computer
+class Computers
 {
 public:
-    Computer();
-    Computer(string nam, int year, string Type, string Made);
+    Computers();
+    Computers(string nam, int year, string Type, string Made);
     string getName();
     int getBuildYear();
     string getType();

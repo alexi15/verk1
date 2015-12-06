@@ -15,12 +15,12 @@ public:
     void ComputerToVector();
     void ScientistToVector();
     bool AddScientist(Scientist add);
-    bool Addcomputers(Computer add);
+    bool Addcomputers(Computers add);
     vector<Scientist> getSciVector();
 private:
     QSqlDatabase db;
     vector<Scientist>scientist;
-    vector<Computer>computers;
+    vector<Computers>computers;
 };
 
 #endif // DATABASE_H

@@ -1,15 +1,15 @@
-#ifndef READFILES
-#define READFILES
+#ifndef COMPUTERSERVICE_H
+#define COMPUTERSERVICE_H
 #include<iostream>
 #include <vector>
 #include "Scientist.h"
 #include "computers.h"
 #include "database.h"
 
-
-class ScientistService{
+class ComputerService
+{
 public:
-    ScientistService();
+    ComputerService();
     vector<Scientist> SortStringList(int tala);
     vector<Scientist> SortNumbersList(int tala);
     bool add(Scientist number);
@@ -18,10 +18,7 @@ public:
     void SaveFile();
 private:
     Database temp;
-    vector<Scientist> sci;
-    vector<Computer> comp;
+    vector<Computers> com;
 };
 
-#endif // READFILES
-
-
+#endif // COMPUTERSERVICE_H
