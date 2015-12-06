@@ -4,7 +4,7 @@
 #include <vector>
 #include "Scientist.h"
 #include "computers.h"
-#include "database.h"
+#include "ScientistData.h"
 
 
 class Service{

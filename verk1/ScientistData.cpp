@@ -1,8 +1,8 @@
-#include "database.h"
+#include "ScientistData.h"
 
 
 
-Database::Database()
+ScientistData::ScientistData()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "Computers.sqlite";
@@ -11,14 +11,14 @@ Database::Database()
 
 }
 
-bool Database::IsOpen()const
+bool ScientistData::IsOpen()const
 {
 
     return db.isOpen();
 
 }
 
-void Database::ScientistToVector()
+void ScientistData::ScientistToVector()
 {
 
     QSqlQuery query(db);
@@ -38,25 +38,7 @@ void Database::ScientistToVector()
 
 }
 
-
-void Database::ComputerToVector()
-{
-
-    QSqlQuery query(db);
-
-    query.exec("SELECT * FROM Computers");
-
-    while(query.next()){
-        string name = query.value("Name").toString().toStdString();
-        int BuildYear = query.value("BuildYear").toUInt();
-        string Type = query.value("Type").toString().toStdString();
-        string made = query.value("Made").toString().toStdString();
-        Computers P(name,BuildYear,Type,made);
-        computers.push_back(P);
-    }
-}
-
-bool Database::AddScientist(Scientist add)
+bool ScientistData::AddScientist(Scientist add)
 {
 
     bool Added = false;
@@ -81,32 +63,9 @@ bool Database::AddScientist(Scientist add)
     return Added;
 }
 
-bool Database::Addcomputers(Computers add)
-{
-
-    bool Added = false;
-
-    QSqlQuery Insert;
-
-    Insert.prepare("INSERT INTO Scientist (id, Name, Build Year, Type, Made) VALUES (:id,:Name, :Build Year,"
-                   ":Type,:Made)");
 
 
-    Insert.bindValue(":Name",add.getName().c_str());
-    Insert.bindValue(":Build Year",add.getBuildYear());
-    Insert.bindValue(":Type",add.getType().c_str());
-    Insert.bindValue(":Made",add.getType().c_str());
-
-    if (Insert.exec())
-    {
-        Added = true;
-    }
-
-    return Added;
-
-}
-
-vector<Scientist> Database::getSciVector()
+vector<Scientist> ScientistData::getSciVector()
 {
     return scientist;
 }

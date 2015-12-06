@@ -11,18 +11,18 @@ TEMPLATE = app
 SOURCES += main.cpp \
     Scientist.cpp \
     Service.cpp \
-    data.cpp \
     ui.cpp \
-    database.cpp \
-    computers.cpp
+    computers.cpp \
+    ComputerData.cpp \
+    ScientistData.cpp
 
 HEADERS += \
     Scientist.h \
     Service.h \
-    data.h \
     ui.h \
-    database.h \
-    computers.h
+    computers.h \
+    ScientistData.h \
+    ComputerData.h
 
 DISTFILES +=
 
