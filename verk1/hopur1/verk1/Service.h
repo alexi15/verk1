@@ -3,8 +3,7 @@
 #include<iostream>
 #include <vector>
 #include "Scientist.h"
-#include "computers.h"
-#include "ScientistData.h"
+#include <data.h>
 
 
 class Service{
@@ -17,9 +16,7 @@ public:
     vector<Scientist> SearchFirst(string name);
     void SaveFile();
 private:
-    Database temp;
-    vector<Scientist> sci;
-    vector<Computers> comp;
+    vector<Scientist> list;
 };
 
 #endif // READFILES
