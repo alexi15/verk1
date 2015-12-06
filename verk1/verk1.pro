@@ -10,19 +10,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     Scientist.cpp \
-    Service.cpp \
     data.cpp \
     ui.cpp \
     database.cpp \
-    computers.cpp
+    computers.cpp \
+    ScientistService.cpp
 
 HEADERS += \
     Scientist.h \
-    Service.h \
     data.h \
     ui.h \
     database.h \
-    computers.h
+    computers.h \
+    ScientistService.h
 
 DISTFILES +=
 

@@ -7,9 +7,9 @@
 #include "database.h"
 
 
-class Service{
+class ScientistService{
 public:
-    Service();
+    ScientistService();
     vector<Scientist> SortStringList(int tala);
     vector<Scientist> SortNumbersList(int tala);
     bool add(Scientist number);

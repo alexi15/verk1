@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "Scientist.h"
-#include "Service.h"
+#include "ScientistService.h"
 //class Service;
 
 using namespace std;
@@ -21,7 +21,7 @@ public:
     void SaveFile();
 
 private:
-    Service temp;
+    ScientistService temp;
 };
 
 #endif // UI_H
