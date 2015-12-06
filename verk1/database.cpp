@@ -27,9 +27,9 @@ void Database::ScientistToVector()
 
     while(query.next()){
         string name = query.value("Name").toString().toStdString();
-        string LastName = query.value("Last Name").toString().toStdString();
+        string LastName = query.value("LastName").toString().toStdString();
         string Gender = query.value("Gender").toString().toStdString();
-        int Born = query.value("Year Born").toUInt();
+        int Born = query.value("YearBorn").toUInt();
         int Died = query.value("Death").toUInt();
         Scientist P(name,LastName,Gender,Born,Died);
         scientist.push_back(P);
@@ -48,7 +48,7 @@ void Database::ComputerToVector()
 
     while(query.next()){
         string name = query.value("Name").toString().toStdString();
-        int BuildYear = query.value("Build Year").toUInt();
+        int BuildYear = query.value("BuildYear").toUInt();
         string Type = query.value("Type").toString().toStdString();
         string made = query.value("Made").toString().toStdString();
         Computers P(name,BuildYear,Type,made);
@@ -63,15 +63,15 @@ bool Database::AddScientist(Scientist add)
 
     QSqlQuery Insert;
 
-    Insert.prepare("INSERT INTO Scientist (id, First name, Last name, Gender, Year Born, Year Died) VALUES (:id,:First name, :Last name,"
-                   ":Gender, :Year Born,:Year Died)");
+    Insert.prepare("INSERT INTO Scientist (Name, LastName, Gender, YearBorn, Death) VALUES (:Name, :LastName,"
+                   ":Gender, :YearBorn,:Death)");
 
 
-    Insert.bindValue(":First name",add.getFirstName().c_str());
-    Insert.bindValue(":Last name",add.getLastName().c_str());
+    Insert.bindValue(":Name",add.getFirstName().c_str());
+    Insert.bindValue(":LastName",add.getLastName().c_str());
     Insert.bindValue(":Gender",add.getSex().c_str());
-    Insert.bindValue(":Year born",add.getYearBorn());
-    Insert.bindValue(":Year Died",add.getYearDead());
+    Insert.bindValue(":YearBorn",add.getYearBorn());
+    Insert.bindValue(":Death",add.getYearDead());
 
     if (Insert.exec())
     {
