@@ -12,8 +12,14 @@ Computer::Computer(int ID, string nam, int year, string Type, string Made){
     BuildYear = year;
     type = Type;
     made = Made;
+}
 
-
+Computer::Computer(string nam, int year, string Type, string Made)
+{
+    name = nam;
+    BuildYear = year;
+    type = Type;
+    made = Made;
 }
 
 string Computer::getName()

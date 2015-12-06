@@ -8,6 +8,7 @@ class Computer
 public:
     Computer();
     Computer(int ID, string nam, int year, string Type, string Made);
+    Computer(string nam, int year, string Type, string Made);
     string getName();
     int getBuildYear();
     string getType();

@@ -14,6 +14,16 @@ Scientist::Scientist(int ID, string Nam, string Last, string Sex, int year, int 
     yearBorn = year;
     yearDead = dead;
 }
+
+Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead)
+{
+    name = Nam;
+    lastname = Last;
+    Gender = Sex;
+    yearBorn = year;
+    yearDead = dead;
+}
+
 //default constructor
 Scientist::Scientist()
 {

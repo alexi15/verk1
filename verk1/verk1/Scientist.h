@@ -10,6 +10,7 @@ class Scientist
 
 public:
     Scientist(int ID, string Nam, string Last, string Sex, int year, int dead);
+    Scientist(string Nam, string Last, string Sex, int year, int dead);
     Scientist();
     string getFirstName();
     string getLastName();
