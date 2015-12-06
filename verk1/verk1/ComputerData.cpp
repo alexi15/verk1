@@ -1,6 +1,6 @@
 #include "ComputerData.h"
 
-ComputerDatabase::ComputerDatabase()
+ComputerData::ComputerData()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "Computers.sqlite";
@@ -11,7 +11,7 @@ ComputerDatabase::ComputerDatabase()
 }
 
 
-bool ComputerDatabase::IsOpen()const
+bool ComputerData::IsOpen()const
 {
 
     return db.isOpen();
@@ -19,7 +19,7 @@ bool ComputerDatabase::IsOpen()const
 }
 
 
-void ComputerDatabase::ComputerToVector()
+void ComputerData::ComputerToVector()
 {
 
     QSqlQuery query(db);
@@ -37,7 +37,7 @@ void ComputerDatabase::ComputerToVector()
 }
 
 
-bool ComputerDatabase::Addcomputers(Computer add)
+bool ComputerData::AddComputer(Computer add)
 {
 
     bool Added = false;
@@ -63,7 +63,7 @@ bool ComputerDatabase::Addcomputers(Computer add)
 }
 
 
-vector<Computer> ComputerDatabase::getCompVector()
+vector<Computer> ComputerData::getComVector()
 {
-    return scientist;
+    return computers;
 }

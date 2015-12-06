@@ -28,8 +28,7 @@ void UI::start()
     cout << "Press 1 to add" << endl;
     cout << "Press 2 to sort" << endl;
     cout << "Press 3 to search" << endl;
-    cout << "Press 4 to save" << endl;
-    cout << "Press 5 to exit" << endl;
+    cout << "Press 4 to exit" << endl;
 
     while(!(cin >> number)){
         cin.clear();
@@ -50,9 +49,6 @@ void UI::start()
             search();
             break;
         case 4:
-            SaveFile();
-            break;
-        case 5:
             cout << " --- Until next time ---" << endl;
             exit(0);
             break;
@@ -156,11 +152,6 @@ void UI::search()
     else
         cout << "Scientists found: " << endl;
         PrintData(temp.Search(word));
-}
-
-void UI::SaveFile(){
-    temp.SaveFile();
-    cout << "File was saved" << endl;
 }
 
 

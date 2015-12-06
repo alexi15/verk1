@@ -6,15 +6,15 @@
 #include "computers.h"
 
 
-class ComputerDatabase
+class ComputerData
 {
 public:
-    ComputerDatabase();
+    ComputerData();
     ScientistData();
     bool IsOpen()const;
     void ComputerToVector();
-    bool Addcomputers(Computer add);
-    vector<Scientist> getCompVector();
+    bool AddComputer(Computer add);
+    vector<Computer> getComVector();
 private:
     QSqlDatabase db;
     vector<Computer>computers;

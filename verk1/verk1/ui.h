@@ -18,7 +18,6 @@ public:
     void add();
     void PrintData(vector<Scientist>Sorted);
     void search();
-    void SaveFile();
 
 private:
     ScientistService temp;

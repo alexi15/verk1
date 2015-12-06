@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include "ScientistService.h"
 
 using namespace std;
@@ -86,10 +85,4 @@ vector<Scientist> ScientistService::Search(string toSearch)
         }
     }
     return temp;
-}
-
-//This function connects the domain layer(Servise) to data layer to save the file
-void ScientistService::SaveFile(){
-    Database temp;
-    //temp.SaveFile(list);
 }

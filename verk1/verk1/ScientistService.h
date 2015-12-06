@@ -2,9 +2,9 @@
 #define READFILES
 #include<iostream>
 #include <vector>
+#include <sstream>
 #include "Scientist.h"
-#include "computers.h"
-#include "database.h"
+#include "ScientistData.h"
 
 
 class ScientistService{
@@ -15,11 +15,9 @@ public:
     bool add(Scientist number);
     vector<Scientist> Search(string toSearch);
     vector<Scientist> SearchFirst(string name);
-    void SaveFile();
 private:
-    Database temp;
+    ScientistData temp;
     vector<Scientist> sci;
-    vector<Computer> comp;
 };
 
 #endif // READFILES

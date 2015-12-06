@@ -25,7 +25,8 @@ HEADERS += \
     computers.h \
     ScientistService.h \
     ComputerData.h \
-    ScientistData.h
+    ScientistData.h \
+    computerservice.h
 
 DISTFILES +=
 

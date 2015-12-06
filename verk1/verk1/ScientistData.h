@@ -12,7 +12,7 @@ public:
     ScientistData();
     bool IsOpen()const;
     void ScientistToVector();
-    bool Addcomputers(Computers add);
+    bool AddScientist(Scientist add);
     vector<Scientist> getSciVector();
 private:
     QSqlDatabase db;
