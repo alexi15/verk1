@@ -5,72 +5,80 @@ UI::UI()
 
 }
 
-//display function
-void UI::PrintData(vector<Scientist>Sorted){
+//display function scientist ATH réttur vector
+void UI::PrintDataScientist(vector<Scientist>Sorted){
 
     for(unsigned int i = 0; i < Sorted.size(); i++){
-        cout << "Name: " << Sorted[i].getFirstName() << endl;
-        cout << "Lastname: " << Sorted[i].getLastName() << endl;
-        cout << "Gender: " << Sorted[i].getSex() << endl;
-        cout << "YearBorn: " << Sorted[i].getYearBorn() << endl;
-        cout << "Death: " << Sorted[i].getYearDead() << endl;
+        //cout << "ID: " << Sorted[i].getID() << endl;
+        cout << "   Name: " << Sorted[i].getFirstName() << endl;
+        cout << "   Lastname: " << Sorted[i].getLastName() << endl;
+        cout << "   Gender: " << Sorted[i].getSex() << endl;
+        cout << "   YearBorn: " << Sorted[i].getYearBorn() << endl;
+        cout << "   Death: " << Sorted[i].getYearDead() << endl;
         cout << endl;
     }
 }
-//This function asks the user what he wants the program to do
-void UI::start()
+//display function computers ATH réttan vector vector<Computer>ComputerService
+void UI::PrintDataComputers(vector<Computer>Sorted){
+
+    for(unsigned int i = 0; i < Sorted.size(); i++){
+        //cout << " ID: " << Sorted[i].getID() << endl;
+        cout << "   Name: " << Sorted[i].getName() << endl;
+        cout << "   Build Year: " << Sorted[i].getBuildYear() << endl;
+        cout << "   Type: " << Sorted[i].getType() << endl;
+        cout << "   Made: " << Sorted[i].getMade() << endl;
+        cout << endl;
+
+    }
+}
+//
+int UI::start()
 {
     int number;
 
-    while(true){
-    cout << "-------What do you want to do-------" << endl;
-    cout << "Do you want to add, sort, save or search? " << endl;
-    cout << "Press 1 to add" << endl;
-    cout << "Press 2 to sort" << endl;
-    cout << "Press 3 to search" << endl;
-    cout << "Press 4 to exit" << endl;
+   //while(true){
+    cout << "=============What do you want to do==============" << endl;
+    cout << "Do you want to look at scientists, computers or relations between them? " << endl;
+    cout << "Press 1 for scientists" << endl;
+    cout << "Press 2 for computers" << endl;
+    cout << "Press 3 for relations" << endl;
 
     while(!(cin >> number)){
         cin.clear();
-        cin.ignore(6, '\n');
+        cin.ignore(4, '\n');
         cout << "Error in input" << endl;
-        cout << "Please choose a number between 1 to 5"<< endl;
+        cout << "Please choose a number between 1 to 3"<< endl;
     }
 
-    switch(number)
-    {
-        case 1:
-            add();
-            break;
-        case 2:
-            ChooseSort();
-            break;
-        case 3:
-            search();
-            break;
-        case 4:
-            cout << " --- Until next time ---" << endl;
-            exit(0);
-            break;
-        default:
-           cout << "Error in input" << endl;
-           cout << "Please choose a number between 1 to 5"<< endl;
-        }
-    }
+   //}
+    return number;
 }
 
-//This function asks the user how he wants to sort the data
-void UI::ChooseSort()
+//This function asks the user what he wants the program to do
+void UI::NextStep()
 {
-
-    vector<Scientist>Database;
+    int number = start();
     int input;
-    do{
-    cout << "Press 1 to sort by first name " << endl;
-    cout << "Press 2 to sort by last name" << endl;
-    cout << "Press 3 to sort by gender" << endl;
-    cout << "Press 4 to sort by birth" << endl;
-    cout << "Press 5 to sort by death" << endl;
+
+
+    //while(true){
+
+    cout << "------------What do you want to do------------" << endl;
+    if (number == 1 || number == 2){
+        cout << "Do you want to add, sort, edit, remove or search? " << endl;
+        cout << "Press 1 to add" << endl;
+        cout << "Press 2 to sort" << endl;
+        cout << "Press 3 to edit" << endl;
+        cout << "Press 4 to remove" << endl;
+        cout << "Press 5 to search" << endl;
+    }
+    else{
+        cout << "Do you want to add, sort, edit or remove? " << endl;
+        cout << "Press 1 to add" << endl;
+        cout << "Press 2 to sort" << endl;
+        cout << "Press 3 to edit" << endl;
+        cout << "Press 4 to remove" << endl;
+    }
 
     while(!(cin >> input)){
         cin.clear();
@@ -82,29 +90,57 @@ void UI::ChooseSort()
     switch(input)
     {
         case 1:
-            PrintData(temp.SortStringList(input));
+            if (number == 1)
+                addScientist();
+            if (number == 2)
+                addComputers();
+            if (number == 3)
+                //addRelations();
             break;
         case 2:
-           PrintData(temp.SortStringList(input));
-            break;
-        case 3:
-           PrintData(temp.SortStringList(input));
-            break;
+            if (number == 1)
+                ChooseSortScientist();
+            if (number == 2)
+                ChooseSortComputers();
+            if (number == 3)
+                //ChooseSortRelations();
+                break;
+       /* case 3:
+            if (number == 1)
+                scient.edit();
+            if (number == 2)
+                com.edit();
+            if (number == 3)
+                relat.edit();
+                break;
         case 4:
-           PrintData(temp.SortNumbersList(input));
-            break;
+            if (number == 1)
+                scient.remove();
+            if (number == 2)
+                com.remove();
+            if (number == 3)
+                relat.remove();
+                break;
+*/
         case 5:
-            PrintData(temp.SortNumbersList(input));
+            if (number == 1 || number == 2)
+                search();
+            else {//ef notandi valdi að fara í relations og svo valdi hann að 5 þá þarf hann að
+                   cout << "Error in input" << endl;
+                   cout << "Please choose a number between 1 to 5"<< endl;
+            }
             break;
         default:
            cout << "Error in input" << endl;
            cout << "Please choose a number between 1 to 5"<< endl;
-    }
-    }while(input > 5 || input < 1);
+        }
 
+    //}
 }
-//This function allows the user to add information to the database
-void UI::add()
+
+
+//This function allows the user to add information to the scientist database
+void UI::addScientist()
 {
     string sName;
     string sLast;
@@ -136,22 +172,198 @@ void UI::add()
     }
     Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
 
-    if(!(temp.add(tempSci)))
+    if(!(scient.add(tempSci)))
         cout << "Error, could not add scientist";
     cout << endl;
     }
 }
-//This function allows the user to search in the database
-void UI::search()
+
+//This function allows the user to add information to the computers database
+void UI::addComputers()
 {
+    string sName;
+    int sBuildYear;
+    string sType;
+    string sMade;//hvað á notandin að inputa hér, yes eða no - villuchecka
+
+    int number;
+    cout << "How many computers do you want to add ? ";
+    cin >> number;
+
+    for (int i = 0; i < number; i++){
+    cout << "Name of the computer: ";
+    cin >> sName;
+    cout << "Build Year(if not build input 0): ";
+    while(!(cin >> sBuildYear)){
+        cin.clear();
+        cin.ignore(0, '\n');
+        cout << "Invalid input, try again" << endl << "Build Year: ";
+    }
+    cout << "Computers Type: ";
+    cin >> sType;
+    cout << "Was the computer made? ";
+    while(!(cin >> sMade)){
+        cin.clear();
+        cin.ignore(3000, '\n');
+        cout << "Invalid input, try again" << endl << "Made: ";
+    }
+
+    Computer tempcom(sName, sBuildYear, sType, sMade);
+
+    if(!(com.add(tempcom)))
+        cout << "Error, could not add computer";
+    cout << endl;
+    }
+}
+
+//EFTIR að útfæra!!! ATH
+//This function allows the user to add information to the relations database
+/*void UI::addRelations()
+{
+    string sScientist;
+    string sScientist;
+    int number;
+    cout << "How many relations do you want to add ? ";
+    cin >> number;
+
+    for (int i = 0; i < number; i++){
+
+    }
+    Relations temprelat(sScientist, sScientist);
+
+    if(!(relat.add(temprelat)))
+        cout << "Error, could not add scientist";
+    cout << endl;
+    }
+}
+*/
+
+
+//This function asks the user how he wants to sort the scientist data
+void UI::ChooseSortScientist()
+{
+    vector<Scientist>Database;
+    int input;
+    do{
+    cout << "Press 1 to sort by first name " << endl;
+    cout << "Press 2 to sort by last name" << endl;
+    cout << "Press 3 to sort by gender" << endl;
+    cout << "Press 4 to sort by birth" << endl;
+    cout << "Press 5 to sort by death" << endl;
+
+    while(!(cin >> input)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number between 1 to 5"<< endl;
+    }
+
+    switch(input)
+    {
+        case 1:
+            PrintDataScientist(scient.SortStringList(input));
+            break;
+        case 2:
+           PrintDataScientist(scient.SortStringList(input));
+            break;
+        case 3:
+           PrintDataScientist(scient.SortStringList(input));
+            break;
+        case 4:
+           PrintDataScientist(scient.SortNumbersList(input));
+            break;
+        case 5:
+            PrintDataScientist(scient.SortNumbersList(input));
+            break;
+        default:
+           cout << "Error in input" << endl;
+           cout << "Please choose a number between 1 to 5"<< endl;
+    }
+    }while(input > 5 || input < 1);
+
+}
+//This function asks the user how he wants to sort the computers data
+void UI::ChooseSortComputers()
+{
+    vector<Scientist>Database;//hvada vector
+    int input;
+    do{
+    cout << "Press 1 to sort by name " << endl;
+    cout << "Press 2 to sort by build year" << endl;
+    cout << "Press 3 to sort by computers type" << endl;
+    cout << "Press 4 to sort by made ???" << endl;
+
+    while(!(cin >> input)){
+        cin.clear();
+        cin.ignore(4, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number between 1 to 3"<< endl;
+    }
+
+    switch(input)
+    {
+        case 1:
+            PrintDataComputers(com.SortStringList(input));
+            break;
+        case 2:
+           PrintDataComputers(com.SortNumbersList(input));
+            break;
+        case 3:
+           PrintDataComputers(com.SortStringList(input));
+            break;
+        default:
+           cout << "Error in input" << endl;
+           cout << "Please choose a number between 1 to 3"<< endl;
+    }
+    }while(input > 3 || input < 1);
+
+}
+
+
+//This function asks the user how he wants to sort the relations data
+/*void UI::ChooseSortRelations()
+{
+    vector<Scientist>Database;//hvada vector
+    int input;
+    do{
+    cout << "Press 1 to sort by computer name" << endl;
+    cout << "Press 2 to sort by scientist name" << endl;
+
+    while(!(cin >> input)){
+        cin.clear();
+        cin.ignore(3, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number between 1 to 2"<< endl;
+    }
+
+    switch(input)
+    {
+        case 1:
+            PrintData(relat.SortStringList(input));
+            break;
+        case 2:
+           PrintData(relat.SortStringList(input));
+            break;
+        default:
+           cout << "Error in input" << endl;
+           cout << "Please choose a number between 1 to 2"<< endl;
+    }
+    }while(input > 2 || input < 1);
+
+
+}
+ */
+
+
+//This function allows the user to search in the database
+void UI::search(){
     string word;
     cout << "Search for: ";
     cin >> word;
-    if(!temp.Search(word).size())
+    if(!scient.Search(word).size())
         cout << "Could not find " << word << " in file" << endl;
     else
         cout << "Scientists found: " << endl;
-        PrintData(temp.Search(word));
+        PrintDataScientist(scient.Search(word));
 }
-
 

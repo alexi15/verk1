@@ -6,18 +6,19 @@ ComputerService::ComputerService()
     com = temp.getComVector();
 }
 
-vector<Computer>ComputerService::SortNumbersList(){
+vector<Computer>ComputerService::SortNumbersList(int tala){
     int j;
     Computer temp;
 
     for(unsigned int i = 0; i < com.size(); i++){
         j = i;
 
-        while (j > 0 && com[j].getBuildYear() < com[j-1].getBuildYear()){
+        while (j > 0 && com[j].getNumbers(tala) < com[j-1].getNumbers(tala)){
             temp = com[j];
             com[j] = com[j-1];
             com[j-1] = temp;
             j--;
+
         }
     }
     return com;

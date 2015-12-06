@@ -10,7 +10,7 @@ class ComputerData
 {
 public:
     ComputerData();
-    ScientistData();
+    //ScientistData();
     bool IsOpen()const;
     void ComputerToVector();
     bool AddComputer(Computer add);

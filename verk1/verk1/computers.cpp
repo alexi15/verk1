@@ -47,6 +47,7 @@ int Computer::getId()
     return id;
 }
 
+
 string Computer::getStrings(int tala)
 {
     if (tala == 1){
@@ -60,4 +61,11 @@ string Computer::getStrings(int tala)
     }
     return 0;
 
+}
+int Computer::getNumbers(int tala)
+{
+    if (tala == 2){
+        return getBuildYear();
+    }
+    return 0;
 }

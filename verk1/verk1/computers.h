@@ -15,6 +15,7 @@ public:
     string getMade();
     int getId();
     string getStrings(int tala);
+    int getNumbers(int tala);
 private:
     int id;
     string name;

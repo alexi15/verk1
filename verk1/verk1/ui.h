@@ -4,7 +4,11 @@
 #include <vector>
 #include "Scientist.h"
 #include "ScientistService.h"
-//class Service;
+#include "computerservice.h"
+#include "computers.h"
+
+
+class Service;
 
 using namespace std;
 
@@ -12,15 +16,22 @@ class UI
 {
 public:
     UI();
-    void start();
-    void ChooseSort();
-    void ChooseSearch();
-    void add();
-    void PrintData(vector<Scientist>Sorted);
+    void PrintDataScientist(vector<Scientist>Sorted);
+    void PrintDataComputers(vector<Computer>Sorted);
+    int start();
+    void NextStep();
+    void addScientist();
+    void addComputers();
+    void addRelations();
+    void ChooseSortScientist();
+    void ChooseSortComputers();
+    void ChooseSortRelations();
     void search();
 
 private:
-    ScientistService temp;
+    ScientistService scient;
+    ComputerService com;
+    //Relations relat;
 };
 
 #endif // UI_H
