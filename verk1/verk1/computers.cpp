@@ -5,8 +5,9 @@ Computer::Computer()
 
 }
 
-Computer::Computer(string nam, int year, string Type, string Made){
+Computer::Computer(int ID, string nam, int year, string Type, string Made){
 
+    id = ID;
     name = nam;
     BuildYear = year;
     type = Type;
@@ -15,26 +16,33 @@ Computer::Computer(string nam, int year, string Type, string Made){
 
 }
 
-string Computer::getName(){
-
+string Computer::getName()
+{
     return name;
 }
 
-int Computer::getBuildYear(){
-
+int Computer::getBuildYear()
+{
     return BuildYear;
 }
 
-string Computer::getType(){
-
+string Computer::getType()
+{
     return type;
 }
 
-string Computer::getMade(){
-
+string Computer::getMade()
+{
     return made;
 }
-string Computer::getStrings(int tala){
+
+int Computer::getId()
+{
+    return id;
+}
+
+string Computer::getStrings(int tala)
+{
     if (tala == 1){
         return getName();
     }

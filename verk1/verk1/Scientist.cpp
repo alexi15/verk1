@@ -5,8 +5,9 @@
 using namespace std;
 
 //constructor
-Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead)
+Scientist::Scientist(int ID, string Nam, string Last, string Sex, int year, int dead)
 {
+    id = ID;
     name = Nam;
     lastname = Last;
     Gender = Sex;
@@ -51,6 +52,11 @@ int Scientist::getYearDead()
 {
 
     return yearDead;
+}
+
+int Scientist::getId()
+{
+    return id;
 }
 
 string Scientist::GetStrings(int tala)

@@ -9,17 +9,19 @@ class Scientist
 {
 
 public:
-    Scientist(string Nam, string Last, string Sex, int year, int dead);
+    Scientist(int ID, string Nam, string Last, string Sex, int year, int dead);
     Scientist();
     string getFirstName();
     string getLastName();
     string getSex();
     int getYearBorn();
     int getYearDead();
+    int getId();
     string GetStrings(int tala);
     int GetNumbers(int tala);
 
 private:
+    int id;
     string name;
     string lastname;
     string Gender;

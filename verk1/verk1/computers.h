@@ -7,13 +7,15 @@ class Computer
 {
 public:
     Computer();
-    Computer(string nam, int year, string Type, string Made);
+    Computer(int ID, string nam, int year, string Type, string Made);
     string getName();
     int getBuildYear();
     string getType();
     string getMade();
+    int getId();
     string getStrings(int tala);
 private:
+    int id;
     string name;
     int BuildYear;
     string type;
