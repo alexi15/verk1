@@ -82,3 +82,24 @@ vector<Computer> ComputerService::getVec()
     return com;
 }
 
+
+vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
+{
+    vector<Computer> tempVec;
+    for(unsigned int i = 0; i < com.size(); i++)
+    {
+        for(unsigned int j = 0; j < IDs.size(); j++)
+        {
+            if(IDs[j] == com[i].getID())
+            {
+                tempVec.push_back(com[i]);
+            }
+        }
+    }
+    return tempVec;
+}
+
+vector<int> ComputerService::getComRel(int comID)
+{
+    return temp.getComRelation(comID);
+}

@@ -121,7 +121,7 @@ void UI::NextStep()
             else if (number == 2)
                 ChooseSortComputers();
             else if (number == 3)
-                {}//ChooseSortRelations();
+                ChooseSortRelations();
             break;
 
         case 3:
@@ -354,10 +354,11 @@ void UI::ChooseSortComputers()
 
 
 //This function asks the user how he wants to sort the relations data
-/*void UI::ChooseSortRelations()
+void UI::ChooseSortRelations()
 {
-    vector<Scientist>Database;//hvada vector
+  //  vector<Scientist>Database;//hvada vector
     int input;
+    int idInput;
     do{
     cout << "Press 1 to sort by computer name" << endl;
     cout << "Press 2 to sort by scientist name" << endl;
@@ -372,10 +373,16 @@ void UI::ChooseSortComputers()
     switch(input)
     {
         case 1:
-            PrintData(relat.SortStringList(input));
+        printComName();
+        cout << "Select the ID of the computers you want to look at ";
+        cin >> idInput;
+        PrintDataScientist(scient.getScientistVec(com.getComRel(idInput)));
             break;
         case 2:
-           PrintData(relat.SortStringList(input));
+            printSciName();
+            cout << "Select the ID of the scientist you want to look at ";
+            cin >> idInput;
+            PrintDataComputers(com.getComputerVec(scient.getSciRel(idInput)));
             break;
         default:
            cout << "Error in input" << endl;
@@ -385,7 +392,6 @@ void UI::ChooseSortComputers()
 
 
 }
- */
 
 
 //This function allows the user to search in the database

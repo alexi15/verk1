@@ -71,4 +71,29 @@ vector<Scientist> ScientistData::getSciVector()
 }
 
 
+vector<int> ScientistData::getSciRelation(int sciID)
+{
+    QSqlQuery query(db);
 
+    cout << endl << sciID << endl;
+
+    query.prepare("SELECT computer_id FROM relations WHERE Scientist_ID = :input" );
+    query.bindValue(":input",sciID);
+    query.exec();
+
+
+    vector<int> tempVec;
+
+    while(query.next()){
+        tempVec.push_back(query.value("Computer_ID").toUInt());
+        /*int ID = query.value("ID").toUInt();
+        string name = query.value("Name").toString().toStdString();
+        string LastName = query.value("LastName").toString().toStdString();
+        string Gender = query.value("Gender").toString().toStdString();
+        int Born = query.value("YearBorn").toUInt();
+        int Died = query.value("Death").toUInt();
+        Scientist P(ID, name,LastName,Gender,Born,Died);
+        scientist.push_back(P);*/
+    }
+    return tempVec;
+}

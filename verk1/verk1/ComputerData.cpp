@@ -5,8 +5,6 @@
 ComputerData::ComputerData()
 {
 
-
-
 }
 
 bool ComputerData::IsOpen()const
@@ -68,5 +66,31 @@ vector<Computer> ComputerData::getComVector()
 }
 
 
+vector<int> ComputerData::getComRelation(int comID)
+{
+    QSqlQuery query(db);
+
+    cout << endl << comID << endl;
+
+    query.prepare("SELECT scientist_id FROM relations WHERE computer_id = :input" );
+    query.bindValue(":input",comID);
+    query.exec();
+
+
+    vector<int> tempVec;
+
+    while(query.next()){
+        tempVec.push_back(query.value("scientist_id").toUInt());
+        /*int ID = query.value("ID").toUInt();
+        string name = query.value("Name").toString().toStdString();
+        string LastName = query.value("LastName").toString().toStdString();
+        string Gender = query.value("Gender").toString().toStdString();
+        int Born = query.value("YearBorn").toUInt();
+        int Died = query.value("Death").toUInt();
+        Scientist P(ID, name,LastName,Gender,Born,Died);
+        scientist.push_back(P);*/
+    }
+    return tempVec;
+}
 
 

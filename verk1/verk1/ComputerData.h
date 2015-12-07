@@ -15,6 +15,7 @@ public:
     void ComputerToVector();
     bool AddComputer(Computer add);
     vector<Computer> getComVector();
+    vector<int> getComRelation(int comID);
 private:
     QSqlDatabase db;
     vector<Computer>computers;

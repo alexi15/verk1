@@ -92,4 +92,25 @@ vector<Scientist> ScientistService::getVec()
     return sci;
 }
 
+vector<int> ScientistService::getSciRel(int sciID)
+{
+    return temp.getSciRelation(sciID);
+}
 
+
+
+vector<Scientist> ScientistService::getScientistVec(vector<int> IDs)
+{
+    vector<Scientist> tempVec;
+    for(unsigned int i = 0; i < sci.size(); i++)
+    {
+        for(unsigned int j = 0; j < IDs.size(); j++)
+        {
+            if(IDs[j] == sci[i].getID())
+            {
+                tempVec.push_back(sci[i]);
+            }
+        }
+    }
+    return tempVec;
+}

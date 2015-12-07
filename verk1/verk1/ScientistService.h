@@ -16,6 +16,8 @@ public:
     vector<Scientist> Search(string toSearch);
     vector<Scientist> SearchFirst(string name);
     vector<Scientist> getVec();
+    vector<int> getSciRel(int sciID);
+    vector<Scientist> getScientistVec(vector<int> IDs);
 
 
 private:
