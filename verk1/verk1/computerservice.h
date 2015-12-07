@@ -19,6 +19,8 @@ public:
     vector<Computer> Search(string toSearch);
     vector<Computer> SearchFirst(string name);
     vector<Computer> getVec();
+
+
 private:
     ComputerData temp;
     vector<Computer> com;

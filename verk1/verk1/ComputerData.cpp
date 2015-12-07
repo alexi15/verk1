@@ -1,15 +1,13 @@
+
 #include "ComputerData.h"
+
 
 ComputerData::ComputerData()
 {
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbName = "Computers.sqlite";
-    db.setDatabaseName(dbName);
-    db.open();
+
 
 
 }
-
 
 bool ComputerData::IsOpen()const
 {
@@ -68,3 +66,7 @@ vector<Computer> ComputerData::getComVector()
 {
     return computers;
 }
+
+
+
+

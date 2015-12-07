@@ -54,7 +54,6 @@ int UI::start()
 {
     int number;
 
-   //while(true){
     cout << "=============What do you want to do==============" << endl;
     cout << "Do you want to look at scientists, computers or relations between them? " << endl;
     cout << "Press 1 for scientists" << endl;
@@ -68,18 +67,19 @@ int UI::start()
         cout << "Please choose a number between 1 to 3"<< endl;
     }
 
-   //}
+
     return number;
 }
 
 //This function asks the user what he wants the program to do
 void UI::NextStep()
 {
+    while(true){
     int number = start();
     int input;
 
 
-    //while(true){
+
 
     cout << "------------What do you want to do------------" << endl;
     if (number == 1 || number == 2){
@@ -164,7 +164,8 @@ void UI::NextStep()
             }
     }
 
-    //}
+    }
+
 }
 
 

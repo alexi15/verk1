@@ -8,7 +8,6 @@ ScientistData::ScientistData()
     QString dbName = "Computers.sqlite";
     db.setDatabaseName(dbName);
     db.open();
-
 }
 
 bool ScientistData::IsOpen()const
@@ -70,4 +69,6 @@ vector<Scientist> ScientistData::getSciVector()
 {
     return scientist;
 }
+
+
 

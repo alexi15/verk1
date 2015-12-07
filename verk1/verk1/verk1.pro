@@ -11,7 +11,6 @@ TEMPLATE = app
 SOURCES += main.cpp \
     Scientist.cpp \
     ui.cpp \
-    database.cpp \
     computers.cpp \
     ScientistService.cpp \
     ComputerData.cpp \
@@ -21,7 +20,6 @@ SOURCES += main.cpp \
 HEADERS += \
     Scientist.h \
     ui.h \
-    database.h \
     computers.h \
     ScientistService.h \
     ComputerData.h \

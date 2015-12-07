@@ -14,6 +14,7 @@ public:
     void ScientistToVector();
     bool AddScientist(Scientist add);
     vector<Scientist> getSciVector();
+
 private:
     QSqlDatabase db;
     vector<Scientist>scientist;
