@@ -46,16 +46,16 @@ vector<Scientist>ScientistService::SortStringList(int tala)
     return sci;
 }
 //This function returns variables into the vector form UI
-bool ScientistService::add(Scientist number)
+bool ScientistService::add(Scientist toAdd)
 {
-    string sex = number.getSex();
+    string sex = toAdd.getSex();
     if (sex != "male" && sex != "female"){
          return false;
     }
 
     else{
-        sci.push_back(number);
-        temp.AddScientist(number);
+        sci.push_back(toAdd);
+        temp.AddScientist(toAdd);
         return true;
     }
 }

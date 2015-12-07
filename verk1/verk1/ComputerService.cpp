@@ -43,10 +43,10 @@ vector<Computer>ComputerService::SortStringList(int tala)
 }
 
 
-bool ComputerService::add(Computer number)
+bool ComputerService::add(Computer toAdd)
 {
-        com.push_back(number);
-        temp.AddComputer(number);
+        com.push_back(toAdd);
+        temp.AddComputer(toAdd);
         return true;
 }
 

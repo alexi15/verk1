@@ -72,7 +72,7 @@ void UI::NextStep()
         cout << "Press 4 to remove" << endl;
         cout << "Press 5 to search" << endl;
     }
-    else{
+    else if(number == 3){
         cout << "Do you want to add, sort, edit or remove? " << endl;
         cout << "Press 1 to add" << endl;
         cout << "Press 2 to sort" << endl;
@@ -92,48 +92,58 @@ void UI::NextStep()
         case 1:
             if (number == 1)
                 addScientist();
-            if (number == 2)
+            else if (number == 2)
                 addComputers();
-            if (number == 3)
-                //addRelations();
+            else if (number == 3)
+                {}//addRelations();
             break;
         case 2:
             if (number == 1)
                 ChooseSortScientist();
-            if (number == 2)
+            else if (number == 2)
                 ChooseSortComputers();
-            if (number == 3)
-                //ChooseSortRelations();
-                break;
-       /* case 3:
+            else if (number == 3)
+                {}//ChooseSortRelations();
+            break;
+/*
+        case 3:
             if (number == 1)
                 scient.edit();
-            if (number == 2)
+            else if (number == 2)
                 com.edit();
-            if (number == 3)
+            else if (number == 3)
                 relat.edit();
                 break;
         case 4:
             if (number == 1)
                 scient.remove();
-            if (number == 2)
+            else if (number == 2)
                 com.remove();
-            if (number == 3)
+            else if (number == 3)
                 relat.remove();
                 break;
 */
+
         case 5:
             if (number == 1 || number == 2)
                 search();
-            else {//ef notandi valdi að fara í relations og svo valdi hann að 5 þá þarf hann að
+            else if(number == 3){//ef notandi valdi að fara í relations og svo valdi hann að 5 þá þarf hann að
                    cout << "Error in input" << endl;
                    cout << "Please choose a number between 1 to 5"<< endl;
             }
             break;
         default:
-           cout << "Error in input" << endl;
-           cout << "Please choose a number between 1 to 5"<< endl;
-        }
+            if(number == 1 || number == 2)
+            {
+                cout << "Error in input" << endl;
+                cout << "Please choose a number between 1 to 5"<< endl;
+            }
+            else if(number == 3)
+            {
+                cout << "Error in input" << endl;
+                cout << "Please choose a number between 1 to 4"<< endl;
+            }
+    }
 
     //}
 }
@@ -202,17 +212,19 @@ void UI::addComputers()
     cout << "Computers Type: ";
     cin >> sType;
     cout << "Was the computer made? ";
-    while(!(cin >> sMade)){
-        cin.clear();
-        cin.ignore(3000, '\n');
-        cout << "Invalid input, try again" << endl << "Made: ";
+    while(true){
+        cin >> sMade;
+        if(sMade != "Yes" && sMade != "yes" && sMade != "No" && sMade != "no")
+            cout << "Invalid input, try again" << endl << "Made: ";
+        else break;
     }
 
     Computer tempcom(sName, sBuildYear, sType, sMade);
 
     if(!(com.add(tempcom)))
         cout << "Error, could not add computer";
-    cout << endl;
+    else
+        cout << "Computer succesfully added" << endl;
     }
 }
 
