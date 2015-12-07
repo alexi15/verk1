@@ -86,3 +86,8 @@ vector<Scientist> ScientistService::Search(string toSearch)
     }
     return temp;
 }
+
+vector<Scientist> ScientistService::getVec()
+{
+    return sci;
+}

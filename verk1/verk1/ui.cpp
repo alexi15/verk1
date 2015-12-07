@@ -28,9 +28,27 @@ void UI::PrintDataComputers(vector<Computer>Sorted){
         cout << "   Type: " << Sorted[i].getType() << endl;
         cout << "   Made: " << Sorted[i].getMade() << endl;
         cout << endl;
-
     }
 }
+
+
+void UI::printSciName()
+{
+    for(unsigned int i = 0; i < scient.getVec().size(); i++){
+        cout << " ID: " << scient.getVec()[i].getID() << endl;
+        cout << " Name: " << scient.getVec()[i].getFirstName() << " "
+        << scient.getVec()[i].getLastName() << endl;
+    }
+}
+
+void UI::printComName()
+{
+    for(unsigned int i = 0; i < com.getVec().size(); i++){
+        cout << " ID: " << com.getVec()[i].getID() << endl;
+        cout << "   Name: " << com.getVec()[i].getName() << endl;
+    }
+}
+
 //
 int UI::start()
 {
@@ -105,15 +123,16 @@ void UI::NextStep()
             else if (number == 3)
                 {}//ChooseSortRelations();
             break;
-/*
+
         case 3:
             if (number == 1)
-                scient.edit();
+                editSci();
             else if (number == 2)
-                com.edit();
-            else if (number == 3)
-                relat.edit();
-                break;
+                editCom();
+          /*  else if (number == 3)
+                editRel();
+         */       break;
+        /*
         case 4:
             if (number == 1)
                 scient.remove();
@@ -162,29 +181,29 @@ void UI::addScientist()
     cin >> number;
 
     for (int i = 0; i < number; i++){
-    cout << "First name: ";
-    cin >> sName;
-    cout << "Last name: ";
-    cin >> sLast;
-    cout << "Gender: ";
-    cin >> sGender;
-    cout << "Born: ";
-    while(!(cin >> sBorn)){
-        cin.clear();
-        cin.ignore(3000, '\n');
-        cout << "Invalid input, try again" << endl << "Born: ";
-    }
-    cout << "Death(if not dead input 0): ";
-    while(!(cin >> sDeath)){
-        cin.clear();
-        cin.ignore(0, '\n');
-        cout << "Invalid input, try again" << endl << "Dead: ";
-    }
-    Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
+        cout << "First name: ";
+        cin >> sName;
+        cout << "Last name: ";
+        cin >> sLast;
+        cout << "Gender: ";
+        cin >> sGender;
+        cout << "Born: ";
+        while(!(cin >> sBorn)){
+            cin.clear();
+            cin.ignore(3000, '\n');
+            cout << "Invalid input, try again" << endl << "Born: ";
+        }
+        cout << "Death(if not dead input 0): ";
+        while(!(cin >> sDeath)){
+            cin.clear();
+            cin.ignore(0, '\n');
+            cout << "Invalid input, try again" << endl << "Dead: ";
+        }
+        Scientist tempSci(sName, sLast, sGender, sBorn, sDeath);
 
-    if(!(scient.add(tempSci)))
-        cout << "Error, could not add scientist";
-    cout << endl;
+        if(!(scient.add(tempSci)))
+            cout << "Error, could not add scientist";
+        cout << endl;
     }
 }
 
@@ -200,31 +219,32 @@ void UI::addComputers()
     cout << "How many computers do you want to add ? ";
     cin >> number;
 
-    for (int i = 0; i < number; i++){
-    cout << "Name of the computer: ";
-    cin >> sName;
-    cout << "Build Year(if not build input 0): ";
-    while(!(cin >> sBuildYear)){
-        cin.clear();
-        cin.ignore(0, '\n');
-        cout << "Invalid input, try again" << endl << "Build Year: ";
-    }
-    cout << "Computers Type: ";
-    cin >> sType;
-    cout << "Was the computer made? ";
-    while(true){
-        cin >> sMade;
-        if(sMade != "Yes" && sMade != "yes" && sMade != "No" && sMade != "no")
-            cout << "Invalid input, try again" << endl << "Made: ";
-        else break;
-    }
+    for (int i = 0; i < number; i++)
+    {
+        cout << "Name of the computer: ";
+        cin >> sName;
+        cout << "Build Year(if not build input 0): ";
+        while(!(cin >> sBuildYear)){
+            cin.clear();
+            cin.ignore(0, '\n');
+            cout << "Invalid input, try again" << endl << "Build Year: ";
+        }
+        cout << "Computers Type: ";
+        cin >> sType;
+        cout << "Was the computer made? ";
+        while(true){
+            cin >> sMade;
+            if(sMade != "Yes" && sMade != "yes" && sMade != "No" && sMade != "no")
+                cout << "Invalid input, try again" << endl << "Made: ";
+            else break;
+        }
 
-    Computer tempcom(sName, sBuildYear, sType, sMade);
+        Computer tempcom(sName, sBuildYear, sType, sMade);
 
-    if(!(com.add(tempcom)))
-        cout << "Error, could not add computer";
-    else
-        cout << "Computer succesfully added" << endl;
+        if(!(com.add(tempcom)))
+            cout << "Error, could not add computer";
+        else
+            cout << "Computer succesfully added" << endl;
     }
 }
 
@@ -379,3 +399,12 @@ void UI::search(){
         PrintDataScientist(scient.Search(word));
 }
 
+void UI::editSci()
+{
+    printSciName();
+}
+
+void UI::editCom()
+{
+    printComName();
+}

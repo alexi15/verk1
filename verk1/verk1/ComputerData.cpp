@@ -27,11 +27,12 @@ void ComputerData::ComputerToVector()
     query.exec("SELECT * FROM Computers");
 
     while(query.next()){
+        int ID = query.value("ID").toUInt();
         string name = query.value("Name").toString().toStdString();
         int BuildYear = query.value("BuildYear").toUInt();
         string Type = query.value("Type").toString().toStdString();
         string made = query.value("Made").toString().toStdString();
-        Computer P(name,BuildYear,Type,made);
+        Computer P(ID, name,BuildYear,Type,made);
         computers.push_back(P);
     }
 }
@@ -44,7 +45,7 @@ bool ComputerData::AddComputer(Computer add)
 
     QSqlQuery Insert;
 
-    Insert.prepare("INSERT INTO Scientist (id, Name, Build Year, Type, Made) VALUES (:id,:Name, :Build Year,"
+    Insert.prepare("INSERT INTO computers (id, Name, BuildYear, Type, Made) VALUES (:id,:Name, :Build Year,"
                    ":Type,:Made)");
 
 

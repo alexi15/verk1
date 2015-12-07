@@ -13,7 +13,7 @@ public:
     int getBuildYear();
     string getType();
     string getMade();
-    int getId();
+    int getID();
     string getStrings(int tala);
     int getNumbers(int tala);
 private:

@@ -45,9 +45,9 @@ vector<Computer>ComputerService::SortStringList(int tala)
 
 bool ComputerService::add(Computer toAdd)
 {
-        com.push_back(toAdd);
-        temp.AddComputer(toAdd);
-        return true;
+    com.push_back(toAdd);
+    temp.AddComputer(toAdd);
+    return true;
 }
 
 vector<Computer> ComputerService::Search(string toSearch)
@@ -75,4 +75,9 @@ vector<Computer> ComputerService::Search(string toSearch)
         }
     }
     return temp;
+}
+
+vector<Computer> ComputerService::getVec()
+{
+    return com;
 }

@@ -26,12 +26,13 @@ void ScientistData::ScientistToVector()
     query.exec("SELECT * FROM Scientist");
 
     while(query.next()){
+        int ID = query.value("ID").toUInt();
         string name = query.value("Name").toString().toStdString();
         string LastName = query.value("LastName").toString().toStdString();
         string Gender = query.value("Gender").toString().toStdString();
         int Born = query.value("YearBorn").toUInt();
         int Died = query.value("Death").toUInt();
-        Scientist P(name,LastName,Gender,Born,Died);
+        Scientist P(ID, name,LastName,Gender,Born,Died);
         scientist.push_back(P);
     }
 

@@ -27,6 +27,11 @@ public:
     void ChooseSortComputers();
     void ChooseSortRelations();
     void search();
+    void editSci();
+    void editCom();
+    void editRel();
+    void printSciName();
+    void printComName();
 
 private:
     ScientistService scient;

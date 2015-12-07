@@ -64,7 +64,7 @@ int Scientist::getYearDead()
     return yearDead;
 }
 
-int Scientist::getId()
+int Scientist::getID()
 {
     return id;
 }

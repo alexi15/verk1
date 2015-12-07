@@ -42,7 +42,7 @@ string Computer::getMade()
     return made;
 }
 
-int Computer::getId()
+int Computer::getID()
 {
     return id;
 }

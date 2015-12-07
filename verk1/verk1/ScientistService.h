@@ -15,6 +15,7 @@ public:
     bool add(Scientist number);
     vector<Scientist> Search(string toSearch);
     vector<Scientist> SearchFirst(string name);
+    vector<Scientist> getVec();
 private:
     ScientistData temp;
     vector<Scientist> sci;

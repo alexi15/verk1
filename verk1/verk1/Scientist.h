@@ -17,7 +17,7 @@ public:
     string getSex();
     int getYearBorn();
     int getYearDead();
-    int getId();
+    int getID();
     string GetStrings(int tala);
     int GetNumbers(int tala);
 
