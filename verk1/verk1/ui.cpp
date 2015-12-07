@@ -239,7 +239,7 @@ void UI::addComputers()
             else break;
         }
 
-        Computer tempcom(sName, sBuildYear, sType, sMade);
+        Computer tempcom(sName, sBuildYear, sType, "sMade");
 
         if(!(com.add(tempcom)))
             cout << "Error, could not add computer";

@@ -45,12 +45,12 @@ bool ComputerData::AddComputer(Computer add)
 
     QSqlQuery Insert;
 
-    Insert.prepare("INSERT INTO computers (id, Name, BuildYear, Type, Made) VALUES (:id,:Name, :Build Year,"
+    Insert.prepare("INSERT INTO computers (Name, BuildYear, Type, Made) VALUES (:Name, :BuildYear,"
                    ":Type,:Made)");
 
 
     Insert.bindValue(":Name",add.getName().c_str());
-    Insert.bindValue(":Build Year",add.getBuildYear());
+    Insert.bindValue(":BuildYear",add.getBuildYear());
     Insert.bindValue(":Type",add.getType().c_str());
     Insert.bindValue(":Made",add.getType().c_str());
 
