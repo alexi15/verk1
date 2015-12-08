@@ -519,7 +519,7 @@ void UI::RemoveCom()
     }
     else
     {
-        start();
+      //  start();
     }
 }
 
@@ -553,7 +553,7 @@ void UI::RemoveRelation()
     }
     else
     {
-        start();
+        //NextStep();
     }
 }
 void UI::EditSci()
