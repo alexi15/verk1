@@ -99,9 +99,9 @@ vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
     return tempVec;
 }
 
-void ComputerService::Remove(int Id)
+bool ComputerService::Remove(int Id)
 {
-    temp.remove(Id);
+    return temp.remove(Id);
 }
 
 

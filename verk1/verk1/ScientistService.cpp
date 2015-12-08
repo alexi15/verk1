@@ -87,14 +87,14 @@ vector<Scientist> ScientistService::Search(string toSearch)
     return temp;
 }
 
-void ScientistService::Remove(int Id)
+bool ScientistService::Remove(int Id)
 {
-    temp.remove(Id);
+    return temp.remove(Id);
 }
-void ScientistService::Edit(string toedit, int tala)
+bool ScientistService::Edit(string toedit, int tala)
 {
 
-    temp.Edit(toedit,tala);
+    return temp.Edit(toedit,tala);
 
 }
 

@@ -50,36 +50,36 @@ bool ScientistData::Edit(string toedit, int tala)
     case 1:
         query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
         query.bindValue(":Name", toedit.c_str());
-        query.exec();
-        Success = true;
+        if(query.exec())
+            Success = true;
         return Success;
         break;
     case 2:
         query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
         query.bindValue("LastName", toedit.c_str());
-        query.exec();
-        Success = true;
+        if(query.exec())
+            Success = true;
         break;
     case 3:
         query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
         query.bindValue("Gender", toedit.c_str());
-        query.exec();
-        Success = true;
+        if(query.exec())
+            Success = true;
         return Success;
         break;
     case 4:
         query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
         query.bindValue("YearBorn", intedit);
-        query.exec();
-        Success = true;
+        if(query.exec())
+            Success = true;
         return Success;
         break;
     case 5:
 
         query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
         query.bindValue("Death", intedit);
-        query.exec();
-        Success = true;
+        if(query.exec())
+            Success = true;
         return Success;
         break;
     }

@@ -21,7 +21,7 @@ public:
     vector<Computer> getVec();
     vector<Computer> getComputerVec(vector<int> IDs);
     vector<int> getComRel(int comID);
-    void Remove(int Id);
+    bool Remove(int Id);
     bool addRelations(int comID, int sciID);
     bool removeRelation(int comID, int sciID);
 
