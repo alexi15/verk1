@@ -1,7 +1,6 @@
 #include "ScientistData.h"
 
-
-
+//This function connects the database and opens the database "Computers"
 ScientistData::ScientistData()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -10,6 +9,7 @@ ScientistData::ScientistData()
     db.open();
 }
 
+//This function checks if the database is open
 bool ScientistData::IsOpen()const
 {
 
@@ -17,6 +17,7 @@ bool ScientistData::IsOpen()const
 
 }
 
+//This function loads the scientists data from the database into a vector
 void ScientistData::ScientistToVector()
 {
 
@@ -36,6 +37,8 @@ void ScientistData::ScientistToVector()
         scientist.push_back(P);
     }
 }
+
+//This function edit the scientist data from the database
 bool ScientistData::Edit(string toedit, int tala, int inputEdit)
 {
     int intedit = 0;
@@ -95,6 +98,7 @@ bool ScientistData::Edit(string toedit, int tala, int inputEdit)
     return Success;
 }
 
+//This function add scientist data to the database
 bool ScientistData::AddScientist(Scientist add)
 {
 
@@ -120,6 +124,7 @@ bool ScientistData::AddScientist(Scientist add)
     return Added;
 }
 
+//This function remove scientist data from the database
 bool ScientistData::remove(int Id)
 {
     bool Success = false;
@@ -136,12 +141,13 @@ bool ScientistData::remove(int Id)
     return Success;
 }
 
+//This function returns scientist vector
 vector<Scientist> ScientistData::getSciVector()
 {
     return scientist;
 }
 
-
+//This function gets relation information from the database
 vector<int> ScientistData::getSciRelation(int sciID)
 {
     QSqlQuery query(db);

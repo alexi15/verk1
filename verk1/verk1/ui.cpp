@@ -102,7 +102,7 @@ void UI::NextStep()
                 cout << "Please choose a number between 1 to 6"<< endl;
             }
         }
-        else if (number == 3)
+        else if(number == 3)
         {
             cout << "Do you want to add, sort or remove? " << endl;
             cout << "Press 1 to add" << endl;

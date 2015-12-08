@@ -120,19 +120,20 @@ bool ScientistService::Edit(string toedit, int tala, int inputEdit)
     return ss;
 }
 
-
+//This function returns scientis vector
 vector<Scientist> ScientistService::getVec()
 {
     return sci;
 }
 
+//This function returns scientist relations to computer
 vector<int> ScientistService::getSciRel(int sciID)
 {
     return temp.getSciRelation(sciID);
 }
 
 
-
+//This function ??????????? ATH!
 vector<Scientist> ScientistService::getScientistVec(vector<int> IDs)
 {
     vector<Scientist> tempVec;

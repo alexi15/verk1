@@ -1,11 +1,13 @@
 #include "computerservice.h"
 
+//Default constructor
 ComputerService::ComputerService()
 {
     temp.ComputerToVector();
     com = temp.getComVector();
 }
 
+//This function sorts the data by year build
 vector<Computer>ComputerService::SortNumbersList(int tala)
 {
     int j;
@@ -25,6 +27,7 @@ vector<Computer>ComputerService::SortNumbersList(int tala)
     return com;
 }
 
+//This function sorts the data by name, type and made
 vector<Computer>ComputerService::SortStringList(int tala)
 {
     int j;
@@ -44,7 +47,7 @@ vector<Computer>ComputerService::SortStringList(int tala)
     return com;
 }
 
-
+//This function returns variables into the vector from UI
 bool ComputerService::add(Computer toAdd)
 {
     bool ss = false;
@@ -56,6 +59,7 @@ bool ComputerService::add(Computer toAdd)
     return ss;
 }
 
+//This function searches for the string in database which the user has put in
 vector<Computer> ComputerService::Search(string toSearch)
 {
     vector<Computer> temp;
@@ -86,12 +90,13 @@ vector<Computer> ComputerService::Search(string toSearch)
     return temp;
 }
 
+//This function return computer vector
 vector<Computer> ComputerService::getVec()
 {
     return com;
 }
 
-
+//Get computer vector?
 vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
 {
     vector<Computer> tempVec;
@@ -108,6 +113,7 @@ vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
     return tempVec;
 }
 
+//This function returns bool value if it was successfully or unsuccessfully removed
 bool ComputerService::Remove(int Id)
 {
     bool ss;
@@ -116,6 +122,8 @@ bool ComputerService::Remove(int Id)
     com = temp.getComVector();
     return ss;
 }
+
+//This function returns bool value if it was successfully or unsuccessfully edited
 bool ComputerService::Edit(string toedit, int tala, int inputEdit)
 {
     bool ss;
@@ -125,19 +133,20 @@ bool ComputerService::Edit(string toedit, int tala, int inputEdit)
     return ss;
 }
 
-
+//This function returns computer relations
 vector<int> ComputerService::getComRel(int comID)
 {
     return temp.getComRelation(comID);
 }
 
+//This function add computer relations
 bool ComputerService::addRelations(int comID, int sciID)
 {
     return temp.addRelation(comID, sciID);
 }
 
+//This function removes computer relations
 bool ComputerService::removeRelation(int comID, int sciID)
 {
     return temp.removeRelation(comID, sciID);
 }
-

@@ -1,17 +1,18 @@
 #include "ComputerData.h"
 
-
+//Default constructor
 ComputerData::ComputerData()
 {
 
 }
 
+//This function checks if the database is open
 bool ComputerData::IsOpen()const
 {
     return db.isOpen();
 }
 
-
+//This function loads the computers data from database into a vector
 void ComputerData::ComputerToVector()
 {
 
@@ -31,7 +32,7 @@ void ComputerData::ComputerToVector()
     }
 }
 
-
+//This function add computer data to the database
 bool ComputerData::AddComputer(Computer add)
 {
 
@@ -56,12 +57,13 @@ bool ComputerData::AddComputer(Computer add)
 
 }
 
-
+//This function edit computer data to the database
 vector<Computer> ComputerData::getComVector()
 {
     return computers;
 }
 
+//This function remove computer data from the database
 bool ComputerData::remove(int Id)
 {
     bool Success = false;
@@ -77,7 +79,7 @@ bool ComputerData::remove(int Id)
     return Success;
 }
 
-
+//This function gets computers relation information from the database
 vector<int> ComputerData::getComRelation(int comID)
 {
     QSqlQuery query(db);
@@ -95,6 +97,7 @@ vector<int> ComputerData::getComRelation(int comID)
     return tempVec;
 }
 
+//This function add relation to the database
 bool ComputerData::addRelation(int comID, int sciID)
 {
     bool Added = false;
@@ -113,6 +116,7 @@ bool ComputerData::addRelation(int comID, int sciID)
     return Added;
 }
 
+//This function removes relation from the database
 bool ComputerData::removeRelation(int comID, int sciID)
 {
     bool removed = false;
@@ -133,6 +137,7 @@ bool ComputerData::removeRelation(int comID, int sciID)
 
 }
 
+//This function edit relation to the database
 bool ComputerData::Edit(string toedit, int tala, int inputEdit)
 {
     int intedit = 0;
