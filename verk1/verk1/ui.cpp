@@ -172,11 +172,11 @@ void UI::NextStep()
 void UI::displayinfoSci(){
 
     int number;
-
-    cout << "There are " << scient.getVec().size()  <<" scientist in the database." << endl;
+    int size = scient.getVec().size();
+    cout << "There are " << size  <<" scientist in the database." << endl;
     cout << "To cancel please press 0" << endl;
     cout << "How many do you want to display? ";
-    int size = scient.getVec().size();
+
 
     while(!(cin >> number) && (size < number)){
         cin.clear();
@@ -184,6 +184,8 @@ void UI::displayinfoSci(){
         cout << "Error in input" << endl;
         cout << "Please choose a number smaller or equal to "<< scient.getVec().size() << endl;
     }
+    if (size < number)
+        number = size;
     for (int i = 0; i < number; i++)
     {
         cout << "ID: " << scient.getVec()[i].getID() << endl;
@@ -199,18 +201,23 @@ void UI::displayinfoSci(){
 void UI::displayinfoCom(){
 
     int number;
-
-    cout << "There are " << com.getVec().size()  <<" computer in the database." << endl;
+    int size = com.getVec().size();
+    cout << "There are " << size <<" computer in the database." << endl;
     cout << "To cancel please press 0" << endl;
     cout << "How many do you want to display? ";
-    int size = com.getVec().size();
 
-    while(!(cin >> number) && (size < number)){
+
+    while(!(cin >> number))
+    {
         cin.clear();
         cin.ignore(com.getVec().size() + 1, '\n');
         cout << "Error in input" << endl;
         cout << "Please choose a number smaller or equal to "<< com.getVec().size() << endl;
     }
+    if (size < number)
+        number = size;
+
+
     for (int i = 0; i < number; i++)
     {
         cout << " ID: " << com.getVec()[i].getID() << endl;
