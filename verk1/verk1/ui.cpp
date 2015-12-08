@@ -572,7 +572,7 @@ void UI::EditSci()
                 cout << "Please enter new name: ";
                 cin >> temp;
                 scient.Edit(temp,inputId, inputEdit);
-                scient.update();
+
             break;
         case 2:
                 cout << "Please enter new last name: ";

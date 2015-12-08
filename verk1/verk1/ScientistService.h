@@ -20,7 +20,6 @@ public:
     vector<Scientist> getScientistVec(vector<int> IDs);
     bool Remove(int Id);
     bool Edit(string toedit, int tala, int inputEdit);
-    void update();
 
 
 private:

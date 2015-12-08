@@ -101,13 +101,7 @@ bool ScientistService::Edit(string toedit, int tala, int inputEdit)
     return ss;
 
 }
-void ScientistService::update()
-{
 
-    sci.clear();
-    sci = temp.getSciVector();
-
-}
 
 vector<Scientist> ScientistService::getVec()
 {
