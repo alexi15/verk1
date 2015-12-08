@@ -384,7 +384,7 @@ void UI::ChooseSortComputers()
     cout << "Press 1 to sort by name " << endl;
     cout << "Press 2 to sort by build year" << endl;
     cout << "Press 3 to sort by computers type" << endl;
-    cout << "Press 4 to sort by made ???" << endl;
+    cout << "Press 4 to sort by made" << endl;
 
     while(!(cin >> input)){
         cin.clear();
@@ -404,6 +404,8 @@ void UI::ChooseSortComputers()
         case 3:
            PrintDataComputers(com.SortStringList(input));
             break;
+        case 4:
+            PrintDataComputers(com.SortStringList(input));
         default:
            cout << "Error in input" << endl;
            cout << "Please choose a number between 1 to 3"<< endl;
