@@ -54,7 +54,7 @@ bool ComputerData::AddComputer(Computer add)
     {
         Added = true;
     }
-
+    computers.clear();
     return Added;
 
 }
@@ -112,7 +112,6 @@ bool ComputerData::addRelation(int comID, int sciID)
     {
         Added = true;
     }
-
     return Added;
 
 }
