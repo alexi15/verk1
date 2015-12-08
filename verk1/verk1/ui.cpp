@@ -241,7 +241,12 @@ void UI::addScientist()
     int sDeath;
     int number;
     cout << "How many scientist do you want to add ? ";
-    cin >> number;
+    while(!(cin >> number)){
+        cin.clear();
+        cin.ignore(3000, '\n');
+        cout << "Invalid input, try again" << endl;
+        cout << "How many scientist do you want to add ? ";
+    }
 
     for (int i = 0; i < number; i++){
         cout << "First name: ";
@@ -493,10 +498,7 @@ void UI::RemoveSci()
     {
         scient.Remove(Id);
     }
-    else
-    {
-        start();
-    }
+
 }
 
 void UI::RemoveCom()
@@ -517,10 +519,7 @@ void UI::RemoveCom()
     {
         com.Remove(Id);
     }
-    else
-    {
-      //  start();
-    }
+
 }
 
 void UI::RemoveRelation()
@@ -551,10 +550,7 @@ void UI::RemoveRelation()
     {
         com.removeRelation(comID, sciID);
     }
-    else
-    {
-        //NextStep();
-    }
+
 }
 void UI::EditSci()
 {
