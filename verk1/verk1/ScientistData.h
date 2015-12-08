@@ -4,6 +4,7 @@
 #include <QDebug>
 #include "Scientist.h"
 #include "computers.h"
+#include <sstream>
 
 
 class ScientistData
@@ -16,6 +17,7 @@ public:
     vector<Scientist> getSciVector();
     vector<int> getSciRelation(int sciID);
     bool remove(int Id);
+    bool Edit(string toedit, int tala);
 
 private:
     QSqlDatabase db;
