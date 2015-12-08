@@ -56,7 +56,6 @@ bool ScientistService::add(Scientist toAdd)
     }
 
     else{
-        //sci.push_back(toAdd);
         temp.AddScientist(toAdd);
         ss = true;
     }
