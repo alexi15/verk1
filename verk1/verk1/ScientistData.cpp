@@ -63,7 +63,20 @@ bool ScientistData::AddScientist(Scientist add)
     return Added;
 }
 
+bool ScientistData::remove(int Id)
+{
+    bool Success = false;
+    QSqlQuery query(db);
+    query.prepare("DELETE FROM Scientist WHERE Id = :Id");
+    query.bindValue(":Id", Id);
+    query.exec();
 
+    if(query.exec())
+    {
+        Success = true;
+    }
+    return Success;
+}
 
 vector<Scientist> ScientistData::getSciVector()
 {

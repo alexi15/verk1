@@ -1,0 +1,11 @@
+#ifndef RELEATIONS_H
+#define RELEATIONS_H
+
+
+class Releations
+{
+public:
+    Releations();
+};
+
+#endif // RELEATIONS_H

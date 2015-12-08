@@ -85,11 +85,17 @@ string Scientist::GetStrings(int tala)
 
 int Scientist::GetNumbers(int tala)
 {
-    if (tala == 4){
+    if (tala == 4)
+    {
         return getYearBorn();
     }
-    else if (tala == 5){
+    else if (tala == 5)
+    {
         return getYearDead();
+    }
+    else if (tala == 6)
+    {
+        return getID();
     }
     return 0;
 }

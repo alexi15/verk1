@@ -18,6 +18,7 @@ public:
     vector<Scientist> getVec();
     vector<int> getSciRel(int sciID);
     vector<Scientist> getScientistVec(vector<int> IDs);
+    void Remove(int Id);
 
 
 private:

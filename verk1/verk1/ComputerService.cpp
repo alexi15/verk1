@@ -99,6 +99,9 @@ vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
     return tempVec;
 }
 
+
+
+
 vector<int> ComputerService::getComRel(int comID)
 {
     return temp.getComRelation(comID);

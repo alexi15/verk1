@@ -9,7 +9,7 @@ UI::UI()
 void UI::PrintDataScientist(vector<Scientist>Sorted){
 
     for(unsigned int i = 0; i < Sorted.size(); i++){
-        //cout << "ID: " << Sorted[i].getID() << endl;
+        cout << "ID: " << Sorted[i].getID() << endl;
         cout << "   Name: " << Sorted[i].getFirstName() << endl;
         cout << "   Lastname: " << Sorted[i].getLastName() << endl;
         cout << "   Gender: " << Sorted[i].getSex() << endl;
@@ -22,7 +22,7 @@ void UI::PrintDataScientist(vector<Scientist>Sorted){
 void UI::PrintDataComputers(vector<Computer>Sorted){
 
     for(unsigned int i = 0; i < Sorted.size(); i++){
-        //cout << " ID: " << Sorted[i].getID() << endl;
+        cout << " ID: " << Sorted[i].getID() << endl;
         cout << "   Name: " << Sorted[i].getName() << endl;
         cout << "   Build Year: " << Sorted[i].getBuildYear() << endl;
         cout << "   Type: " << Sorted[i].getType() << endl;
@@ -132,17 +132,15 @@ void UI::NextStep()
           /*  else if (number == 3)
                 editRel();
          */       break;
-        /*
+
         case 4:
             if (number == 1)
-                scient.remove();
+                RemoveSci();
             else if (number == 2)
-                com.remove();
+                RemoveCom();
             else if (number == 3)
-                relat.remove();
-                break;
-*/
-
+                RemoveRelation();
+            break;
         case 5:
             if (number == 1 || number == 2)
                 search();
@@ -415,3 +413,40 @@ void UI::editCom()
 {
     printComName();
 }
+
+
+void UI::RemoveSci()
+{
+    int Id;
+    PrintDataScientist(scient.SortNumbersList(6));
+
+    cout << "Please Insert Id number of wich scientist you would like to remove: " << endl;
+    cout << "To cancel please press 0" << endl;
+    while(!(cin >> Id || Id != 0)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose Valid Id Number"<< endl;
+
+    }
+    if (Id > 0)
+    {
+        scient.Remove(Id);
+    }
+    else
+    {
+        start();
+    }
+}
+
+void UI::RemoveCom()
+{
+
+}
+
+void UI::RemoveRelation()
+{
+
+}
+
+

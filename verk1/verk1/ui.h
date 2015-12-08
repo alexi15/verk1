@@ -32,6 +32,9 @@ public:
     void editRel();
     void printSciName();
     void printComName();
+    void RemoveRelation();
+    void RemoveSci();
+    void RemoveCom();
 
 private:
     ScientistService scient;

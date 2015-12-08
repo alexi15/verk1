@@ -15,6 +15,7 @@ public:
     bool AddScientist(Scientist add);
     vector<Scientist> getSciVector();
     vector<int> getSciRelation(int sciID);
+    bool remove(int Id);
 
 private:
     QSqlDatabase db;

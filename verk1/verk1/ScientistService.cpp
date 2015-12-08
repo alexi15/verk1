@@ -87,6 +87,11 @@ vector<Scientist> ScientistService::Search(string toSearch)
     return temp;
 }
 
+void ScientistService::Remove(int Id)
+{
+    temp.remove(Id);
+}
+
 vector<Scientist> ScientistService::getVec()
 {
     return sci;

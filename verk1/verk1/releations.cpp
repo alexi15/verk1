@@ -1,0 +1,7 @@
+#include "RelationsData"
+
+Releations::Releations()
+{
+
+}
+
