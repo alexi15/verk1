@@ -93,14 +93,6 @@ vector<int> ComputerData::getComRelation(int comID)
 
     while(query.next()){
         tempVec.push_back(query.value("scientist_id").toUInt());
-        /*int ID = query.value("ID").toUInt();
-        string name = query.value("Name").toString().toStdString();
-        string LastName = query.value("LastName").toString().toStdString();
-        string Gender = query.value("Gender").toString().toStdString();
-        int Born = query.value("YearBorn").toUInt();
-        int Died = query.value("Death").toUInt();
-        Scientist P(ID, name,LastName,Gender,Born,Died);
-        scientist.push_back(P);*/
     }
     return tempVec;
 }
@@ -142,5 +134,71 @@ bool ComputerData::removeRelation(int comID, int sciID)
         removed = true;
     }
     return removed;
+
+}
+
+bool ComputerData::Edit(string toedit, int tala, int inputEdit)
+{
+    {
+        int intedit = 0;
+        if(isdigit(toedit[1]) == 1)
+        {
+            std::stringstream ss(toedit);
+            ss >> intedit;
+        }
+
+
+        bool Success = false;
+        QSqlQuery query(db);
+
+        switch(inputEdit)
+        {
+        case 1:
+            query.prepare("UPDATE Computers SET name = :Name WHERE id = :Id");
+            query.bindValue(":Id",tala);
+            query.bindValue(":Name", toedit.c_str());
+            if(query.exec())
+                Success = true;
+            break;
+        case 2:
+            if(intedit == 0)
+                return false;
+            query.prepare("UPDATE Computers SET buildyear = :LastName WHERE id = :Id");
+            query.bindValue(":Id",tala);
+            query.bindValue(":BuildYear", intedit);
+            if(query.exec())
+                Success = true;
+            break;
+        case 3:
+            query.prepare("UPDATE Computers SET type = :Gender WHERE id = :Id");
+            query.bindValue(":Id",tala);
+            query.bindValue(":Type", toedit.c_str());
+            if(query.exec())
+                Success = true;
+            break;
+        case 4:
+            if(toedit != "Yes" || toedit != "yes" || toedit != "No" || toedit != "No")
+                return false;
+            query.prepare("UPDATE Computers SET made = :YearBorn WHERE id = :Id");
+            query.bindValue(":Id",tala);
+            query.bindValue(":Made", toedit.c_str());
+            if(query.exec())
+                Success = true;
+            break;
+        case 5:
+            if(intedit == 0)
+                return false;
+            query.prepare("UPDATE Computers SET death = :Death WHERE id = :Id");
+            query.bindValue(":Id",tala);
+            query.bindValue(":Death", intedit);
+            if(query.exec())
+                Success = true;
+            break;
+        }
+        computers.clear();
+        return Success;
+
+    }
+
 
 }

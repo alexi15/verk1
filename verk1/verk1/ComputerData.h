@@ -4,13 +4,13 @@
 #include <QDebug>
 #include "Scientist.h"
 #include "computers.h"
+#include <sstream>
 
 
 class ComputerData
 {
 public:
     ComputerData();
-    //ScientistData();
     bool IsOpen()const;
     void ComputerToVector();
     bool AddComputer(Computer add);
@@ -19,6 +19,7 @@ public:
     bool remove(int Id);
     bool addRelation(int comID, int sciID);
     bool removeRelation(int comID, int sciID);
+    bool Edit(string toedit, int tala, int inputEdit);
 private:
     QSqlDatabase db;
     vector<Computer>computers;

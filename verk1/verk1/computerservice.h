@@ -24,6 +24,7 @@ public:
     bool Remove(int Id);
     bool addRelations(int comID, int sciID);
     bool removeRelation(int comID, int sciID);
+    void update();
 
 private:
     ComputerData temp;

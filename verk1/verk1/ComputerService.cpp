@@ -119,3 +119,8 @@ bool ComputerService::removeRelation(int comID, int sciID)
 {
     return temp.removeRelation(comID, sciID);
 }
+void ComputerService::update()
+{
+    com.clear();
+    com = temp.getComVector();
+}
