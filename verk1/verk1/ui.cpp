@@ -54,7 +54,7 @@ int UI::start()
 {
     int number;
 
-    cout << "=============What do you want to do==============" << endl;
+    cout << "=========================What do you want to do=========================" << endl;
     cout << "Do you want to look at scientists, computers or relations between them? " << endl;
     cout << "Press 1 for scientists" << endl;
     cout << "Press 2 for computers" << endl;
@@ -78,31 +78,36 @@ void UI::NextStep()
     int number = start();
     int input;
 
-
-
-
-    cout << "------------What do you want to do------------" << endl;
+    cout << "------------------What do you want to do-------------------" << endl;
     if (number == 1 || number == 2){
-        cout << "Do you want to add, sort, edit, remove or search? " << endl;
+        cout << "Do you want to add, sort, edit, remove, search or display? " << endl;
         cout << "Press 1 to add" << endl;
         cout << "Press 2 to sort" << endl;
-        cout << "Press 3 to edit" << endl;
-        cout << "Press 4 to remove" << endl;
+        cout << "Press 3 to remove" << endl;
+        cout << "Press 4 to edit" << endl;
         cout << "Press 5 to search" << endl;
+        cout << "Press 6 to display" << endl;
+
+        while(!(cin >> input)){
+            cin.clear();
+            cin.ignore(7, '\n');
+            cout << "Error in input" << endl;
+            cout << "Please choose a number between 1 to 6"<< endl;
     }
-    else if(number == 3){
-        cout << "Do you want to add, sort, edit or remove? " << endl;
+    }
+    else if (number == 3){
+        cout << "Do you want to add, sort or remove? " << endl;
         cout << "Press 1 to add" << endl;
         cout << "Press 2 to sort" << endl;
-        cout << "Press 3 to edit" << endl;
-        cout << "Press 4 to remove" << endl;
-    }
+        cout << "Press 3 to remove" << endl;
+
 
     while(!(cin >> input)){
         cin.clear();
-        cin.ignore(6, '\n');
+        cin.ignore(4, '\n');
         cout << "Error in input" << endl;
-        cout << "Please choose a number between 1 to 5"<< endl;
+        cout << "Please choose a number between 1 to 3"<< endl;
+        }
     }
 
     switch(input)
@@ -123,15 +128,7 @@ void UI::NextStep()
             else if (number == 3)
                 ChooseSortRelations();
             break;
-
         case 3:
-            if (number == 1)
-                EditSci();
-            else if (number == 2)
-                EditCom();
-            break;
-
-        case 4:
             if (number == 1)
                 RemoveSci();
             else if (number == 2)
@@ -139,27 +136,89 @@ void UI::NextStep()
             else if (number == 3)
                 RemoveRelation();
             break;
+        case 4:
+            if (number == 1)
+                EditSci();
+            else if (number == 2)
+                EditCom();
+            break;
         case 5:
             if (number == 1 || number == 2)
                 search();
-            else if(number == 3){//ef notandi valdi að fara í relations og svo valdi hann að 5 þá þarf hann að
-                   cout << "Error in input" << endl;
-                   cout << "Please choose a number between 1 to 5"<< endl;
-            }
+            break;
+        case 6:
+            if (number == 1)
+                displayinfoSci();
+            else if (number == 2)
+                displayinfoCom();
             break;
         default:
             if(number == 1 || number == 2)
             {
                 cout << "Error in input" << endl;
-                cout << "Please choose a number between 1 to 5"<< endl;
+                cout << "Please choose a number between 1 to 6"<< endl;
             }
             else if(number == 3)
             {
                 cout << "Error in input" << endl;
-                cout << "Please choose a number between 1 to 4"<< endl;
+                cout << "Please choose a number between 1 to 3"<< endl;
             }
     }
 
+    }
+
+}
+
+void UI::displayinfoSci(){
+
+    int number;
+
+    cout << "There are " << scient.getVec().size()  <<" scientist in the database." << endl;
+    cout << "To cancel please press 0" << endl;
+    cout << "How many do you want to display? ";
+    int size = scient.getVec().size();
+
+    while(!(cin >> number) && (size < number)){
+        cin.clear();
+        cin.ignore(scient.getVec().size() + 1, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number smaller or equal to "<< scient.getVec().size() << endl;
+    }
+    for (int i = 0; i < number; i++)
+    {
+        cout << "ID: " << scient.getVec()[i].getID() << endl;
+        cout << "   Name: " << scient.getVec()[i].getFirstName() << endl;
+        cout << "   Lastname: " << scient.getVec()[i].getLastName() << endl;
+        cout << "   Gender: " << scient.getVec()[i].getSex() << endl;
+        cout << "   YearBorn: " << scient.getVec()[i].getYearBorn() << endl;
+        cout << "   Death: " << scient.getVec()[i].getYearDead() << endl;
+        cout << endl;
+    }
+
+}
+void UI::displayinfoCom(){
+
+    int number;
+
+    cout << "There are " << com.getVec().size()  <<" computer in the database." << endl;
+    cout << "To cancel please press 0" << endl;
+    cout << "How many do you want to display? ";
+    int size = com.getVec().size();
+
+    while(!(cin >> number) && (size < number)){
+        cin.clear();
+        cin.ignore(com.getVec().size() + 1, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose a number smaller or equal to "<< com.getVec().size() << endl;
+    }
+    for (int i = 0; i < number; i++)
+    {
+        cout << " ID: " << com.getVec()[i].getID() << endl;
+        cout << "   Name: " << com.getVec()[i].getName() << endl;
+        cout << "   Build Year: " << com.getVec()[i].getBuildYear() << endl;
+        cout << "   Type: " << com.getVec()[i].getType() << endl;
+        cout << "   Made: " << com.getVec()[i].getMade() << endl;
+        cout << endl;
     }
 
 }

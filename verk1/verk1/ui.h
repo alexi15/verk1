@@ -35,6 +35,8 @@ public:
     void RemoveCom();
     void EditSci();
     void EditCom();
+    void displayinfoSci();
+    void displayinfoCom();
 
 private:
     ScientistService scient;

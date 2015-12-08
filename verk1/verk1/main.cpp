@@ -6,7 +6,6 @@
 
 int main(){
     UI temp;
-    //temp.start();
     temp.NextStep();
 }
 
