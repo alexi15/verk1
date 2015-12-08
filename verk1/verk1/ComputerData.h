@@ -17,6 +17,7 @@ public:
     vector<Computer> getComVector();
     vector<int> getComRelation(int comID);
     bool remove(int Id);
+    bool addRelation(int comID, int sciID);
 private:
     QSqlDatabase db;
     vector<Computer>computers;

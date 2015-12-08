@@ -85,12 +85,9 @@ vector<int> ComputerData::getComRelation(int comID)
 {
     QSqlQuery query(db);
 
-    cout << endl << comID << endl;
-
     query.prepare("SELECT scientist_id FROM relations WHERE computer_id = :input" );
     query.bindValue(":input",comID);
     query.exec();
-
 
     vector<int> tempVec;
 
@@ -108,4 +105,22 @@ vector<int> ComputerData::getComRelation(int comID)
     return tempVec;
 }
 
+bool ComputerData::addRelation(int comID, int sciID)
+{
+    bool Added = false;
 
+    QSqlQuery Insert(db);
+
+    Insert.prepare("INSERT INTO relations VALUES (:com, :sci)");
+
+    Insert.bindValue(":com",comID);
+    Insert.bindValue(":sci",sciID);
+
+    if (Insert.exec())
+    {
+        Added = true;
+    }
+
+    return Added;
+
+}

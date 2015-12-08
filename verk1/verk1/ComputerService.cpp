@@ -109,3 +109,8 @@ vector<int> ComputerService::getComRel(int comID)
 {
     return temp.getComRelation(comID);
 }
+
+bool ComputerService::addRelations(int comID, int sciID)
+{
+    return temp.addRelation(comID, sciID);
+}

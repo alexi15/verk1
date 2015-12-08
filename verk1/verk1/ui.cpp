@@ -113,7 +113,7 @@ void UI::NextStep()
             else if (number == 2)
                 addComputers();
             else if (number == 3)
-                {}//addRelations();
+                addRelations();
             break;
         case 2:
             if (number == 1)
@@ -247,27 +247,32 @@ void UI::addComputers()
     }
 }
 
-//EFTIR að útfæra!!! ATH
+
 //This function allows the user to add information to the relations database
-/*void UI::addRelations()
+void UI::addRelations()
 {
-    string sScientist;
-    string sScientist;
+    int comID;
+    int sciID;
     int number;
     cout << "How many relations do you want to add ? ";
     cin >> number;
 
     for (int i = 0; i < number; i++){
-
+        printSciName();
+        cout << "What scientist do you want to add realtions to? ";
+        cin >> sciID;
+        printComName();
+        cout << "To what computer do you want to relate him to? ";
+        cin >> comID;
+        if(!com.addRelations(comID, sciID))
+            cout << "Could not add relations!" << endl;
+        else
+            cout << "Relation succesfully added!" << endl;
     }
-    Relations temprelat(sScientist, sScientist);
 
-    if(!(relat.add(temprelat)))
-        cout << "Error, could not add scientist";
-    cout << endl;
-    }
+
 }
-*/
+
 
 
 //This function asks the user how he wants to sort the scientist data
