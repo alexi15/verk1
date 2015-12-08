@@ -91,6 +91,12 @@ void ScientistService::Remove(int Id)
 {
     temp.remove(Id);
 }
+void ScientistService::Edit(string toedit, int tala)
+{
+
+    temp.Edit(toedit,tala);
+
+}
 
 vector<Scientist> ScientistService::getVec()
 {
