@@ -5,7 +5,7 @@ UI::UI()
 
 }
 
-//display function scientist ATH réttur vector
+//display function scientist
 void UI::PrintDataScientist(vector<Scientist>Sorted)
 {
     for(unsigned int i = 0; i < Sorted.size(); i++){
@@ -18,7 +18,8 @@ void UI::PrintDataScientist(vector<Scientist>Sorted)
         cout << endl;
     }
 }
-//display function computers ATH réttan vector vector<Computer>ComputerService
+
+//display function computers
 void UI::PrintDataComputers(vector<Computer>Sorted)
 {
     for(unsigned int i = 0; i < Sorted.size(); i++){
@@ -31,7 +32,7 @@ void UI::PrintDataComputers(vector<Computer>Sorted)
     }
 }
 
-
+//display function for scientist name
 void UI::printSciName()
 {
     for(unsigned int i = 0; i < scient.getVec().size(); i++){
@@ -41,6 +42,7 @@ void UI::printSciName()
     }
 }
 
+//display function for computer name
 void UI::printComName()
 {
     for(unsigned int i = 0; i < com.getVec().size(); i++){
@@ -49,7 +51,7 @@ void UI::printComName()
     }
 }
 
-//
+//This function returns input from the user of what he wants to look at which we use in next function
 int UI::start()
 {
     int number;
@@ -176,6 +178,7 @@ void UI::NextStep()
     }
 }
 
+//This function displays number of scientists which the user inputs
 void UI::displayinfoSci()
 {
     int number;
@@ -206,6 +209,8 @@ void UI::displayinfoSci()
     }
 
 }
+
+//This function displays number of computers which the user inputs
 void UI::displayinfoCom()
 {
     int number;
@@ -356,8 +361,6 @@ void UI::addRelations()
     cout << endl;
 }
 
-
-
 //This function asks the user how he wants to sort the scientist data
 void UI::ChooseSortScientist()
 {
@@ -402,6 +405,7 @@ void UI::ChooseSortScientist()
     }while(input > 5 || input < 1);
 
 }
+
 //This function asks the user how he wants to sort the computers data
 void UI::ChooseSortComputers()
 {
@@ -440,7 +444,6 @@ void UI::ChooseSortComputers()
         }
     }while(input > 3 || input < 1);
 }
-
 
 //This function asks the user how he wants to sort the relations data
 void UI::ChooseSortRelations()
@@ -481,7 +484,6 @@ void UI::ChooseSortRelations()
     }while(input > 2 || input < 1);
 }
 
-
 //This function allows the user to search in the database
 void UI::search()
 {
@@ -495,6 +497,7 @@ void UI::search()
         PrintDataScientist(scient.Search(word));
 }
 
+//This function allows the user to remove scientist from the database
 void UI::RemoveSci()
 {
     int Id;
@@ -518,6 +521,7 @@ void UI::RemoveSci()
     }
 }
 
+//This function allows the user to remove computers from the database
 void UI::RemoveCom()
 {
     int Id;
@@ -543,6 +547,7 @@ void UI::RemoveCom()
 
 }
 
+//This function allows the user to remove relations from the database
 void UI::RemoveRelation()
 {
     int comID;
@@ -580,6 +585,8 @@ void UI::RemoveRelation()
     }
 
 }
+
+//This function allows the user to edit scientist from the database
 void UI::EditSci()
 {
     int inputId;
@@ -631,6 +638,7 @@ void UI::EditSci()
         cout << "Could not edit scientist" << endl;
 }
 
+//This function allows the user to edit computer from the database
 void UI::EditCom()
 {
 

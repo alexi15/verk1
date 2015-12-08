@@ -100,6 +100,7 @@ vector<Scientist> ScientistService::Search(string toSearch)
     return temp;
 }
 
+//This function returns bool value if it was successfully or unsuccessfully removed
 bool ScientistService::Remove(int Id)
 {
     bool ss;
@@ -108,6 +109,8 @@ bool ScientistService::Remove(int Id)
     sci = temp.getSciVector();
     return ss;
 }
+
+//This function returns bool value if it was successfully or unsuccessfully edited
 bool ScientistService::Edit(string toedit, int tala, int inputEdit)
 {
     bool ss;
