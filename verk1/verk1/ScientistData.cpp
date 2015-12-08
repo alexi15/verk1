@@ -116,7 +116,7 @@ bool ScientistData::AddScientist(Scientist add)
     {
         Added = true;
     }
-
+    scientist.clear();
     return Added;
 }
 

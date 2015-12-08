@@ -49,16 +49,20 @@ vector<Scientist>ScientistService::SortStringList(int tala)
 //This function returns variables into the vector form UI
 bool ScientistService::add(Scientist toAdd)
 {
+    bool ss;
     string sex = toAdd.getSex();
     if (sex != "male" && sex != "female"){
-         return false;
+         ss = false;
     }
 
     else{
-        sci.push_back(toAdd);
+        //sci.push_back(toAdd);
         temp.AddScientist(toAdd);
-        return true;
+        ss = true;
     }
+    temp.ScientistToVector();
+    sci = temp.getSciVector();
+    return ss;
 }
 //This function searches for the string in data which the user has put in
 vector<Scientist> ScientistService::Search(string toSearch)
