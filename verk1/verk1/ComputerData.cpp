@@ -173,7 +173,7 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
                 Success = true;
             break;
         case 4:
-            if(toedit != "Yes" && toedit != "yes" && toedit != "No" && toedit != "No")
+            if(toedit != "Yes" && toedit != "yes" && toedit != "no" && toedit != "No")
                 return false;
             query.prepare("UPDATE Computers SET made = :Made WHERE id = :Id");
             query.bindValue(":Id",tala);

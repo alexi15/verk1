@@ -260,7 +260,7 @@ void UI::addScientist()
         cin >> sName;
         cout << "Last name: ";
         cin >> sLast;
-        cout << "Gender: ";
+        cout << "Gender(male/female): ";
         cin >> sGender;
         cout << "Born: ";
         while(!(cin >> sBorn))
