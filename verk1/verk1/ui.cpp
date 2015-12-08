@@ -126,12 +126,10 @@ void UI::NextStep()
 
         case 3:
             if (number == 1)
-                editSci();
+                EditSci();
             else if (number == 2)
-                editCom();
-          /*  else if (number == 3)
-                editRel();
-         */       break;
+                EditCom();
+            break;
 
         case 4:
             if (number == 1)
@@ -409,17 +407,6 @@ void UI::search(){
         PrintDataScientist(scient.Search(word));
 }
 
-void UI::editSci()
-{
-    printSciName();
-}
-
-void UI::editCom()
-{
-    printComName();
-}
-
-
 void UI::RemoveSci()
 {
     int Id;
@@ -501,5 +488,58 @@ void UI::RemoveRelation()
         start();
     }
 }
+void UI::EditSci()
+{
+    int inputId;
+    int inputEdit;
+    string temp;
+    vector<int>Id;
+    PrintDataScientist(scient.getVec());
+    cout << "Please Select Scientist you would like to edit: ";
+    cin >> inputId;
+    Id.push_back(inputId);
+    PrintDataScientist(scient.getScientistVec(Id));
+    cout << "What do you want to edit" << endl;
+    cout << "Press 1 for Name" << endl;
+    cout << "Press 2 for Lastname" << endl;
+    cout << "Press 3 for Gender" << endl;
+    cout << "Press 4 for year born" << endl;
+    cout << "Press 5 for year died" << endl;
+    cin >> inputEdit;
 
+    switch(inputEdit)
+    {
+        case 1:
+                cout << "Please enter new name: ";
+                cin >> temp;
+                scient.Edit(temp,inputId, inputEdit);
+                scient.update();
+            break;
+        case 2:
+                cout << "Please enter new last name: ";
+                cin >> temp;
+                scient.Edit(temp,inputId,inputEdit);
+            break;
+        case 3:
+                cout << "Please enter new gender: ";
+                cin >> temp;
+                scient.Edit(temp,inputId, inputEdit);
+            break;
+        case 4:
+                cout << "Please enter year born: ";
+                cin >> temp;
+               scient.Edit(temp,inputId, inputEdit);
+            break;
+        case 5:
+                 cout << "Please enter year died: ";
+                 cin >> temp;
+                 scient.Edit(temp,inputId, inputEdit);
+             break;
 
+    }
+}
+
+void UI::EditCom()
+{
+
+}

@@ -10,7 +10,8 @@ ScientistService::ScientistService()
     sci = temp.getSciVector();
 }
 //This function sorts the data by birth or by death
-vector<Scientist>ScientistService::SortNumbersList(int tala){
+vector<Scientist>ScientistService::SortNumbersList(int tala)
+{
     int j;
     Scientist temp;
 
@@ -91,10 +92,20 @@ bool ScientistService::Remove(int Id)
 {
     return temp.remove(Id);
 }
-bool ScientistService::Edit(string toedit, int tala)
+bool ScientistService::Edit(string toedit, int tala, int inputEdit)
+{
+    bool ss;
+    ss = temp.Edit(toedit,tala,inputEdit);
+    temp.ScientistToVector();
+    sci = temp.getSciVector();
+    return ss;
+
+}
+void ScientistService::update()
 {
 
-    return temp.Edit(toedit,tala);
+    sci.clear();
+    sci = temp.getSciVector();
 
 }
 

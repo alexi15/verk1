@@ -35,57 +35,63 @@ void ScientistData::ScientistToVector()
         scientist.push_back(P);
     }
 }
-bool ScientistData::Edit(string toedit, int tala)
+bool ScientistData::Edit(string toedit, int tala, int inputEdit)
 {
-    int intedit;
-    if(isdigit(toedit[1]) == 1){
+    int intedit = 0;
+    if(isdigit(toedit[1]) == 1)
+    {
         std::stringstream ss(toedit);
         ss >> intedit;
     }
+
+
     bool Success = false;
     QSqlQuery query(db);
 
-    switch(tala)
+    switch(inputEdit)
     {
     case 1:
-        query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
+        query.prepare("UPDATE Scientist SET name = :Name WHERE id = :Id");
+        query.bindValue(":Id",tala);
         query.bindValue(":Name", toedit.c_str());
         if(query.exec())
             Success = true;
-        return Success;
         break;
     case 2:
-        query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
-        query.bindValue("LastName", toedit.c_str());
+        query.prepare("UPDATE Scientist SET lastname = :LastName WHERE id = :Id");
+        query.bindValue(":Id",tala);
+        query.bindValue(":LastName", toedit.c_str());
         if(query.exec())
             Success = true;
         break;
     case 3:
-        query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
-        query.bindValue("Gender", toedit.c_str());
+        query.prepare("UPDATE Scientist SET gender = :Gender WHERE id = :Id");
+        query.bindValue(":Id",tala);
+        query.bindValue(":Gender", toedit.c_str());
         if(query.exec())
             Success = true;
-        return Success;
         break;
     case 4:
-        query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
-        query.bindValue("YearBorn", intedit);
+        if(intedit == 0)
+            return false;
+        query.prepare("UPDATE Scientist SET yearborn = :YearBorn WHERE id = :Id");
+        query.bindValue(":Id",tala);
+        query.bindValue(":YearBorn", intedit);
         if(query.exec())
             Success = true;
-        return Success;
         break;
     case 5:
-
-        query.prepare("UPDATE TABLE Scientist WHERE Id = :Id");
-        query.bindValue("Death", intedit);
+        if(intedit == 0)
+            return false;
+        query.prepare("UPDATE Scientist SET death = :Death WHERE id = :Id");
+        query.bindValue(":Id",tala);
+        query.bindValue(":Death", intedit);
         if(query.exec())
             Success = true;
-        return Success;
         break;
     }
+    scientist.clear();
     return Success;
-
-
 
 }
 

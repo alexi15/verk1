@@ -19,7 +19,8 @@ public:
     vector<int> getSciRel(int sciID);
     vector<Scientist> getScientistVec(vector<int> IDs);
     bool Remove(int Id);
-    bool Edit(string toedit, int tala);
+    bool Edit(string toedit, int tala, int inputEdit);
+    void update();
 
 
 private:

@@ -17,7 +17,7 @@ public:
     vector<Scientist> getSciVector();
     vector<int> getSciRelation(int sciID);
     bool remove(int Id);
-    bool Edit(string toedit, int tala);
+    bool Edit(string toedit, int tala, int inputEdit);
 
 private:
     QSqlDatabase db;
