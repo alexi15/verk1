@@ -57,7 +57,7 @@ bool ComputerData::AddComputer(Computer add)
 
 }
 
-//This function edit computer data to the database
+//This functions gets vector from database
 vector<Computer> ComputerData::getComVector()
 {
     return computers;

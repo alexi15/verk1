@@ -15,6 +15,7 @@ Scientist::Scientist(int ID, string Nam, string Last, string Sex, int year, int 
     yearDead = dead;
 }
 
+//constructor
 Scientist::Scientist(string Nam, string Last, string Sex, int year, int dead)
 {
     name = Nam;

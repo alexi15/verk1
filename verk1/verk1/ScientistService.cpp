@@ -49,7 +49,7 @@ vector<Scientist>ScientistService::SortStringList(int tala)
     return sci;
 }
 
-//This function returns variables into the vector form UI
+//This function takes variables from UI and adds to scientistdata and returns if successfull or unsuccessfull.
 bool ScientistService::add(Scientist toAdd)
 {
     bool ss;
@@ -69,7 +69,7 @@ bool ScientistService::add(Scientist toAdd)
     return ss;
 }
 
-//This function searches for the string in data which the user has put in
+//This function searches for the string or integer that user from UI enter.
 vector<Scientist> ScientistService::Search(string toSearch)
 {
     vector<Scientist> temp;

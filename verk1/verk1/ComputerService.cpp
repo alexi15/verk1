@@ -47,7 +47,7 @@ vector<Computer>ComputerService::SortStringList(int tala)
     return com;
 }
 
-//This function returns variables into the vector from UI
+//This function adds a computer to vector and refreshes vector
 bool ComputerService::add(Computer toAdd)
 {
     bool ss = false;
@@ -96,7 +96,7 @@ vector<Computer> ComputerService::getVec()
     return com;
 }
 
-//Get computer vector?
+//This functions gets the ids from relation table and finds the relation
 vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
 {
     vector<Computer> tempVec;
