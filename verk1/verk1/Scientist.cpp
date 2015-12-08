@@ -71,13 +71,16 @@ int Scientist::getID()
 
 string Scientist::GetStrings(int tala)
 {
-      if (tala == 1){
+      if (tala == 1)
+      {
           return getFirstName();
       }
-      else if (tala == 2){
+      else if (tala == 2)
+      {
           return getLastName();
       }
-      else if (tala == 3){
+      else if (tala == 3)
+      {
           return getSex();
       }
       return 0;

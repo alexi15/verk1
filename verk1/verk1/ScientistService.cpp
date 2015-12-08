@@ -15,10 +15,11 @@ vector<Scientist>ScientistService::SortNumbersList(int tala)
     int j;
     Scientist temp;
 
-    for(unsigned int i = 0; i < sci.size(); i++){
+    for(unsigned int i = 0; i < sci.size(); i++)
+    {
         j = i;
-
-        while (j > 0 && sci[j].GetNumbers(tala) < sci[j-1].GetNumbers(tala)){
+        while (j > 0 && sci[j].GetNumbers(tala) < sci[j-1].GetNumbers(tala))
+        {
             temp = sci[j];
             sci[j] = sci[j-1];
             sci[j-1] = temp;
@@ -26,8 +27,8 @@ vector<Scientist>ScientistService::SortNumbersList(int tala)
         }
     }
     return sci;
-
 }
+
 //This function sorts the data by first name, by last name or by gender
 vector<Scientist>ScientistService::SortStringList(int tala)
 {
@@ -37,7 +38,8 @@ vector<Scientist>ScientistService::SortStringList(int tala)
     {
         j = i;
 
-        while (j > 0 && sci[j].GetStrings(tala) < sci[j-1].GetStrings(tala)){
+        while (j > 0 && sci[j].GetStrings(tala) < sci[j-1].GetStrings(tala))
+        {
             temp = sci[j];
             sci[j] = sci[j-1];
             sci[j-1] = temp;
@@ -46,16 +48,19 @@ vector<Scientist>ScientistService::SortStringList(int tala)
     }
     return sci;
 }
+
 //This function returns variables into the vector form UI
 bool ScientistService::add(Scientist toAdd)
 {
     bool ss;
     string sex = toAdd.getSex();
-    if (sex != "male" && sex != "female"){
+    if (sex != "male" && sex != "female")
+    {
          ss = false;
     }
 
-    else{
+    else
+    {
         temp.AddScientist(toAdd);
         ss = true;
     }
@@ -63,6 +68,7 @@ bool ScientistService::add(Scientist toAdd)
     sci = temp.getSciVector();
     return ss;
 }
+
 //This function searches for the string in data which the user has put in
 vector<Scientist> ScientistService::Search(string toSearch)
 {
@@ -72,7 +78,8 @@ vector<Scientist> ScientistService::Search(string toSearch)
     for(unsigned int i = 0; i < sci.size(); i++)
     {
         current = sci[i];
-        if(isdigit(toSearch[1]) == 1){
+        if(isdigit(toSearch[1]) == 1)
+        {
             int intToSearch;
             std::stringstream ss(toSearch);
             ss >> intToSearch;
@@ -80,10 +87,12 @@ vector<Scientist> ScientistService::Search(string toSearch)
             if(searchInt[0] == intToSearch || searchInt[1] == intToSearch)
                 temp.push_back(sci[i]);
         }
-        else{
+        else
+        {
              string searchWord = current.getFirstName() + current.getLastName();
 
-            if (searchWord.find(toSearch) != string::npos){
+            if (searchWord.find(toSearch) != string::npos)
+            {
                 temp.push_back(sci[i]);
             }
         }
@@ -93,7 +102,11 @@ vector<Scientist> ScientistService::Search(string toSearch)
 
 bool ScientistService::Remove(int Id)
 {
-    return temp.remove(Id);
+    bool ss;
+    ss = temp.remove(Id);
+    temp.ScientistToVector();
+    sci = temp.getSciVector();
+    return ss;
 }
 bool ScientistService::Edit(string toedit, int tala, int inputEdit)
 {
@@ -102,7 +115,6 @@ bool ScientistService::Edit(string toedit, int tala, int inputEdit)
     temp.ScientistToVector();
     sci = temp.getSciVector();
     return ss;
-
 }
 
 

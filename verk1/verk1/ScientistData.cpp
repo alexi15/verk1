@@ -24,7 +24,8 @@ void ScientistData::ScientistToVector()
 
     query.exec("SELECT * FROM Scientist");
 
-    while(query.next()){
+    while(query.next())
+    {
         int ID = query.value("ID").toUInt();
         string name = query.value("Name").toString().toStdString();
         string LastName = query.value("LastName").toString().toStdString();
@@ -92,7 +93,6 @@ bool ScientistData::Edit(string toedit, int tala, int inputEdit)
     }
     scientist.clear();
     return Success;
-
 }
 
 bool ScientistData::AddScientist(Scientist add)
@@ -132,6 +132,7 @@ bool ScientistData::remove(int Id)
     {
         Success = true;
     }
+    scientist.clear();
     return Success;
 }
 
@@ -154,7 +155,8 @@ vector<int> ScientistData::getSciRelation(int sciID)
 
     vector<int> tempVec;
 
-    while(query.next()){
+    while(query.next())
+    {
         tempVec.push_back(query.value("Computer_ID").toUInt());
         /*int ID = query.value("ID").toUInt();
         string name = query.value("Name").toString().toStdString();

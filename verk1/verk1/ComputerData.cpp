@@ -9,9 +9,7 @@ ComputerData::ComputerData()
 
 bool ComputerData::IsOpen()const
 {
-
     return db.isOpen();
-
 }
 
 
@@ -22,7 +20,8 @@ void ComputerData::ComputerToVector()
 
     query.exec("SELECT * FROM Computers");
 
-    while(query.next()){
+    while(query.next())
+    {
         int ID = query.value("ID").toUInt();
         string name = query.value("Name").toString().toStdString();
         int BuildYear = query.value("BuildYear").toUInt();
@@ -43,7 +42,6 @@ bool ComputerData::AddComputer(Computer add)
 
     Insert.prepare("INSERT INTO computers (Name, BuildYear, Type, Made) VALUES (:Name, :BuildYear,"
                    ":Type,:Made)");
-
 
     Insert.bindValue(":Name",add.getName().c_str());
     Insert.bindValue(":BuildYear",add.getBuildYear());
@@ -69,14 +67,14 @@ bool ComputerData::remove(int Id)
 {
     bool Success = false;
     QSqlQuery query(db);
-    query.prepare("DELETE FROM computer WHERE Id = :Id");
+    query.prepare("DELETE FROM computers WHERE Id = :Id");
     query.bindValue(":Id", Id);
     query.exec();
-
     if(query.exec())
     {
         Success = true;
     }
+    computers.clear();
     return Success;
 }
 
@@ -91,7 +89,8 @@ vector<int> ComputerData::getComRelation(int comID)
 
     vector<int> tempVec;
 
-    while(query.next()){
+    while(query.next())
+    {
         tempVec.push_back(query.value("scientist_id").toUInt());
     }
     return tempVec;
@@ -113,7 +112,6 @@ bool ComputerData::addRelation(int comID, int sciID)
         Added = true;
     }
     return Added;
-
 }
 
 bool ComputerData::removeRelation(int comID, int sciID)
@@ -138,20 +136,19 @@ bool ComputerData::removeRelation(int comID, int sciID)
 
 bool ComputerData::Edit(string toedit, int tala, int inputEdit)
 {
+    int intedit = 0;
+    if(isdigit(toedit[1]) == 1)
     {
-        int intedit = 0;
-        if(isdigit(toedit[1]) == 1)
-        {
-            std::stringstream ss(toedit);
-            ss >> intedit;
-        }
+        std::stringstream ss(toedit);
+        ss >> intedit;
+    }
 
 
-        bool Success = false;
-        QSqlQuery query(db);
+    bool Success = false;
+    QSqlQuery query(db);
 
-        switch(inputEdit)
-        {
+    switch(inputEdit)
+    {
         case 1:
             query.prepare("UPDATE Computers SET name = :Name WHERE id = :Id");
             query.bindValue(":Id",tala);
@@ -184,11 +181,7 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
             if(query.exec())
                 Success = true;
             break;
-        }
-        computers.clear();
-        return Success;
-
     }
-
-
+    computers.clear();
+    return Success;
 }

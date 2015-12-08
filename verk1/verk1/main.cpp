@@ -1,10 +1,10 @@
 #include <QCoreApplication>
 #include <iostream>
-#include "Scientist.h"
 #include "ui.h"
 
 
-int main(){
+int main()
+{
     UI temp;
     temp.NextStep();
 }

@@ -6,7 +6,8 @@ ComputerService::ComputerService()
     com = temp.getComVector();
 }
 
-vector<Computer>ComputerService::SortNumbersList(int tala){
+vector<Computer>ComputerService::SortNumbersList(int tala)
+{
     int j;
     Computer temp;
 
@@ -32,7 +33,8 @@ vector<Computer>ComputerService::SortStringList(int tala)
     {
         j = i;
 
-        while (j > 0 && com[j].getStrings(tala) < com[j-1].getStrings(tala)){
+        while (j > 0 && com[j].getStrings(tala) < com[j-1].getStrings(tala))
+        {
             temp = com[j];
             com[j] = com[j-1];
             com[j-1] = temp;
@@ -62,7 +64,8 @@ vector<Computer> ComputerService::Search(string toSearch)
     for(unsigned int i = 0; i < com.size(); i++)
     {
         current = com[i];
-        if(isdigit(toSearch[1]) == 1){
+        if(isdigit(toSearch[1]) == 1)
+        {
             int intToSearch;
             std::stringstream ss(toSearch);
             ss >> intToSearch;
@@ -70,10 +73,12 @@ vector<Computer> ComputerService::Search(string toSearch)
             if(searchInt[0] == intToSearch || searchInt[1] == intToSearch)
                 temp.push_back(com[i]);
         }
-        else{
+        else
+        {
              string searchWord = current.getName() + current.getType();
 
-            if (searchWord.find(toSearch) != string::npos){
+            if (searchWord.find(toSearch) != string::npos)
+            {
                 temp.push_back(com[i]);
             }
         }
@@ -105,7 +110,11 @@ vector<Computer> ComputerService::getComputerVec(vector<int> IDs)
 
 bool ComputerService::Remove(int Id)
 {
-    return temp.remove(Id);
+    bool ss;
+    ss = temp.remove(Id);
+    temp.ComputerToVector();
+    com = temp.getComVector();
+    return ss;
 }
 bool ComputerService::Edit(string toedit, int tala, int inputEdit)
 {
