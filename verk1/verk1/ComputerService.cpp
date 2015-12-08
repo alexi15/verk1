@@ -103,6 +103,14 @@ bool ComputerService::Remove(int Id)
 {
     return temp.remove(Id);
 }
+bool ComputerService::Edit(string toedit, int tala, int inputEdit)
+{
+    bool ss;
+    ss = temp.Edit(toedit,tala,inputEdit);
+    temp.ComputerToVector();
+    com = temp.getComVector();
+    return ss;
+}
 
 
 vector<int> ComputerService::getComRel(int comID)

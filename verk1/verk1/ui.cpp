@@ -601,4 +601,44 @@ void UI::EditSci()
 void UI::EditCom()
 {
 
+        int inputId;
+        int inputEdit;
+        string temp;
+        vector<int>Id;
+        PrintDataComputers(com.getVec());
+        cout << "Please select computer you would like to edit: ";
+        cin >> inputId;
+        Id.push_back(inputId);
+        PrintDataComputers(com.getComputerVec(Id));
+        cout << "What do you want to edit" << endl;
+        cout << "Press 1 for Name" << endl;
+        cout << "Press 2 for Build Year" << endl;
+        cout << "Press 3 for Type" << endl;
+        cout << "Press 4 for Made" << endl;
+        cin >> inputEdit;
+
+        switch(inputEdit)
+        {
+            case 1:
+                    cout << "Please enter new name: ";
+                    cin >> temp;
+                    com.Edit(temp,inputId, inputEdit);
+
+                break;
+            case 2:
+                    cout << "Please enter new build year: ";
+                    cin >> temp;
+                    com.Edit(temp,inputId,inputEdit);
+                break;
+            case 3:
+                    cout << "Please enter new type: ";
+                    cin >> temp;
+                    com.Edit(temp,inputId, inputEdit);
+                break;
+            case 4:
+                    cout << "Please enter made: ";
+                    cin >> temp;
+                    com.Edit(temp,inputId, inputEdit);
+                break;
+        }
 }

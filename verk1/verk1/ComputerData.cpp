@@ -163,14 +163,14 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
         case 2:
             if(intedit == 0)
                 return false;
-            query.prepare("UPDATE Computers SET buildyear = :LastName WHERE id = :Id");
+            query.prepare("UPDATE Computers SET buildyear = :BuildYear WHERE id = :Id");
             query.bindValue(":Id",tala);
             query.bindValue(":BuildYear", intedit);
             if(query.exec())
                 Success = true;
             break;
         case 3:
-            query.prepare("UPDATE Computers SET type = :Gender WHERE id = :Id");
+            query.prepare("UPDATE Computers SET type = :Type WHERE id = :Id");
             query.bindValue(":Id",tala);
             query.bindValue(":Type", toedit.c_str());
             if(query.exec())
@@ -179,18 +179,9 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
         case 4:
             if(toedit != "Yes" || toedit != "yes" || toedit != "No" || toedit != "No")
                 return false;
-            query.prepare("UPDATE Computers SET made = :YearBorn WHERE id = :Id");
+            query.prepare("UPDATE Computers SET made = :Made WHERE id = :Id");
             query.bindValue(":Id",tala);
             query.bindValue(":Made", toedit.c_str());
-            if(query.exec())
-                Success = true;
-            break;
-        case 5:
-            if(intedit == 0)
-                return false;
-            query.prepare("UPDATE Computers SET death = :Death WHERE id = :Id");
-            query.bindValue(":Id",tala);
-            query.bindValue(":Death", intedit);
             if(query.exec())
                 Success = true;
             break;
