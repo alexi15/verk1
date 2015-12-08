@@ -1,10 +1,12 @@
 #include "computers.h"
 
+//default constructor
 Computer::Computer()
 {
 
 }
 
+//constructor
 Computer::Computer(int ID, string nam, int year, string Type, string Made)
 {
     id = ID;
@@ -14,6 +16,7 @@ Computer::Computer(int ID, string nam, int year, string Type, string Made)
     made = Made;
 }
 
+//constructor
 Computer::Computer(string nam, int year, string Type, string Made)
 {
     name = nam;
@@ -22,6 +25,7 @@ Computer::Computer(string nam, int year, string Type, string Made)
     made = Made;
 }
 
+//These get function return private parameters
 string Computer::getName()
 {
     return name;
@@ -47,7 +51,7 @@ int Computer::getID()
     return id;
 }
 
-
+//This function used to sort strings
 string Computer::getStrings(int tala)
 {
     if (tala == 1)
@@ -65,6 +69,8 @@ string Computer::getStrings(int tala)
     return 0;
 
 }
+
+//This function used to sort integers
 int Computer::getNumbers(int tala)
 {
     if (tala == 2)
@@ -77,3 +83,4 @@ int Computer::getNumbers(int tala)
     }
     return 0;
 }
+

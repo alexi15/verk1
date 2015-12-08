@@ -69,6 +69,7 @@ int Scientist::getID()
     return id;
 }
 
+//This function used to sort strings
 string Scientist::GetStrings(int tala)
 {
       if (tala == 1)
@@ -86,6 +87,7 @@ string Scientist::GetStrings(int tala)
       return 0;
 }
 
+//This function used to sort integers
 int Scientist::GetNumbers(int tala)
 {
     if (tala == 4)
@@ -102,8 +104,3 @@ int Scientist::GetNumbers(int tala)
     }
     return 0;
 }
-
-
-
-
-
