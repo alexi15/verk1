@@ -23,6 +23,7 @@ public:
     vector<int> getComRel(int comID);
     void Remove(int Id);
     bool addRelations(int comID, int sciID);
+    bool removeRelation(int comID, int sciID);
 
 private:
     ComputerData temp;

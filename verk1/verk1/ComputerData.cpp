@@ -124,3 +124,23 @@ bool ComputerData::addRelation(int comID, int sciID)
     return Added;
 
 }
+
+bool ComputerData::removeRelation(int comID, int sciID)
+{
+    bool removed = false;
+
+    QSqlQuery query(db);
+
+    query.prepare("DELETE FROM relations WHERE computer_id = :com "
+                  "and scientist_ID = :sci");
+
+    query.bindValue(":com",comID);
+    query.bindValue(":sci",sciID);
+
+    if(query.exec())
+    {
+        removed = true;
+    }
+    return removed;
+
+}

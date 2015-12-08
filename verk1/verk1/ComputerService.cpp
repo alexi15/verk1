@@ -114,3 +114,8 @@ bool ComputerService::addRelations(int comID, int sciID)
 {
     return temp.addRelation(comID, sciID);
 }
+
+bool ComputerService::removeRelation(int comID, int sciID)
+{
+    return temp.removeRelation(comID, sciID);
+}

@@ -449,7 +449,7 @@ void UI::RemoveCom()
     int Id;
     printComName();
 
-    cout << "Please Insert Id number of wich scientist you would like to remove: " << endl;
+    cout << "Please Insert Id number of wich computer you would like to remove: " << endl;
     cout << "To cancel please press 0" << endl;
     while(!(cin >> Id || Id != 0)){
         cin.clear();
@@ -470,7 +470,36 @@ void UI::RemoveCom()
 
 void UI::RemoveRelation()
 {
+    int comID;
+    int sciID;
 
+    printSciName();
+
+    cout << "Please Insert Id number of wich scientist you would like to remove relations to: " << endl;
+    cout << "To cancel please press 0" << endl;
+    while(!(cin >> sciID || sciID != 0)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose Valid Id Number"<< endl;
+    }
+    PrintDataComputers(com.getComputerVec(scient.getSciRel(sciID)));
+    cout << "Please Insert Id number of wich computer you would like to remove relations to: " << endl;
+    cout << "To cancel please press 0" << endl;
+    while(!(cin >> comID || comID != 0)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose Valid Id Number"<< endl;
+    }
+    if (comID > 0)
+    {
+        com.removeRelation(comID, sciID);
+    }
+    else
+    {
+        start();
+    }
 }
 
 
