@@ -358,8 +358,8 @@ void UI::ChooseSortRelations()
     int input;
     int idInput;
     do{
-    cout << "Press 1 to sort by computer name" << endl;
-    cout << "Press 2 to sort by scientist name" << endl;
+         cout << "Press 1 to sort by computer name" << endl;
+         cout << "Press 2 to sort by scientist name" << endl;
 
     while(!(cin >> input)){
         cin.clear();
@@ -418,7 +418,7 @@ void UI::editCom()
 void UI::RemoveSci()
 {
     int Id;
-    PrintDataScientist(scient.SortNumbersList(6));
+    printSciName();
 
     cout << "Please Insert Id number of wich scientist you would like to remove: " << endl;
     cout << "To cancel please press 0" << endl;
@@ -441,7 +441,26 @@ void UI::RemoveSci()
 
 void UI::RemoveCom()
 {
+    int Id;
+    printComName();
 
+    cout << "Please Insert Id number of wich scientist you would like to remove: " << endl;
+    cout << "To cancel please press 0" << endl;
+    while(!(cin >> Id || Id != 0)){
+        cin.clear();
+        cin.ignore(6, '\n');
+        cout << "Error in input" << endl;
+        cout << "Please choose Valid Id Number"<< endl;
+
+    }
+    if (Id > 0)
+    {
+        com.Remove(Id);
+    }
+    else
+    {
+        start();
+    }
 }
 
 void UI::RemoveRelation()

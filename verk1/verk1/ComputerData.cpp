@@ -65,6 +65,21 @@ vector<Computer> ComputerData::getComVector()
     return computers;
 }
 
+bool ComputerData::remove(int Id)
+{
+    bool Success = false;
+    QSqlQuery query(db);
+    query.prepare("DELETE FROM computer WHERE Id = :Id");
+    query.bindValue(":Id", Id);
+    query.exec();
+
+    if(query.exec())
+    {
+        Success = true;
+    }
+    return Success;
+}
+
 
 vector<int> ComputerData::getComRelation(int comID)
 {

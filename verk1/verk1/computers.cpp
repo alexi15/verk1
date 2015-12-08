@@ -64,8 +64,13 @@ string Computer::getStrings(int tala)
 }
 int Computer::getNumbers(int tala)
 {
-    if (tala == 2){
+    if (tala == 2)
+    {
         return getBuildYear();
+    }
+    if (tala == 5)
+    {
+        return getID();
     }
     return 0;
 }

@@ -39,7 +39,6 @@ public:
 private:
     ScientistService scient;
     ComputerService com;
-    //Relations relat;
 };
 
 #endif // UI_H
