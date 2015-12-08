@@ -2,9 +2,10 @@
 #include <QtSql>
 #include <QtDebug>
 
-//default constructor
+//Default constructor
 Data::Data()
 {
+
 }
 //This function loads the file fraedingar.txt into a vector
 void Data::load(){

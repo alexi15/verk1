@@ -5,13 +5,13 @@ Computers::Computers()
 
 }
 
-Computers::Computers(string nam, int year, string Type, string Made){
+Computers::Computers(string nam, int year, string Type, string Made)
+{
 
     name = nam;
     BuildYear = year;
     type = Type;
     made = Made;
-
 
 }
 

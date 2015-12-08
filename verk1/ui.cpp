@@ -5,7 +5,7 @@ UI::UI()
 
 }
 
-//display function
+//Display function
 void UI::PrintData(vector<Scientist>Sorted){
 
     for(unsigned int i = 0; i < Sorted.size(); i++){

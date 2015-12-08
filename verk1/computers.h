@@ -3,8 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Computers
-{
+class Computers{
 public:
     Computers();
     Computers(string nam, int year, string Type, string Made);
