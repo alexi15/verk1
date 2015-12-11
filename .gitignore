@@ -9,6 +9,7 @@ qlite
 *.so
 *.dll
 *.dylib
+*.exe
 
 # Qt-es
 /.qmake.cache
