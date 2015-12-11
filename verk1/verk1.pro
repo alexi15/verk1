@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     ScientistService.cpp \
     ComputerData.cpp \
     ScientistData.cpp \
-    ComputerService.cpp
+    ComputerService.cpp \
+    mainwindow.cpp
 
 HEADERS += \
     Scientist.h \
@@ -24,7 +25,11 @@ HEADERS += \
     ScientistService.h \
     ComputerData.h \
     ScientistData.h \
-    computerservice.h
+    computerservice.h \
+    mainwindow.h
 
 DISTFILES +=
+
+FORMS += \
+    mainwindow.ui
 
