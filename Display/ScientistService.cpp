@@ -53,17 +53,9 @@ vector<Scientist>ScientistService::SortStringList(int tala)
 bool ScientistService::add(Scientist toAdd)
 {
     bool ss;
-    string sex = toAdd.getSex();
-    if (sex != "male" && sex != "female")
-    {
-         ss = false;
-    }
-
-    else
-    {
-        temp.AddScientist(toAdd);
+       if (temp.AddScientist(toAdd))
         ss = true;
-    }
+
     temp.ScientistToVector();
     sci = temp.getSciVector();
     return ss;

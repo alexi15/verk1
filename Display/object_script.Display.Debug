@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\ComputerData.o
+./debug\computers.o
+./debug\ComputerService.o
+./debug\Scientist.o
+./debug\ScientistData.o
+./debug\ScientistService.o
+./debug\add.o
+./debug\moc_mainwindow.o
+./debug\moc_add.o
+);

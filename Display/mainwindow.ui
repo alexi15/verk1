@@ -94,7 +94,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushAdd">
+         <widget class="QPushButton" name="addScientist">
           <property name="text">
            <string>Add</string>
           </property>

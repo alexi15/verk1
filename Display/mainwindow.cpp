@@ -110,3 +110,24 @@ void MainWindow::on_line_filter_com_textChanged(const QString &arg1)
     displayComputers(found);
 }
 
+void MainWindow::on_add_computers_clicked()
+{
+    Add a;
+    a.exec();
+
+}
+
+void MainWindow::on_addScientist_clicked()
+{
+    Add a;
+    a.exec();
+
+    displayScientists(a.getvec());
+
+
+
+
+
+}
+
+
