@@ -25,6 +25,9 @@ void ScientistData::ScientistToVector()
 
     query.exec("SELECT * FROM Scientist");
 
+    if(!query.exec("SELECT * FROM Scientist"))
+        cout << "Fail";
+
     while(query.next())
     {
         int ID = query.value("ID").toUInt();
