@@ -65,28 +65,29 @@ vector<Computer> ComputerService::Search(string toSearch)
     vector<Computer> temp;
     Computer current;
 
-    for(unsigned int i = 0; i < com.size(); i++)
+    toSearch[0] = toupper(toSearch[0]);
+
+    for(unsigned int i = 0;i < com.size(); i++)
     {
         current = com[i];
-        if(isdigit(toSearch[1]) == 1)
-        {
-            int intToSearch;
-            std::stringstream ss(toSearch);
-            ss >> intToSearch;
-            int searchInt[2] = {current.getBuildYear(), current.getBuildYear()};
-            if(searchInt[0] == intToSearch || searchInt[1] == intToSearch)
-                temp.push_back(com[i]);
-        }
-        else
-        {
-             string searchWord = current.getName() + current.getType();
+        string name = current.getName();
+        string type = current.getType();
+        string made = current.getMade();
+        string year;
+        stringstream s;
+        s << current.getBuildYear();
+        s >> year;
 
-            if (searchWord.find(toSearch) != string::npos)
-            {
-                temp.push_back(com[i]);
-            }
+
+        string searchWord = name + " " + made + " " +
+                type + " " + year;
+
+        if (searchWord.find(toSearch) != string::npos)
+        {
+            temp.push_back(com[i]);
         }
     }
+    return temp;
     return temp;
 }
 

@@ -27,13 +27,14 @@ private slots:
     void on_table_scientists_clicked(const QModelIndex &index);
     void on_actionComputers_triggered();
 
-    void on_actionScientists_triggered();
-
-    void on_tableWidget_activated(const QModelIndex &index);
-
     void on_table_computers_activated(const QModelIndex &index);
 
     void on_tabScientists_tabBarClicked(int index);
+
+
+    void on_line_filter_sci_textChanged(const QString &arg1);
+
+    void on_line_filter_com_textChanged(const QString &arg1);
 
 private:
     ScientistService sci;

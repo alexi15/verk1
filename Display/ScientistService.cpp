@@ -75,26 +75,28 @@ vector<Scientist> ScientistService::Search(string toSearch)
     vector<Scientist> temp;
     Scientist current;
 
-    for(unsigned int i = 0; i < sci.size(); i++)
+    toSearch[0] = toupper(toSearch[0]);
+
+    for(unsigned int i = 0;i < sci.size(); i++)
     {
         current = sci[i];
-        if(isdigit(toSearch[1]) == 1)
-        {
-            int intToSearch;
-            std::stringstream ss(toSearch);
-            ss >> intToSearch;
-            int searchInt[2] = {current.getYearBorn(), current.getYearDead()};
-            if(searchInt[0] == intToSearch || searchInt[1] == intToSearch)
-                temp.push_back(sci[i]);
-        }
-        else
-        {
-             string searchWord = current.getFirstName() + current.getLastName();
+        string first = current.getFirstName();
+        string last = current.getLastName();
+        string gender = current.getSex();
+        string born;
+        string dead;
+        stringstream s, ss;
+        s << current.getYearBorn();
+        s >> born;
+        ss << current.getYearDead();
+        ss >> dead;
 
-            if (searchWord.find(toSearch) != string::npos)
-            {
-                temp.push_back(sci[i]);
-            }
+        string searchWord = first + " " + last + " " + gender +
+                " " + born + " " + dead;
+
+        if (searchWord.find(toSearch) != string::npos)
+        {
+            temp.push_back(sci[i]);
         }
     }
     return temp;
