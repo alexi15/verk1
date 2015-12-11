@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\ComputerData.o
+./release\computers.o
+./release\ComputerService.o
+./release\Scientist.o
+./release\ScientistData.o
+./release\ScientistService.o
+./release\add.o
+./release\moc_mainwindow.o
+./release\moc_add.o
+);

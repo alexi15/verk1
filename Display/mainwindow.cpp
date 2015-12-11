@@ -102,3 +102,24 @@ void MainWindow::on_tabScientists_tabBarClicked(int index)
 {
     cout << index;
 }
+
+void MainWindow::on_add_computers_clicked()
+{
+    Add a;
+    a.exec();
+
+}
+
+void MainWindow::on_addScientist_clicked()
+{
+    Add a;
+    a.exec();
+
+    displayScientists(a.getvec());
+
+
+
+
+
+}
+
