@@ -58,6 +58,8 @@ private slots:
 
     void on_table_computers_pressed(const QModelIndex &index);
 
+    void on_table_scientists_cellDoubleClicked(int row, int column);
+
 private:
     ScientistService sci;
     ComputerService com;

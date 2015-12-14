@@ -145,6 +145,7 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
 
     QMenu menu;
     menu.addAction(ui->actionRemoveScientist);
+    menu.addAction(ui->actionRelationScientist);
     menu.exec(ui->table_scientists->viewport()->mapToGlobal(pos));
 }
 
@@ -158,6 +159,7 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
     QMenu menu;
 
     menu.addAction(ui->actionRemoveComputer);
+    menu.addAction(ui->actionRelationComputer);
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
 
 
@@ -191,5 +193,12 @@ void MainWindow::on_table_computers_pressed(const QModelIndex &index)
     int rowidx = ui->table_computers->selectionModel()->currentIndex().row();
     int id = index.sibling(rowidx, 4).data().toInt();
     clicked_idComputer = id;
-    cout << id << endl;
+}
+
+
+
+
+void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
+{
+
 }
