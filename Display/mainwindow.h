@@ -50,11 +50,13 @@ private slots:
 
     void on_table_computers_customContextMenuRequested(const QPoint &pos);
 
+    void on_table_scientists_pressed(const QModelIndex &index);
+
 private:
     ScientistService sci;
     ComputerService com;
 
-
+    int clicked_id;
     void displayAllScientists();
     void displayScientists(vector<Scientist> scientists);
     void displayAllComputers();

@@ -21,7 +21,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -36,73 +36,69 @@
          </widget>
         </item>
         <item>
-         <widget class="QTableWidget" name="table_scientists">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="mouseTracking">
-           <bool>true</bool>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::CustomContextMenu</enum>
-          </property>
-          <property name="acceptDrops">
-           <bool>false</bool>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAsNeeded</enum>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustIgnored</enum>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SingleSelection</enum>
-          </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
-          </property>
-          <property name="sortingEnabled">
-           <bool>true</bool>
-          </property>
-          <column>
-           <property name="text">
-            <string>First Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Last Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Gender</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Year Born</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Year Died</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string/>
-           </property>
-          </column>
-         </widget>
-        </item>
-        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QPushButton" name="addScientist">
-            <property name="text">
-             <string>Add</string>
+           <widget class="QTableWidget" name="table_scientists">
+            <property name="enabled">
+             <bool>true</bool>
             </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::CustomContextMenu</enum>
+            </property>
+            <property name="acceptDrops">
+             <bool>false</bool>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustIgnored</enum>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <property name="columnCount">
+             <number>6</number>
+            </property>
+            <column>
+             <property name="text">
+              <string>First Name</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Last Name</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Gender</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Year Born</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Year Died</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string/>
+             </property>
+            </column>
            </widget>
           </item>
          </layout>
@@ -176,6 +172,13 @@
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="addScientist">
+      <property name="text">
+       <string>Add</string>
+      </property>
      </widget>
     </item>
    </layout>

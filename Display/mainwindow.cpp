@@ -40,6 +40,8 @@ void MainWindow::displayScientists(vector<Scientist> scientists)
         QString gender = QString::fromStdString(current.getSex());
         QString yearBorn = QString::number(current.getYearBorn());
         QString yearDied = QString::number(current.getYearDead());
+        QString id = QString::number(current.getID());
+
 
 
         ui->table_scientists->setItem(i, 0, new QTableWidgetItem(firstName));
@@ -47,6 +49,8 @@ void MainWindow::displayScientists(vector<Scientist> scientists)
         ui->table_scientists->setItem(i, 2, new QTableWidgetItem(gender));
         ui->table_scientists->setItem(i, 3, new QTableWidgetItem(yearBorn));
         ui->table_scientists->setItem(i, 4, new QTableWidgetItem(yearDied));
+        ui->table_scientists->setItem(i, 5, new QTableWidgetItem(id));
+        ui->table_scientists->setColumnHidden(5, true);
     }
 }
 
@@ -94,6 +98,7 @@ void MainWindow::on_actionComputers_triggered()
 
 void MainWindow::on_table_computers_activated(const QModelIndex &index)
 {
+
 }
 
 void MainWindow::on_tabScientists_tabBarClicked(int index)
@@ -136,10 +141,15 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
 {
 
     QMenu menu;
-
     menu.addAction(ui->actionRemoveScientist);
     menu.exec(ui->table_scientists->viewport()->mapToGlobal(pos));
 
+    if(ui->actionRemoveScientist && clicked_id > 0)
+    {
+        sci.Remove(clicked_id);
+
+    }
+    displayAllScientists();
 }
 
 void MainWindow::on_table_computers_clicked(const QModelIndex &index)
@@ -153,4 +163,15 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
 
     menu.addAction(ui->actionRemoveComputer);
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
+
+
+
+
+}
+
+void MainWindow::on_table_scientists_pressed(const QModelIndex &index)
+{
+    int rowidx = ui->table_scientists->selectionModel()->currentIndex().row();
+    int id = index.sibling(rowidx, 5).data().toInt();
+    clicked_id = id;
 }
