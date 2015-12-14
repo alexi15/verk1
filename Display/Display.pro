@@ -22,7 +22,9 @@ SOURCES += main.cpp\
     ScientistData.cpp \
     ScientistService.cpp \
     add.cpp \
-    addcomp.cpp
+    addcomp.cpp \
+    relsci.cpp \
+    relcom.cpp
 
 HEADERS  += mainwindow.h \
     ComputerData.h \
@@ -32,8 +34,12 @@ HEADERS  += mainwindow.h \
     ScientistData.h \
     ScientistService.h \
     add.h \
-    addcomp.h
+    addcomp.h \
+    relsci.h \
+    relcom.h
 
 FORMS    += mainwindow.ui \
     add.ui \
-    addcomp.ui
+    addcomp.ui \
+    relsci.ui \
+    relcom.ui

@@ -155,8 +155,6 @@ vector<int> ScientistData::getSciRelation(int sciID)
 {
     QSqlQuery query(db);
 
-    cout << endl << sciID << endl;
-
     query.prepare("SELECT computer_id FROM relations WHERE Scientist_ID = :input" );
     query.bindValue(":input",sciID);
     query.exec();

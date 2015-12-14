@@ -8,6 +8,9 @@
 #include "computers.h"
 #include "add.h"
 #include "addcomp.h"
+#include "relsci.h"
+#include "relcom.h"
+
 #include <QDebug>
 #include <QMenu>
 
@@ -59,6 +62,10 @@ private slots:
     void on_table_computers_pressed(const QModelIndex &index);
 
     void on_table_scientists_cellDoubleClicked(int row, int column);
+
+    void on_actionRelationScientist_triggered();
+
+    void on_actionRelationComputer_triggered();
 
 private:
     ScientistService sci;

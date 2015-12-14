@@ -142,7 +142,6 @@ void MainWindow::on_addScientist_clicked()
 
 void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &pos)
 {
-
     QMenu menu;
     menu.addAction(ui->actionRemoveScientist);
     menu.addAction(ui->actionRelationScientist);
@@ -161,8 +160,6 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
     menu.addAction(ui->actionRemoveComputer);
     menu.addAction(ui->actionRelationComputer);
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
-
-
 
 
 }
@@ -201,4 +198,28 @@ void MainWindow::on_table_computers_pressed(const QModelIndex &index)
 void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
 {
 
+}
+
+
+void MainWindow::on_actionRelationScientist_triggered()
+{
+    vector<Computer> computers = com.getComputerVec(sci.getSciRel(clicked_idScientist));
+    if(computers.size() > 0)
+    {
+        relSci rel;
+        rel.addVec(computers);
+        rel.exec();
+    }
+
+}
+
+void MainWindow::on_actionRelationComputer_triggered()
+{
+    vector<Scientist> scientists = sci.getScientistVec(com.getComRel(clicked_idComputer));
+    if(scientists.size() > 0)
+    {
+        relCom rel;
+        rel.addVec(scientists);
+        rel.exec();
+    }
 }
