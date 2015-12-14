@@ -8,6 +8,8 @@ INPUT(
 ./debug\ScientistData.o
 ./debug\ScientistService.o
 ./debug\add.o
+./debug\addcomp.o
 ./debug\moc_mainwindow.o
 ./debug\moc_add.o
+./debug\moc_addcomp.o
 );

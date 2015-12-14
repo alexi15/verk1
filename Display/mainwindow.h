@@ -7,6 +7,7 @@
 #include "computerservice.h"
 #include "computers.h"
 #include "add.h"
+#include "addcomp.h"
 
 #include <QMainWindow>
 

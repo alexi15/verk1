@@ -8,6 +8,8 @@ INPUT(
 ./release\ScientistData.o
 ./release\ScientistService.o
 ./release\add.o
+./release\addcomp.o
 ./release\moc_mainwindow.o
 ./release\moc_add.o
+./release\moc_addcomp.o
 );

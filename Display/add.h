@@ -19,15 +19,9 @@ public:
     vector<Scientist>getvec();
 
 private slots:
-
     bool on_click_scienstist_male_clicked();
-
     bool on_click_scientist_female_clicked();
-
-
     void on_Add_Scientist_clicked();
-
-
 private:
     ScientistService addScientist;
     Ui::Add *ui;

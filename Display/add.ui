@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>425</width>
+    <height>297</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,7 +42,7 @@
   <widget class="QLineEdit" name="Input_Scientist_Firstname">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>130</x>
      <y>20</y>
      <width>191</width>
      <height>22</height>
@@ -87,7 +87,7 @@
   <widget class="QLineEdit" name="Input_Scientist_lastname">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>130</x>
      <y>60</y>
      <width>191</width>
      <height>22</height>
@@ -100,7 +100,7 @@
   <widget class="QLabel" name="Scientist_firstname">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>20</y>
      <width>71</width>
      <height>20</height>
@@ -113,7 +113,7 @@
   <widget class="QLabel" name="Scientist_lastname">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>60</y>
      <width>71</width>
      <height>20</height>
@@ -172,7 +172,72 @@
     </rect>
    </property>
    <property name="text">
-    <string>Add Scientist</string>
+    <string>Add </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Error_yearBorn">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>150</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Error_yearDied">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>190</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Error_Gender">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>100</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Error_LastName">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>60</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Error_FirstName">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>20</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

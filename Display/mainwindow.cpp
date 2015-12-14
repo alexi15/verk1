@@ -112,17 +112,19 @@ void MainWindow::on_line_filter_com_textChanged(const QString &arg1)
 
 void MainWindow::on_add_computers_clicked()
 {
-    Add a;
-    a.exec();
+    addComp computer;
+    computer.exec();
+
+    displayComputers(computer.getvec());
 
 }
 
 void MainWindow::on_addScientist_clicked()
 {
-    Add a;
-    a.exec();
+    Add scientist;
+    scientist.exec();
 
-    displayScientists(a.getvec());
+    displayScientists(scientist.getvec());
 
 
 
