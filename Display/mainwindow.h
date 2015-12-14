@@ -46,6 +46,10 @@ private slots:
 
     void on_addScientist_clicked();
 
+    void on_table_computers_clicked(const QModelIndex &index);
+
+    void on_table_computers_customContextMenuRequested(const QPoint &pos);
+
 private:
     ScientistService sci;
     ComputerService com;

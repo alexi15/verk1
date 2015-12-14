@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -151,3 +152,16 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
 
 
 
+
+void MainWindow::on_table_computers_clicked(const QModelIndex &index)
+{
+
+}
+
+void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos)
+{
+    QMenu menu;
+
+    menu.addAction(ui->ActionRemoveComputers);
+    menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
+}
