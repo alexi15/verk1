@@ -8,6 +8,8 @@
 #include "computers.h"
 #include "add.h"
 #include "addcomp.h"
+#include <QDebug>
+#include <QMenu>
 
 #include <QMainWindow>
 
@@ -26,6 +28,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_table_scientists_customContextMenuRequested(const QPoint &pos);
+
     void on_table_scientists_clicked(const QModelIndex &index);
 
     void on_actionComputers_triggered();

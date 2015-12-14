@@ -40,8 +40,11 @@
           <property name="enabled">
            <bool>true</bool>
           </property>
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
           <property name="contextMenuPolicy">
-           <enum>Qt::DefaultContextMenu</enum>
+           <enum>Qt::CustomContextMenu</enum>
           </property>
           <property name="acceptDrops">
            <bool>false</bool>
@@ -94,11 +97,15 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="addScientist">
-          <property name="text">
-           <string>Add</string>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="addScientist">
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -142,11 +149,15 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="add_computers">
-          <property name="text">
-           <string>Add</string>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="add_computers">
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -212,6 +223,11 @@
   <action name="actionRelations">
    <property name="text">
     <string>Relations</string>
+   </property>
+  </action>
+  <action name="actionRemoveScientist">
+   <property name="text">
+    <string>Remove</string>
    </property>
   </action>
  </widget>

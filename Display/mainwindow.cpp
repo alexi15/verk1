@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     displayAllScientists();
     displayAllComputers();
 
@@ -80,6 +81,8 @@ void MainWindow::displayComputers(vector<Computer> computers)
 void MainWindow::on_table_scientists_clicked(const QModelIndex &index)
 {
 
+
+
 }
 
 void MainWindow::on_actionComputers_triggered()
@@ -131,5 +134,20 @@ void MainWindow::on_addScientist_clicked()
 
 
 }
+
+
+
+
+
+void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &pos)
+{
+
+    QMenu menu;
+
+    menu.addAction(ui->actionRemoveScientist);
+    menu.exec(ui->table_scientists->viewport()->mapToGlobal(pos));
+
+}
+
 
 

@@ -241,6 +241,15 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>Input_Scientist_Firstname</tabstop>
+  <tabstop>Input_Scientist_lastname</tabstop>
+  <tabstop>click_scienstist_male</tabstop>
+  <tabstop>click_scientist_female</tabstop>
+  <tabstop>Input_scientist_year_born</tabstop>
+  <tabstop>input_scientist_yeardied</tabstop>
+  <tabstop>Add_Scientist</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

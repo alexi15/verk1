@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>251</height>
+    <width>395</width>
+    <height>252</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -215,6 +215,14 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>Input_Computer_Name</tabstop>
+  <tabstop>Input_Computer_Type</tabstop>
+  <tabstop>click_computer_yes</tabstop>
+  <tabstop>click_computer_no</tabstop>
+  <tabstop>Input_Computer_Build_Year</tabstop>
+  <tabstop>Add_Computer</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
