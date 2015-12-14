@@ -52,11 +52,17 @@ private slots:
 
     void on_table_scientists_pressed(const QModelIndex &index);
 
+    void on_actionRemoveScientist_triggered();
+
+    void on_actionRemoveComputer_triggered();
+
+    void on_table_computers_pressed(const QModelIndex &index);
+
 private:
     ScientistService sci;
     ComputerService com;
-
-    int clicked_id;
+    int clicked_idComputer;
+    int clicked_idScientist;
     void displayAllScientists();
     void displayScientists(vector<Scientist> scientists);
     void displayAllComputers();

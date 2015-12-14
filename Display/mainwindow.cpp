@@ -74,12 +74,15 @@ void MainWindow::displayComputers(vector<Computer> computers)
         QString buildYear = QString::number(current.getBuildYear());
         QString type = QString::fromStdString(current.getType());
         QString made = QString::fromStdString(current.getMade());
+        QString Id = QString::number(current.getID());
 
 
         ui->table_computers->setItem(i, 0, new QTableWidgetItem(name));
         ui->table_computers->setItem(i, 1, new QTableWidgetItem(buildYear));
         ui->table_computers->setItem(i, 2, new QTableWidgetItem(type));
         ui->table_computers->setItem(i, 3, new QTableWidgetItem(made));
+        ui->table_computers->setItem(i, 4, new QTableWidgetItem(Id));
+        ui->table_computers->setColumnHidden(4, true);
     }
 }
 
@@ -143,13 +146,6 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
     QMenu menu;
     menu.addAction(ui->actionRemoveScientist);
     menu.exec(ui->table_scientists->viewport()->mapToGlobal(pos));
-
-    if(ui->actionRemoveScientist && clicked_id > 0)
-    {
-        sci.Remove(clicked_id);
-
-    }
-    displayAllScientists();
 }
 
 void MainWindow::on_table_computers_clicked(const QModelIndex &index)
@@ -173,5 +169,27 @@ void MainWindow::on_table_scientists_pressed(const QModelIndex &index)
 {
     int rowidx = ui->table_scientists->selectionModel()->currentIndex().row();
     int id = index.sibling(rowidx, 5).data().toInt();
-    clicked_id = id;
+    clicked_idScientist = id;
+}
+
+void MainWindow::on_actionRemoveScientist_triggered()
+{
+    if (clicked_idScientist > 0)
+     sci.Remove(clicked_idScientist);
+    displayAllScientists();
+}
+
+void MainWindow::on_actionRemoveComputer_triggered()
+{
+    if (clicked_idComputer > 0)
+     com.Remove(clicked_idComputer);
+    displayAllComputers();
+}
+
+void MainWindow::on_table_computers_pressed(const QModelIndex &index)
+{
+    int rowidx = ui->table_computers->selectionModel()->currentIndex().row();
+    int id = index.sibling(rowidx, 4).data().toInt();
+    clicked_idComputer = id;
+    cout << id << endl;
 }

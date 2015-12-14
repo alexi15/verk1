@@ -21,7 +21,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -137,6 +137,9 @@
           <property name="sortingEnabled">
            <bool>true</bool>
           </property>
+          <property name="columnCount">
+           <number>5</number>
+          </property>
           <column>
            <property name="text">
             <string>Name</string>
@@ -155,6 +158,11 @@
           <column>
            <property name="text">
             <string>Made</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Id</string>
            </property>
           </column>
          </widget>
