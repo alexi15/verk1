@@ -16,10 +16,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTabWidget" name="tabScientists">
-      <property name="contextMenuPolicy">
-       <enum>Qt::CustomContextMenu</enum>
-      </property>
+     <widget class="QTabWidget" name="tabList">
       <property name="tabShape">
        <enum>QTabWidget::Triangular</enum>
       </property>
@@ -126,6 +123,18 @@
         </item>
         <item>
          <widget class="QTableWidget" name="table_computers">
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::WheelFocus</enum>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
           <property name="selectionBehavior">
            <enum>QAbstractItemView::SelectRows</enum>
           </property>
@@ -177,7 +186,7 @@
      <x>0</x>
      <y>0</y>
      <width>811</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -236,9 +245,9 @@
     <string>Remove</string>
    </property>
   </action>
-  <action name="ActionRemoveComputers">
+  <action name="actionRemoveComputer">
    <property name="text">
-    <string>RemoveComputers</string>
+    <string>Remove</string>
    </property>
   </action>
  </widget>

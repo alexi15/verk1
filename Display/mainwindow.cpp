@@ -130,15 +130,7 @@ void MainWindow::on_addScientist_clicked()
 
     displayScientists(scientist.getvec());
 
-
-
-
-
 }
-
-
-
-
 
 void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &pos)
 {
@@ -150,9 +142,6 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
 
 }
 
-
-
-
 void MainWindow::on_table_computers_clicked(const QModelIndex &index)
 {
 
@@ -162,6 +151,6 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
 {
     QMenu menu;
 
-    menu.addAction(ui->ActionRemoveComputers);
+    menu.addAction(ui->actionRemoveComputer);
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
 }
