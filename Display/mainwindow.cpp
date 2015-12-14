@@ -104,10 +104,6 @@ void MainWindow::on_table_computers_activated(const QModelIndex &index)
 
 }
 
-void MainWindow::on_tabScientists_tabBarClicked(int index)
-{
-}
-
 void MainWindow::on_line_filter_sci_textChanged(const QString &arg1)
 {
     string input = ui->line_filter_sci->text().toStdString();
@@ -210,6 +206,8 @@ void MainWindow::on_actionRelationScientist_triggered()
         rel.addVec(computers);
         rel.exec();
     }
+    else
+        ui->statusBar->showMessage("There are no relations to this scientist", 3000);
 
 }
 
@@ -222,4 +220,6 @@ void MainWindow::on_actionRelationComputer_triggered()
         rel.addVec(scientists);
         rel.exec();
     }
+    else
+        ui->statusBar->showMessage("There are no relations to this computer", 3000);
 }
