@@ -77,8 +77,7 @@ void Add::on_Add_Scientist_clicked()
     }
     if(yearDied.isEmpty())
     {
-        ui->Error_yearDied->setText("<span style ='color:#FF0000'>Enter year died </span>");
-        Error = true;
+        yearDied = "0";
     }
     else if (!yearDied.toUInt())
     {
