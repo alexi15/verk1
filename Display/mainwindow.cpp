@@ -104,14 +104,14 @@ void MainWindow::displayComputers(vector<Computer> computers)
     ui->table_computers->setSortingEnabled(true);
 }
 
-void MainWindow::on_line_filter_sci_textChanged(const QString &arg1)
+void MainWindow::on_line_filter_sci_textChanged()
 {
     string input = ui->line_filter_sci->text().toStdString();
     vector<Scientist> found = sci.Search(input);
     displayScientists(found);
 }
 
-void MainWindow::on_line_filter_com_textChanged(const QString &arg1)
+void MainWindow::on_line_filter_com_textChanged()
 {
     string input = ui->line_filter_com->text().toStdString();
     vector<Computer> found = com.Search(input);

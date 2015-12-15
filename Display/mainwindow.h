@@ -36,9 +36,9 @@ public:
 private slots:
     void on_table_scientists_customContextMenuRequested(const QPoint &pos);
 
-    void on_line_filter_sci_textChanged(const QString &arg1);
+    void on_line_filter_sci_textChanged();
 
-    void on_line_filter_com_textChanged(const QString &arg1);
+    void on_line_filter_com_textChanged();
 
     void on_add_computers_clicked();
 
