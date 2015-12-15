@@ -49,9 +49,9 @@ vector<Scientist> ScientistService::Search(string toSearch)
         if (searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(sci[i]);
+            toSearch[0] = tolower(toSearch[0]);
         }
-        toSearch[0] = tolower(toSearch[0]);
-        if (searchWord.find(toSearch) != string::npos)
+        else if (searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(sci[i]);
         }
