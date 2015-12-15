@@ -46,9 +46,19 @@ void addComp::on_Add_Computer_clicked()
         ui->Error_Name_empty->setText("<span style ='color:#FF0000'>Enter name</span>");
         Error = true;
     }
+    else if(Name.toInt())
+    {
+        ui->Error_Name_empty->setText("<span style ='color:#FF0000'>Use characters</span>");
+        Error = true;
+    }
     if(Type.isEmpty())
     {
         ui->Error_Type_empty->setText("<span style ='color:#FF0000'>Enter type </span>");
+        Error = true;
+    }
+    else if(Type.toInt())
+    {
+        ui->Error_Type_empty->setText("<span style ='color:#FF0000'>Use characters</span>");
         Error = true;
     }
     if (Made == "")
@@ -56,12 +66,12 @@ void addComp::on_Add_Computer_clicked()
         ui->Error_Made_Not_set->setText("<span style ='color:#FF0000'>Choose yes or no </span>");
         Error = true;
     }
-    if (BuildYear.isEmpty())
+    if (BuildYear.isEmpty() && Made == "yes")
     {
         ui->Error_Build_Year_empty->setText("<span style ='color:#FF0000'>Enter build year </span>");
         Error = true;
     }
-    else if (!BuildYear.toUInt())
+    else if (!BuildYear.toUInt() && Made == "yes")
     {
         ui->Error_Build_Year_empty->setText("<span style ='color:#FF0000'>Enter integers</span>");
         Error = true;

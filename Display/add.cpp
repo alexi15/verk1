@@ -55,9 +55,20 @@ void Add::on_Add_Scientist_clicked()
         ui->Error_FirstName->setText("<span style ='color:#FF0000'>Enter name</span>");
         Error = true;
     }
+    else if(Firstname.toInt())
+    {
+        ui->Error_FirstName->setText("<span style ='color:#FF0000'>Use characters</span>");
+        Error = true;
+    }
+
     if(Lastname.isEmpty())
     {
         ui->Error_LastName->setText("<span style ='color:#FF0000'>Enter lastname</span>");
+        Error = true;
+    }
+    else if(Lastname.toInt())
+    {
+        ui->Error_LastName->setText("<span style ='color:#FF0000'>Use characters</span>");
         Error = true;
     }
     if(Gender == "")
@@ -84,7 +95,11 @@ void Add::on_Add_Scientist_clicked()
         ui->Error_yearDied->setText("<span style ='color:#FF0000'>Enter integers</span>");
         Error = true;
     }
-
+    else if(yearDied < yearBorn)
+    {
+        ui->Error_yearDied->setText("<span style ='color:#FF0000'>That is not possible </span>");
+        Error = true;
+    }
     if (Error)
     {
         return;

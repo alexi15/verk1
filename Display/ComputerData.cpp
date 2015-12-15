@@ -46,7 +46,7 @@ bool ComputerData::AddComputer(Computer add)
     Insert.bindValue(":Name",add.getName().c_str());
     Insert.bindValue(":BuildYear",add.getBuildYear());
     Insert.bindValue(":Type",add.getType().c_str());
-    Insert.bindValue(":Made",add.getType().c_str());
+    Insert.bindValue(":Made",add.getMade().c_str());
 
     if (Insert.exec())
     {
