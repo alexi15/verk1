@@ -61,15 +61,18 @@ private slots:
     void on_actionRelationScientist_triggered();
 
     void on_actionRelationComputer_triggered();
+protected:
+    void displayAllScientists();
+    void displayAllComputers();
 
 private:
     ScientistService sci;
     ComputerService com;
     int clicked_idComputer;
     int clicked_idScientist;
-    void displayAllScientists();
+    //void displayAllScientists();
     void displayScientists(vector<Scientist> scientists);
-    void displayAllComputers();
+    //void displayAllComputers();
     void displayComputers(vector<Computer> computers);
 
     Ui::MainWindow *ui;

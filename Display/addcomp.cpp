@@ -72,7 +72,7 @@ void addComp::on_Add_Computer_clicked()
         return;
     }
     int answer = QMessageBox::question(this, "Confirm", "Are you sure?");
-    if(QMessageBox::No)
+    if(answer == QMessageBox::No)
     {
         this->done(-1);
         return;
