@@ -152,14 +152,14 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
 
     switch(inputEdit)
     {
-        case 1:
+        case 0:
             query.prepare("UPDATE Computers SET name = :Name WHERE id = :Id");
             query.bindValue(":Id",tala);
             query.bindValue(":Name", toedit.c_str());
             if(query.exec())
                 Success = true;
             break;
-        case 2:
+        case 1:
             if(intedit == 0)
                 return false;
             query.prepare("UPDATE Computers SET buildyear = :BuildYear WHERE id = :Id");
@@ -168,14 +168,14 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
             if(query.exec())
                 Success = true;
             break;
-        case 3:
+        case 2:
             query.prepare("UPDATE Computers SET type = :Type WHERE id = :Id");
             query.bindValue(":Id",tala);
             query.bindValue(":Type", toedit.c_str());
             if(query.exec())
                 Success = true;
             break;
-        case 4:
+        case 3:
             if(toedit != "Yes" && toedit != "yes" && toedit != "no" && toedit != "No")
                 return false;
             query.prepare("UPDATE Computers SET made = :Made WHERE id = :Id");

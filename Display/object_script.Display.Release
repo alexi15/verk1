@@ -13,6 +13,8 @@ INPUT(
 ./release\relcom.o
 ./release\addcomtosci.o
 ./release\addscitocom.o
+./release\edit.o
+./release\editsci.o
 ./release\moc_mainwindow.o
 ./release\moc_add.o
 ./release\moc_addcomp.o
@@ -20,4 +22,6 @@ INPUT(
 ./release\moc_relcom.o
 ./release\moc_addcomtosci.o
 ./release\moc_addscitocom.o
+./release\moc_edit.o
+./release\moc_editsci.o
 );

@@ -57,28 +57,28 @@ bool ScientistData::Edit(string toedit, int tala, int inputEdit)
 
     switch(inputEdit)
     {
-    case 1:
+    case 0:
         query.prepare("UPDATE Scientist SET name = :Name WHERE id = :Id");
         query.bindValue(":Id",tala);
         query.bindValue(":Name", toedit.c_str());
         if(query.exec())
             Success = true;
         break;
-    case 2:
+    case 1:
         query.prepare("UPDATE Scientist SET lastname = :LastName WHERE id = :Id");
         query.bindValue(":Id",tala);
         query.bindValue(":LastName", toedit.c_str());
         if(query.exec())
             Success = true;
         break;
-    case 3:
+    case 2:
         query.prepare("UPDATE Scientist SET gender = :Gender WHERE id = :Id");
         query.bindValue(":Id",tala);
         query.bindValue(":Gender", toedit.c_str());
         if(query.exec())
             Success = true;
         break;
-    case 4:
+    case 3:
         if(intedit == 0)
             return false;
         query.prepare("UPDATE Scientist SET yearborn = :YearBorn WHERE id = :Id");
@@ -87,7 +87,7 @@ bool ScientistData::Edit(string toedit, int tala, int inputEdit)
         if(query.exec())
             Success = true;
         break;
-    case 5:
+    case 4:
         if(intedit == 0)
             return false;
         query.prepare("UPDATE Scientist SET death = :Death WHERE id = :Id");

@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     relsci.cpp \
     relcom.cpp \
     addcomtosci.cpp \
-    addscitocom.cpp
+    addscitocom.cpp \
+    edit.cpp \
+    editsci.cpp
 
 HEADERS  += mainwindow.h \
     ComputerData.h \
@@ -40,7 +42,9 @@ HEADERS  += mainwindow.h \
     relsci.h \
     relcom.h \
     addcomtosci.h \
-    addscitocom.h
+    addscitocom.h \
+    edit.h \
+    editsci.h
 
 FORMS    += mainwindow.ui \
     add.ui \
@@ -48,7 +52,9 @@ FORMS    += mainwindow.ui \
     relcom.ui \
     addcomtosci.ui \
     addscitocom.ui \
-    relsci.ui
+    relsci.ui \
+    edit.ui \
+    editsci.ui
 
 DISTFILES += \
     ../.git/refs/stash

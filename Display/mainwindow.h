@@ -10,6 +10,8 @@
 #include "addcomp.h"
 #include "relsci.h"
 #include "relcom.h"
+#include "edit.h"
+#include "editsci.h"
 
 #include <QDebug>
 #include <QMenu>
@@ -70,13 +72,17 @@ private slots:
 
     void on_actionAdd_Computer_triggered();
 
+    void on_table_computers_cellDoubleClicked(int row, int column);
+
+    void on_table_scientists_cellDoubleClicked(int row, int column);
+
 private:
     ScientistService sci;
     ComputerService com;
     int clicked_idComputer;
     int clicked_idScientist;
     void displayAllScientists();
-    void displayScientists(vector<Scientist> scientists);
+    void displayScientists(vector<Scientist> scientist);
     void displayAllComputers();
     void displayComputers(vector<Computer> computers);
 

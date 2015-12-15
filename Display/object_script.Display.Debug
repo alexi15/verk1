@@ -13,6 +13,8 @@ INPUT(
 ./debug\relcom.o
 ./debug\addcomtosci.o
 ./debug\addscitocom.o
+./debug\edit.o
+./debug\editsci.o
 ./debug\moc_mainwindow.o
 ./debug\moc_add.o
 ./debug\moc_addcomp.o
@@ -20,4 +22,6 @@ INPUT(
 ./debug\moc_relcom.o
 ./debug\moc_addcomtosci.o
 ./debug\moc_addscitocom.o
+./debug\moc_edit.o
+./debug\moc_editsci.o
 );

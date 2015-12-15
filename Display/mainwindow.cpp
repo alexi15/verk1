@@ -287,3 +287,24 @@ void MainWindow::on_actionAdd_Computer_triggered()
 
     displayComputers(computer.getvec());
 }
+
+
+void MainWindow::on_table_computers_cellDoubleClicked(int row, int column)
+{
+   QTableWidgetItem *thisItem = ui->table_computers->item(row, column);
+   QString mytext = thisItem->text();
+   edit et;
+   et.set(mytext.toStdString(), clicked_idComputer, column);
+   et.exec();
+   displayComputers(et.getVec());
+}
+
+void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
+{
+    QTableWidgetItem *thisItem = ui->table_scientists->item(row, column);
+    QString mytext = thisItem->text();
+    editSci et;
+    et.set(mytext.toStdString(), clicked_idScientist, column);
+    et.exec();
+    displayScientists(et.getVec());
+}
