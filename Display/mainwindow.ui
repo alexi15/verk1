@@ -17,6 +17,16 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="tabList">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 255);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+gridline-color: rgb(157, 76, 255);
+border-top-color: rgb(85, 0, 255);
+border-color: rgb(170, 170, 255);
+color: rgb(80, 88, 200);
+alternate-background-color: rgb(102, 128, 200);</string>
+      </property>
       <property name="tabShape">
        <enum>QTabWidget::Triangular</enum>
       </property>
@@ -50,6 +60,13 @@
             </property>
             <property name="acceptDrops">
              <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(220, 220, 220);
+font: italic 8pt &quot;MS Shell Dlg 2&quot;;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+
+selection-background-color: rgb(255, 0, 127);</string>
             </property>
             <property name="verticalScrollBarPolicy">
              <enum>Qt::ScrollBarAsNeeded</enum>
@@ -142,6 +159,11 @@
           <property name="contextMenuPolicy">
            <enum>Qt::CustomContextMenu</enum>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 127);
+background-color: rgb(214, 214, 214);
+color: rgb(0, 0, 127);</string>
+          </property>
           <property name="selectionMode">
            <enum>QAbstractItemView::SingleSelection</enum>
           </property>
@@ -204,7 +226,7 @@
      <x>0</x>
      <y>0</y>
      <width>811</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

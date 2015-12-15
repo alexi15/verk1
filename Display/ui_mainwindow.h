@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.4.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -101,6 +101,14 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         tabList = new QTabWidget(centralWidget);
         tabList->setObjectName(QStringLiteral("tabList"));
+        tabList->setStyleSheet(QLatin1String("color: rgb(0, 0, 255);\n"
+"font: 75 8pt \"MS Shell Dlg 2\";\n"
+"font: 75 8pt \"MS Shell Dlg 2\";\n"
+"gridline-color: rgb(157, 76, 255);\n"
+"border-top-color: rgb(85, 0, 255);\n"
+"border-color: rgb(170, 170, 255);\n"
+"color: rgb(80, 88, 200);\n"
+"alternate-background-color: rgb(102, 128, 200);"));
         tabList->setTabShape(QTabWidget::Triangular);
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -136,6 +144,11 @@ public:
         table_scientists->setMouseTracking(true);
         table_scientists->setContextMenuPolicy(Qt::CustomContextMenu);
         table_scientists->setAcceptDrops(false);
+        table_scientists->setStyleSheet(QLatin1String("background-color: rgb(220, 220, 220);\n"
+"font: italic 8pt \"MS Shell Dlg 2\";\n"
+"font: 75 8pt \"MS Shell Dlg 2\";\n"
+"\n"
+"selection-background-color: rgb(255, 0, 127);"));
         table_scientists->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         table_scientists->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         table_scientists->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -189,6 +202,9 @@ public:
         table_computers->setMouseTracking(true);
         table_computers->setFocusPolicy(Qt::WheelFocus);
         table_computers->setContextMenuPolicy(Qt::CustomContextMenu);
+        table_computers->setStyleSheet(QLatin1String("selection-background-color: rgb(255, 0, 127);\n"
+"background-color: rgb(214, 214, 214);\n"
+"color: rgb(0, 0, 127);"));
         table_computers->setSelectionMode(QAbstractItemView::SingleSelection);
         table_computers->setSelectionBehavior(QAbstractItemView::SelectRows);
         table_computers->setSortingEnabled(true);
@@ -214,7 +230,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 811, 26));
+        menuBar->setGeometry(QRect(0, 0, 811, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuView = new QMenu(menuBar);
