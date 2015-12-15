@@ -292,3 +292,8 @@ void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
     et.exec();
     displayScientists(et.getVec());
 }
+
+void MainWindow::on_actionExit_triggered()
+{
+    exit(1);
+}

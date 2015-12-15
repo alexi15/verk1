@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.2
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -32,9 +32,6 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionScientists;
-    QAction *actionComputers;
-    QAction *actionRelations;
     QAction *actionRemoveScientist;
     QAction *actionRemoveComputer;
     QAction *actionRelationScientist;
@@ -43,6 +40,7 @@ public:
     QAction *actionAdd_relation_computer;
     QAction *actionAdd_Scientist;
     QAction *actionAdd_Computer;
+    QAction *actionExit;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QTabWidget *tabList;
@@ -70,12 +68,6 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(811, 604);
-        actionScientists = new QAction(MainWindow);
-        actionScientists->setObjectName(QStringLiteral("actionScientists"));
-        actionComputers = new QAction(MainWindow);
-        actionComputers->setObjectName(QStringLiteral("actionComputers"));
-        actionRelations = new QAction(MainWindow);
-        actionRelations->setObjectName(QStringLiteral("actionRelations"));
         actionRemoveScientist = new QAction(MainWindow);
         actionRemoveScientist->setObjectName(QStringLiteral("actionRemoveScientist"));
         actionRemoveComputer = new QAction(MainWindow);
@@ -92,6 +84,8 @@ public:
         actionAdd_Scientist->setObjectName(QStringLiteral("actionAdd_Scientist"));
         actionAdd_Computer = new QAction(MainWindow);
         actionAdd_Computer->setObjectName(QStringLiteral("actionAdd_Computer"));
+        actionExit = new QAction(MainWindow);
+        actionExit->setObjectName(QStringLiteral("actionExit"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -230,7 +224,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 811, 21));
+        menuBar->setGeometry(QRect(0, 0, 811, 26));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
@@ -247,6 +241,7 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(actionAdd_Scientist);
         menuFile->addAction(actionAdd_Computer);
+        menuFile->addAction(actionExit);
 
         retranslateUi(MainWindow);
 
@@ -259,9 +254,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        actionScientists->setText(QApplication::translate("MainWindow", "Scientists", 0));
-        actionComputers->setText(QApplication::translate("MainWindow", "Computers", 0));
-        actionRelations->setText(QApplication::translate("MainWindow", "View relations", 0));
         actionRemoveScientist->setText(QApplication::translate("MainWindow", "Remove", 0));
         actionRemoveComputer->setText(QApplication::translate("MainWindow", "Remove", 0));
         actionRelationScientist->setText(QApplication::translate("MainWindow", "View relations", 0));
@@ -270,6 +262,7 @@ public:
         actionAdd_relation_computer->setText(QApplication::translate("MainWindow", "Add relation", 0));
         actionAdd_Scientist->setText(QApplication::translate("MainWindow", "Add Scientist", 0));
         actionAdd_Computer->setText(QApplication::translate("MainWindow", "Add Computer", 0));
+        actionExit->setText(QApplication::translate("MainWindow", "Exit", 0));
         line_filter_sci->setPlaceholderText(QApplication::translate("MainWindow", "Search", 0));
         QTableWidgetItem *___qtablewidgetitem = table_scientists->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "First Name", 0));

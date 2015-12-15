@@ -227,7 +227,7 @@ color: rgb(0, 0, 127);</string>
      <x>0</x>
      <y>0</y>
      <width>811</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -236,6 +236,7 @@ color: rgb(0, 0, 127);</string>
     </property>
     <addaction name="actionAdd_Scientist"/>
     <addaction name="actionAdd_Computer"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -259,21 +260,6 @@ color: rgb(0, 0, 127);</string>
     <bool>false</bool>
    </attribute>
   </widget>
-  <action name="actionScientists">
-   <property name="text">
-    <string>Scientists</string>
-   </property>
-  </action>
-  <action name="actionComputers">
-   <property name="text">
-    <string>Computers</string>
-   </property>
-  </action>
-  <action name="actionRelations">
-   <property name="text">
-    <string>View relations</string>
-   </property>
-  </action>
   <action name="actionRemoveScientist">
    <property name="text">
     <string>Remove</string>
@@ -312,6 +298,11 @@ color: rgb(0, 0, 127);</string>
   <action name="actionAdd_Computer">
    <property name="text">
     <string>Add Computer</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>

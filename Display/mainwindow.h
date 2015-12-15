@@ -70,6 +70,8 @@ private slots:
 
     void on_table_scientists_cellDoubleClicked(int row, int column);
 
+    void on_actionExit_triggered();
+
 private:
     ScientistService sci;
     ComputerService com;
