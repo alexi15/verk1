@@ -76,6 +76,7 @@ void MainWindow::displayComputers(vector<Computer> computers)
 {
 
     ui->table_computers->setSortingEnabled(false);
+
     ui->table_computers->clearContents();
 
     ui->table_computers->setRowCount(computers.size());
