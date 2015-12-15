@@ -23,6 +23,12 @@ void relCom::addVec(vector<Scientist> sciIn, string name)
     displayScientists();
 }
 
+void relCom::on_pushButton_clicked()
+{
+    addSciToCom add;
+    add.exec();
+}
+
 void relCom::displayScientists()
 {
     ui->table_scientists->clearContents();
