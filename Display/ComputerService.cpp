@@ -101,11 +101,14 @@ bool ComputerService::Edit(string toedit, int tala, int inputEdit)
 
 Computer ComputerService::getCom(int inputID)
 {
+    Computer temp;
+
     for(unsigned int i = 0;i < com.size(); i++)
     {
         if(com[i].getID() == inputID)
-            return com[i];
+            temp = com[i];
     }
+    return temp;
 }
 
 //This function returns computer relations
