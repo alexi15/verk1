@@ -7,46 +7,6 @@ ComputerService::ComputerService()
     com = temp.getComVector();
 }
 
-//This function sorts the data by year build
-vector<Computer>ComputerService::SortNumbersList(int tala)
-{
-    int j;
-    Computer temp;
-
-    for(unsigned int i = 0; i < com.size(); i++){
-        j = i;
-
-        while (j > 0 && com[j].getNumbers(tala) < com[j-1].getNumbers(tala)){
-            temp = com[j];
-            com[j] = com[j-1];
-            com[j-1] = temp;
-            j--;
-
-        }
-    }
-    return com;
-}
-
-//This function sorts the data by name, type and made
-vector<Computer>ComputerService::SortStringList(int tala)
-{
-    int j;
-    Computer temp;
-    for(unsigned int i = 0; i < com.size(); i++)
-    {
-        j = i;
-
-        while (j > 0 && com[j].getStrings(tala) < com[j-1].getStrings(tala))
-        {
-            temp = com[j];
-            com[j] = com[j-1];
-            com[j-1] = temp;
-            j--;
-        }
-    }
-    return com;
-}
-
 //This function adds a computer to vector and refreshes vector
 bool ComputerService::add(Computer toAdd)
 {

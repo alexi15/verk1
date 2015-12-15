@@ -11,8 +11,6 @@ class ComputerService
 {
 public:
     ComputerService();
-    vector<Computer> SortStringList(int tala);
-    vector<Computer> SortNumbersList(int tala);
     bool add(Computer number);
     vector<Computer> Search(string toSearch);
     vector<Computer> SearchFirst(string name);

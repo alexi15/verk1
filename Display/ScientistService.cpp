@@ -9,45 +9,6 @@ ScientistService::ScientistService()
     temp.ScientistToVector();
     sci = temp.getSciVector();
 }
-//This function sorts the data by birth or by death
-vector<Scientist>ScientistService::SortNumbersList(int tala)
-{
-    int j;
-    Scientist temp;
-
-    for(unsigned int i = 0; i < sci.size(); i++)
-    {
-        j = i;
-        while (j > 0 && sci[j].GetNumbers(tala) < sci[j-1].GetNumbers(tala))
-        {
-            temp = sci[j];
-            sci[j] = sci[j-1];
-            sci[j-1] = temp;
-            j--;
-        }
-    }
-    return sci;
-}
-
-//This function sorts the data by first name, by last name or by gender
-vector<Scientist>ScientistService::SortStringList(int tala)
-{
-    int j;
-    Scientist temp;
-    for(unsigned int i = 0; i < sci.size(); i++)
-    {
-        j = i;
-
-        while (j > 0 && sci[j].GetStrings(tala) < sci[j-1].GetStrings(tala))
-        {
-            temp = sci[j];
-            sci[j] = sci[j-1];
-            sci[j-1] = temp;
-            j--;
-        }
-    }
-    return sci;
-}
 
 //This function takes variables from UI and adds to scientistdata and returns if successfull or unsuccessfull.
 bool ScientistService::add(Scientist toAdd)
