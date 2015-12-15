@@ -49,5 +49,7 @@ void relSci::displayComputers()
 
 void relSci::on_pushButton_clicked()
 {
+    addComToSci add;
+    add.exec();
 
 }

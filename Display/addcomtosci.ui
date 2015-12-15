@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>relCom</class>
- <widget class="QDialog" name="relCom">
+ <class>addComToSci</class>
+ <widget class="QDialog" name="addComToSci">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>729</width>
-    <height>151</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,45 +15,25 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTextBrowser" name="text_com">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>31</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QTableWidget" name="table_scientists">
+    <widget class="QTableWidget" name="tableWidget">
      <column>
       <property name="text">
-       <string>First Name</string>
+       <string>Name</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>New Column</string>
+       <string>Build Year</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Last Name</string>
+       <string>Type</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Gender</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Year Died</string>
+       <string>Made</string>
       </property>
      </column>
      <column>

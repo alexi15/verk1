@@ -1,44 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>relCom</class>
- <widget class="QDialog" name="relCom">
+ <class>addSciToCom</class>
+ <widget class="QDialog" name="addSciToCom">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>729</width>
-    <height>151</height>
+    <width>685</width>
+    <height>341</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QTextBrowser" name="text_com">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>31</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-    </widget>
-   </item>
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QTableWidget" name="table_scientists">
      <column>
       <property name="text">
        <string>First Name</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>New Column</string>
       </property>
      </column>
      <column>
@@ -53,7 +33,12 @@
      </column>
      <column>
       <property name="text">
-       <string>Year Died</string>
+       <string>Year Born</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Year Dead</string>
       </property>
      </column>
      <column>
