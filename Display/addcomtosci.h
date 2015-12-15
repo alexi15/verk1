@@ -2,7 +2,7 @@
 #define ADDCOMTOSCI_H
 
 #include <QDialog>
-#include <computerservice.h>
+#include <mainwindow.h>
 
 namespace Ui {
 class addComToSci;
@@ -18,8 +18,6 @@ public:
 
 private:
     Ui::addComToSci *ui;
-    ComputerService com;
-    int clicked_idComputer;
 };
 
 #endif // ADDCOMTOSCI_H

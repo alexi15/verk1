@@ -2,8 +2,9 @@
 #define RELSCI_H
 
 #include <QDialog>
-#include <computers.h>
 #include <computerservice.h>
+#include <addcomtosci.h>
+
 
 namespace Ui {
 class relSci;

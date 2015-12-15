@@ -12,3 +12,4 @@ addComToSci::~addComToSci()
 {
     delete ui;
 }
+
