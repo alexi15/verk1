@@ -60,6 +60,10 @@ void Add::on_Add_Scientist_clicked()
         ui->Error_FirstName->setText("<span style ='color:#FF0000'>Use characters</span>");
         Error = true;
     }
+    else
+    {
+        ui->Error_FirstName->setText("");
+    }
 
     if(Lastname.isEmpty())
     {
@@ -71,10 +75,18 @@ void Add::on_Add_Scientist_clicked()
         ui->Error_LastName->setText("<span style ='color:#FF0000'>Use characters</span>");
         Error = true;
     }
+    else
+    {
+        ui->Error_LastName->setText("");
+    }
     if(Gender == "")
     {
         ui->Error_Gender->setText("<span style ='color:#FF0000'>Choose one</span>");
         Error = true;
+    }
+    else
+    {
+        ui->Error_Gender->setText("");
     }
     if(yearBorn.isEmpty())
     {
@@ -85,6 +97,10 @@ void Add::on_Add_Scientist_clicked()
     {
         ui->Error_yearBorn->setText("<span style ='color:#FF0000'>Enter integers</span>");
         Error = true;
+    }
+    else
+    {
+        ui->Error_yearBorn->setText("");
     }
     if(yearDied.isEmpty())
     {
@@ -99,6 +115,10 @@ void Add::on_Add_Scientist_clicked()
     {
         ui->Error_yearDied->setText("<span style ='color:#FF0000'>That is not possible </span>");
         Error = true;
+    }
+    else
+    {
+         ui->Error_yearDied->setText("");
     }
     if (Error)
     {
