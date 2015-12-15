@@ -134,7 +134,6 @@ bool ComputerData::removeRelation(int comID, int sciID)
         removed = true;
     }
     return removed;
-
 }
 
 //This function edit relation to the database
@@ -188,4 +187,15 @@ bool ComputerData::Edit(string toedit, int tala, int inputEdit)
     }
     computers.clear();
     return Success;
+}
+
+void ComputerData::removeRelationsFromID(int ID)
+{
+    QSqlQuery query(db);
+
+    query.prepare("DELETE FROM relations WHERE computer_id = :com");
+
+    query.bindValue(":com",ID);
+
+    query.exec();
 }

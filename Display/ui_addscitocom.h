@@ -14,25 +14,27 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_addSciToCom
 {
 public:
-    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout;
     QTableWidget *table_scientists;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *addSciToCom)
     {
         if (addSciToCom->objectName().isEmpty())
             addSciToCom->setObjectName(QStringLiteral("addSciToCom"));
         addSciToCom->resize(685, 341);
-        horizontalLayout = new QHBoxLayout(addSciToCom);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        verticalLayout = new QVBoxLayout(addSciToCom);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         table_scientists = new QTableWidget(addSciToCom);
         if (table_scientists->columnCount() < 6)
             table_scientists->setColumnCount(6);
@@ -49,8 +51,15 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         table_scientists->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         table_scientists->setObjectName(QStringLiteral("table_scientists"));
+        table_scientists->setSelectionMode(QAbstractItemView::SingleSelection);
+        table_scientists->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-        horizontalLayout->addWidget(table_scientists);
+        verticalLayout->addWidget(table_scientists);
+
+        pushButton = new QPushButton(addSciToCom);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
 
 
         retranslateUi(addSciToCom);
@@ -71,6 +80,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("addSciToCom", "Year Born", 0));
         QTableWidgetItem *___qtablewidgetitem4 = table_scientists->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("addSciToCom", "Year Dead", 0));
+        pushButton->setText(QApplication::translate("addSciToCom", "Confirm", 0));
     } // retranslateUi
 
 };

@@ -39,6 +39,10 @@ public:
     QAction *actionRemoveComputer;
     QAction *actionRelationScientist;
     QAction *actionRelationComputer;
+    QAction *actionAdd_reltation_scientist;
+    QAction *actionAdd_relation_computer;
+    QAction *actionAdd_Scientist;
+    QAction *actionAdd_Computer;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QTabWidget *tabList;
@@ -81,6 +85,14 @@ public:
         actionRelationScientist->setObjectName(QStringLiteral("actionRelationScientist"));
         actionRelationComputer = new QAction(MainWindow);
         actionRelationComputer->setObjectName(QStringLiteral("actionRelationComputer"));
+        actionAdd_reltation_scientist = new QAction(MainWindow);
+        actionAdd_reltation_scientist->setObjectName(QStringLiteral("actionAdd_reltation_scientist"));
+        actionAdd_relation_computer = new QAction(MainWindow);
+        actionAdd_relation_computer->setObjectName(QStringLiteral("actionAdd_relation_computer"));
+        actionAdd_Scientist = new QAction(MainWindow);
+        actionAdd_Scientist->setObjectName(QStringLiteral("actionAdd_Scientist"));
+        actionAdd_Computer = new QAction(MainWindow);
+        actionAdd_Computer->setObjectName(QStringLiteral("actionAdd_Computer"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -220,13 +232,15 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuView->menuAction());
+        menuFile->addAction(actionAdd_Scientist);
+        menuFile->addAction(actionAdd_Computer);
         menuView->addAction(actionScientists);
         menuView->addAction(actionComputers);
         menuView->addAction(actionRelations);
 
         retranslateUi(MainWindow);
 
-        tabList->setCurrentIndex(0);
+        tabList->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -237,11 +251,15 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionScientists->setText(QApplication::translate("MainWindow", "Scientists", 0));
         actionComputers->setText(QApplication::translate("MainWindow", "Computers", 0));
-        actionRelations->setText(QApplication::translate("MainWindow", "Relations", 0));
+        actionRelations->setText(QApplication::translate("MainWindow", "View relations", 0));
         actionRemoveScientist->setText(QApplication::translate("MainWindow", "Remove", 0));
         actionRemoveComputer->setText(QApplication::translate("MainWindow", "Remove", 0));
-        actionRelationScientist->setText(QApplication::translate("MainWindow", "Relation", 0));
-        actionRelationComputer->setText(QApplication::translate("MainWindow", "Relation", 0));
+        actionRelationScientist->setText(QApplication::translate("MainWindow", "View relations", 0));
+        actionRelationComputer->setText(QApplication::translate("MainWindow", "View relations", 0));
+        actionAdd_reltation_scientist->setText(QApplication::translate("MainWindow", "Add relation", 0));
+        actionAdd_relation_computer->setText(QApplication::translate("MainWindow", "Add relation", 0));
+        actionAdd_Scientist->setText(QApplication::translate("MainWindow", "Add Scientist", 0));
+        actionAdd_Computer->setText(QApplication::translate("MainWindow", "Add Computer", 0));
         line_filter_sci->setPlaceholderText(QApplication::translate("MainWindow", "Search", 0));
         QTableWidgetItem *___qtablewidgetitem = table_scientists->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "First Name", 0));
@@ -253,7 +271,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Year Born", 0));
         QTableWidgetItem *___qtablewidgetitem4 = table_scientists->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Year Died", 0));
-        addScientist->setText(QApplication::translate("MainWindow", "Add", 0));
+        addScientist->setText(QApplication::translate("MainWindow", "Add Scientist", 0));
         tabList->setTabText(tabList->indexOf(tab), QApplication::translate("MainWindow", "Scientists", 0));
         line_filter_com->setPlaceholderText(QApplication::translate("MainWindow", "Search", 0));
         QTableWidgetItem *___qtablewidgetitem5 = table_computers->horizontalHeaderItem(0);
@@ -266,7 +284,7 @@ public:
         ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Made", 0));
         QTableWidgetItem *___qtablewidgetitem9 = table_computers->horizontalHeaderItem(4);
         ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Id", 0));
-        add_computers->setText(QApplication::translate("MainWindow", "Add", 0));
+        add_computers->setText(QApplication::translate("MainWindow", "Add Computer", 0));
         tabList->setTabText(tabList->indexOf(tab_2), QApplication::translate("MainWindow", "Computers", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuView->setTitle(QApplication::translate("MainWindow", "View", 0));

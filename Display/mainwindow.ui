@@ -21,7 +21,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -111,7 +111,7 @@
              <bool>true</bool>
             </property>
             <property name="text">
-             <string>Add</string>
+             <string>Add Scientist</string>
             </property>
            </widget>
           </item>
@@ -186,7 +186,7 @@
           <item>
            <widget class="QPushButton" name="add_computers">
             <property name="text">
-             <string>Add</string>
+             <string>Add Computer</string>
             </property>
            </widget>
           </item>
@@ -211,6 +211,8 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionAdd_Scientist"/>
+    <addaction name="actionAdd_Computer"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -255,7 +257,7 @@
   </action>
   <action name="actionRelations">
    <property name="text">
-    <string>Relations</string>
+    <string>View relations</string>
    </property>
   </action>
   <action name="actionRemoveScientist">
@@ -270,12 +272,32 @@
   </action>
   <action name="actionRelationScientist">
    <property name="text">
-    <string>Relation</string>
+    <string>View relations</string>
    </property>
   </action>
   <action name="actionRelationComputer">
    <property name="text">
-    <string>Relation</string>
+    <string>View relations</string>
+   </property>
+  </action>
+  <action name="actionAdd_reltation_scientist">
+   <property name="text">
+    <string>Add relation</string>
+   </property>
+  </action>
+  <action name="actionAdd_relation_computer">
+   <property name="text">
+    <string>Add relation</string>
+   </property>
+  </action>
+  <action name="actionAdd_Scientist">
+   <property name="text">
+    <string>Add Scientist</string>
+   </property>
+  </action>
+  <action name="actionAdd_Computer">
+   <property name="text">
+    <string>Add Computer</string>
    </property>
   </action>
  </widget>

@@ -121,6 +121,7 @@ bool ComputerService::Remove(int Id)
     ss = temp.remove(Id);
     temp.ComputerToVector();
     com = temp.getComVector();
+    temp.removeRelationsFromID(Id);
     return ss;
 }
 

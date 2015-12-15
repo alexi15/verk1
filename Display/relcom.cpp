@@ -14,20 +14,15 @@ relCom::~relCom()
 }
 
 
-void relCom::addVec(vector<Scientist> sciIn, string name)
+void relCom::addVec(vector<Scientist> sciIn, string name, int comID)
 {
     QString label = QString::fromStdString(name);
     ui->text_com->setText(label);
-    //text_comName
     scientists = sciIn;
+    clicked_idComputer = comID;
     displayScientists();
 }
 
-void relCom::on_pushButton_clicked()
-{
-    addSciToCom add;
-    add.exec();
-}
 
 void relCom::displayScientists()
 {
@@ -53,4 +48,29 @@ void relCom::displayScientists()
         ui->table_scientists->setItem(i, 5, new QTableWidgetItem(id));
         ui->table_scientists->setColumnHidden(5, true);
     }
+}
+
+
+void relCom::on_pushButton_clicked()
+{
+    addSciToCom add;
+    add.setID(clicked_idComputer);
+    add.exec();
+    scientists = sciService.getScientistVec(comService.getComRel(clicked_idComputer));
+    displayScientists();
+}
+
+
+void relCom::on_table_scientists_pressed(const QModelIndex &index)
+{
+    int rowidx = ui->table_scientists->selectionModel()->currentIndex().row();
+    int id = index.sibling(rowidx, 5).data().toInt();
+    clicked_idScientist = id;
+}
+
+void relCom::on_pushButton_2_clicked()
+{
+    comService.removeRelation(clicked_idComputer, clicked_idScientist);
+    scientists = sciService.getScientistVec(comService.getComRel(clicked_idComputer));
+    displayScientists();
 }

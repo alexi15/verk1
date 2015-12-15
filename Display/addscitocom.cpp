@@ -12,6 +12,11 @@ addSciToCom::addSciToCom(QWidget *parent) :
     displayScientists();
 }
 
+void addSciToCom::setID(int com)
+{
+    computerID = com;
+}
+
 addSciToCom::~addSciToCom()
 {
     delete ui;
@@ -41,4 +46,18 @@ void addSciToCom::displayScientists()
         ui->table_scientists->setItem(i, 5, new QTableWidgetItem(id));
         ui->table_scientists->setColumnHidden(5, true);
     }
+}
+
+void addSciToCom::on_pushButton_clicked()
+{
+    bool success = comService.addRelations(computerID, scientistID);
+    if(success)
+        this->done(0);
+}
+
+void addSciToCom::on_table_scientists_pressed(const QModelIndex &index)
+{
+    int rowidx = ui->table_scientists->selectionModel()->currentIndex().row();
+    int id = index.sibling(rowidx, 5).data().toInt();
+    scientistID = id;
 }

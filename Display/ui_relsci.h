@@ -14,25 +14,41 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_relSci
 {
 public:
-    QTableWidget *table_computers;
-    QPushButton *pushButton;
+    QVBoxLayout *verticalLayout;
     QTextBrowser *text_sci;
+    QTableWidget *table_computers;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton;
+    QPushButton *push_remove;
 
     void setupUi(QDialog *relSci)
     {
         if (relSci->objectName().isEmpty())
             relSci->setObjectName(QStringLiteral("relSci"));
-        relSci->resize(659, 171);
+        relSci->resize(659, 206);
+        verticalLayout = new QVBoxLayout(relSci);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        text_sci = new QTextBrowser(relSci);
+        text_sci->setObjectName(QStringLiteral("text_sci"));
+        text_sci->setMaximumSize(QSize(16777215, 31));
+        QFont font;
+        font.setPointSize(10);
+        text_sci->setFont(font);
+
+        verticalLayout->addWidget(text_sci);
+
         table_computers = new QTableWidget(relSci);
         if (table_computers->columnCount() < 5)
             table_computers->setColumnCount(5);
@@ -47,16 +63,26 @@ public:
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         table_computers->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         table_computers->setObjectName(QStringLiteral("table_computers"));
-        table_computers->setGeometry(QRect(11, 44, 637, 81));
+        table_computers->setSelectionMode(QAbstractItemView::SingleSelection);
+        table_computers->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+        verticalLayout->addWidget(table_computers);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         pushButton = new QPushButton(relSci);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(11, 132, 93, 28));
-        text_sci = new QTextBrowser(relSci);
-        text_sci->setObjectName(QStringLiteral("text_sci"));
-        text_sci->setGeometry(QRect(11, 11, 637, 31));
-        QFont font;
-        font.setPointSize(10);
-        text_sci->setFont(font);
+
+        horizontalLayout_2->addWidget(pushButton);
+
+        push_remove = new QPushButton(relSci);
+        push_remove->setObjectName(QStringLiteral("push_remove"));
+
+        horizontalLayout_2->addWidget(push_remove);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
 
         retranslateUi(relSci);
 
@@ -78,6 +104,7 @@ public:
         table_computers->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
         pushButton->setText(QApplication::translate("relSci", "Add relation", 0));
+        push_remove->setText(QApplication::translate("relSci", "Remove relation", 0));
     } // retranslateUi
 
 };

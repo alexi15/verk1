@@ -13,11 +13,12 @@ relSci::~relSci()
     delete ui;
 }
 
-void relSci::addVec(vector<Computer> comIn, string name)
+void relSci::addVec(vector<Computer> comIn, string name, int sciID)
 {
     QString label = QString::fromStdString(name);
     ui->text_sci->setText(label);
     computers = comIn;
+    clicked_idScientist = sciID;
     displayComputers();
 }
 
@@ -49,6 +50,22 @@ void relSci::displayComputers()
 void relSci::on_pushButton_clicked()
 {
     addComToSci add;
+    add.setID(clicked_idScientist);
     add.exec();
+    computers = comService.getComputerVec(sciService.getSciRel(clicked_idScientist));
+    displayComputers();
+}
 
+void relSci::on_push_remove_clicked()
+{
+    comService.removeRelation(clicked_idComputer, clicked_idScientist);
+    computers = comService.getComputerVec(sciService.getSciRel(clicked_idScientist));
+    displayComputers();
+}
+
+void relSci::on_table_computers_pressed(const QModelIndex &index)
+{
+    int rowidx = ui->table_computers->selectionModel()->currentIndex().row();
+    int id = index.sibling(rowidx, 4).data().toInt();
+    clicked_idComputer = id;
 }

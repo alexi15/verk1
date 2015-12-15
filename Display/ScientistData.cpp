@@ -101,6 +101,17 @@ bool ScientistData::Edit(string toedit, int tala, int inputEdit)
     return Success;
 }
 
+void ScientistData::removeRelationsFromID(int ID)
+{
+    QSqlQuery query(db);
+
+    query.prepare("DELETE FROM relations WHERE scientist_id = :sci");
+
+    query.bindValue(":sci",ID);
+
+    query.exec();
+}
+
 //This function add scientist data to the database
 bool ScientistData::AddScientist(Scientist add)
 {

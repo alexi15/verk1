@@ -16,16 +16,24 @@ class relCom : public QDialog
 public:
     explicit relCom(QWidget *parent = 0);
     ~relCom();
-    void addVec(vector<Scientist> scientists, string name);
+    void addVec(vector<Scientist> scientists, string name, int comID);
 
 private slots:
     void on_pushButton_clicked();
 
+
+    void on_table_scientists_pressed(const QModelIndex &index);
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::relCom *ui;
     vector<Scientist> scientists;
+    ScientistService sciService;
+    ComputerService comService;
     void displayScientists();
-    string comName;
+    int clicked_idComputer;
+    int clicked_idScientist;
 };
 
 #endif // RELCOM_H

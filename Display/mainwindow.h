@@ -62,6 +62,13 @@ private slots:
 
     void on_actionRelationComputer_triggered();
 
+    void on_actionAdd_reltation_scientist_triggered();
+
+    void on_actionAdd_relation_computer_triggered();
+
+    void on_actionAdd_Scientist_triggered();
+
+    void on_actionAdd_Computer_triggered();
 
 private:
     ScientistService sci;

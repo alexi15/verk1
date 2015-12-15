@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 
@@ -25,12 +26,13 @@ class Ui_addComToSci
 public:
     QVBoxLayout *verticalLayout;
     QTableWidget *table_computers;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *addComToSci)
     {
         if (addComToSci->objectName().isEmpty())
             addComToSci->setObjectName(QStringLiteral("addComToSci"));
-        addComToSci->resize(400, 300);
+        addComToSci->resize(531, 290);
         verticalLayout = new QVBoxLayout(addComToSci);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         table_computers = new QTableWidget(addComToSci);
@@ -47,8 +49,15 @@ public:
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         table_computers->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         table_computers->setObjectName(QStringLiteral("table_computers"));
+        table_computers->setSelectionMode(QAbstractItemView::SingleSelection);
+        table_computers->setSelectionBehavior(QAbstractItemView::SelectRows);
 
         verticalLayout->addWidget(table_computers);
+
+        pushButton = new QPushButton(addComToSci);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
 
 
         retranslateUi(addComToSci);
@@ -60,13 +69,14 @@ public:
     {
         addComToSci->setWindowTitle(QApplication::translate("addComToSci", "Dialog", 0));
         QTableWidgetItem *___qtablewidgetitem = table_computers->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("addComToSci", "New Column", 0));
+        ___qtablewidgetitem->setText(QApplication::translate("addComToSci", "Name", 0));
         QTableWidgetItem *___qtablewidgetitem1 = table_computers->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("addComToSci", "Name", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("addComToSci", "Build Year", 0));
         QTableWidgetItem *___qtablewidgetitem2 = table_computers->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("addComToSci", "Build Year", 0));
+        ___qtablewidgetitem2->setText(QApplication::translate("addComToSci", "Type", 0));
         QTableWidgetItem *___qtablewidgetitem3 = table_computers->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("addComToSci", "Made", 0));
+        pushButton->setText(QApplication::translate("addComToSci", "Confirm", 0));
     } // retranslateUi
 
 };

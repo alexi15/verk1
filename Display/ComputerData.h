@@ -20,6 +20,7 @@ public:
     bool addRelation(int comID, int sciID);
     bool removeRelation(int comID, int sciID);
     bool Edit(string toedit, int tala, int inputEdit);
+    void removeRelationsFromID(int ID);
 private:
     QSqlDatabase db;
     vector<Computer>computers;

@@ -153,6 +153,7 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
     QMenu menu;
     menu.addAction(ui->actionRemoveScientist);
     menu.addAction(ui->actionRelationScientist);
+    menu.addAction(ui->actionAdd_reltation_scientist);
     menu.exec(ui->table_scientists->viewport()->mapToGlobal(pos));
 }
 
@@ -167,6 +168,7 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
 
     menu.addAction(ui->actionRemoveComputer);
     menu.addAction(ui->actionRelationComputer);
+    menu.addAction(ui->actionAdd_relation_computer);
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
 
 
@@ -233,7 +235,7 @@ void MainWindow::on_actionRelationScientist_triggered()
     if(computers.size() > 0)
     {
         relSci rel;
-        rel.addVec(computers, sciName);
+        rel.addVec(computers, sciName, clicked_idScientist);
         rel.exec();
     }
     else
@@ -249,9 +251,39 @@ void MainWindow::on_actionRelationComputer_triggered()
     if(scientists.size() > 0)
     {
         relCom rel;
-        rel.addVec(scientists, comName);
+        rel.addVec(scientists, comName, clicked_idComputer);
         rel.exec();
     }
     else
         ui->statusBar->showMessage("There are no relations to this computer", 3000);
+}
+
+void MainWindow::on_actionAdd_reltation_scientist_triggered()
+{
+    addComToSci add;
+    add.setID(clicked_idScientist);
+    add.exec();
+}
+
+void MainWindow::on_actionAdd_relation_computer_triggered()
+{
+    addSciToCom add;
+    add.setID(clicked_idComputer);
+    add.exec();
+}
+
+void MainWindow::on_actionAdd_Scientist_triggered()
+{
+    Add scientist;
+    scientist.exec();
+
+    displayScientists(scientist.getvec());
+}
+
+void MainWindow::on_actionAdd_Computer_triggered()
+{
+    addComp computer;
+    computer.exec();
+
+    displayComputers(computer.getvec());
 }

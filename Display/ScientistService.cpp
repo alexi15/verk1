@@ -101,6 +101,7 @@ bool ScientistService::Remove(int Id)
     ss = temp.remove(Id);
     temp.ScientistToVector();
     sci = temp.getSciVector();
+    temp.removeRelationsFromID(Id);
     return ss;
 }
 
@@ -136,7 +137,6 @@ vector<int> ScientistService::getSciRel(int sciID)
 }
 
 
-//This function ??????????? ATH!
 vector<Scientist> ScientistService::getScientistVec(vector<int> IDs)
 {
     vector<Scientist> tempVec;

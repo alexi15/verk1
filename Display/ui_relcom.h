@@ -14,7 +14,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
@@ -27,12 +29,15 @@ public:
     QVBoxLayout *verticalLayout;
     QTextBrowser *text_com;
     QTableWidget *table_scientists;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *relCom)
     {
         if (relCom->objectName().isEmpty())
             relCom->setObjectName(QStringLiteral("relCom"));
-        relCom->resize(729, 151);
+        relCom->resize(649, 225);
         verticalLayout = new QVBoxLayout(relCom);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         text_com = new QTextBrowser(relCom);
@@ -60,8 +65,25 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         table_scientists->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         table_scientists->setObjectName(QStringLiteral("table_scientists"));
+        table_scientists->setSelectionMode(QAbstractItemView::SingleSelection);
+        table_scientists->setSelectionBehavior(QAbstractItemView::SelectRows);
 
         verticalLayout->addWidget(table_scientists);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        pushButton = new QPushButton(relCom);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        horizontalLayout->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(relCom);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        horizontalLayout->addWidget(pushButton_2);
+
+
+        verticalLayout->addLayout(horizontalLayout);
 
 
         retranslateUi(relCom);
@@ -82,6 +104,8 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("relCom", "Gender", 0));
         QTableWidgetItem *___qtablewidgetitem4 = table_scientists->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("relCom", "Year Died", 0));
+        pushButton->setText(QApplication::translate("relCom", "Add relation", 0));
+        pushButton_2->setText(QApplication::translate("relCom", "Remove relation", 0));
     } // retranslateUi
 
 };
