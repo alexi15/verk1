@@ -24,8 +24,7 @@ SOURCES += main.cpp\
     add.cpp \
     addcomp.cpp \
     relsci.cpp \
-    relcom.cpp \
-    addcomtosci.cpp
+    relcom.cpp
 
 HEADERS  += mainwindow.h \
     ComputerData.h \
@@ -37,11 +36,9 @@ HEADERS  += mainwindow.h \
     add.h \
     addcomp.h \
     relsci.h \
-    relcom.h \
-    addcomtosci.h
+    relcom.h
 
 FORMS    += mainwindow.ui \
     add.ui \
     addcomp.ui \
-    relcom.ui \
-    addcomtosci.ui
+    relcom.ui

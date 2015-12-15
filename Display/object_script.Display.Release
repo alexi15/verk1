@@ -11,11 +11,9 @@ INPUT(
 ./release\addcomp.o
 ./release\relsci.o
 ./release\relcom.o
-./release\addcomtosci.o
 ./release\moc_mainwindow.o
 ./release\moc_add.o
 ./release\moc_addcomp.o
 ./release\moc_relsci.o
 ./release\moc_relcom.o
-./release\moc_addcomtosci.o
 );
