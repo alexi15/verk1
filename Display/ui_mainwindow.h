@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.2
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -61,7 +61,6 @@ public:
     QPushButton *add_computers;
     QMenuBar *menuBar;
     QMenu *menuFile;
-    QMenu *menuView;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;
@@ -230,11 +229,9 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 811, 21));
+        menuBar->setGeometry(QRect(0, 0, 811, 26));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
-        menuView = new QMenu(menuBar);
-        menuView->setObjectName(QStringLiteral("menuView"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -247,12 +244,8 @@ public:
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menuBar->addAction(menuFile->menuAction());
-        menuBar->addAction(menuView->menuAction());
         menuFile->addAction(actionAdd_Scientist);
         menuFile->addAction(actionAdd_Computer);
-        menuView->addAction(actionScientists);
-        menuView->addAction(actionComputers);
-        menuView->addAction(actionRelations);
 
         retranslateUi(MainWindow);
 
@@ -303,7 +296,6 @@ public:
         add_computers->setText(QApplication::translate("MainWindow", "Add Computer", 0));
         tabList->setTabText(tabList->indexOf(tab_2), QApplication::translate("MainWindow", "Computers", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
-        menuView->setTitle(QApplication::translate("MainWindow", "View", 0));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0));
     } // retranslateUi
 

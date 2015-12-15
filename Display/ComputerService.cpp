@@ -65,10 +65,9 @@ vector<Computer> ComputerService::Search(string toSearch)
     vector<Computer> temp;
     Computer current;
 
-    toSearch[0] = toupper(toSearch[0]);
-
     for(unsigned int i = 0;i < com.size(); i++)
     {
+        toSearch[0] = toupper(toSearch[0]);
         current = com[i];
         string name = current.getName();
         string type = current.getType();
@@ -82,6 +81,11 @@ vector<Computer> ComputerService::Search(string toSearch)
         string searchWord = name + " " + made + " " +
                 type + " " + year;
 
+        if (searchWord.find(toSearch) != string::npos)
+        {
+            temp.push_back(com[i]);
+        }
+        toSearch[0] = tolower(toSearch[0]);
         if (searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(com[i]);

@@ -104,18 +104,6 @@ void MainWindow::displayComputers(vector<Computer> computers)
     ui->table_computers->setSortingEnabled(true);
 }
 
-
-void MainWindow::on_actionComputers_triggered()
-{
-    displayAllComputers();
-}
-
-
-void MainWindow::on_table_computers_activated(const QModelIndex &index)
-{
-
-}
-
 void MainWindow::on_line_filter_sci_textChanged(const QString &arg1)
 {
     string input = ui->line_filter_sci->text().toStdString();
@@ -157,10 +145,6 @@ void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &po
     menu.exec(ui->table_scientists->viewport()->mapToGlobal(pos));
 }
 
-void MainWindow::on_table_computers_clicked(const QModelIndex &index)
-{
-
-}
 
 void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos)
 {

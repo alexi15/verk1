@@ -67,10 +67,9 @@ vector<Scientist> ScientistService::Search(string toSearch)
     vector<Scientist> temp;
     Scientist current;
 
-    toSearch[0] = toupper(toSearch[0]);
-
     for(unsigned int i = 0;i < sci.size(); i++)
     {
+        toSearch[0] = toupper(toSearch[0]);
         current = sci[i];
         string first = current.getFirstName();
         string last = current.getLastName();
@@ -86,6 +85,11 @@ vector<Scientist> ScientistService::Search(string toSearch)
         string searchWord = first + " " + last + " " + gender +
                 " " + born + " " + dead;
 
+        if (searchWord.find(toSearch) != string::npos)
+        {
+            temp.push_back(sci[i]);
+        }
+        toSearch[0] = tolower(toSearch[0]);
         if (searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(sci[i]);
