@@ -8,9 +8,12 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
+    ui->table_scientists->setSortingEnabled(false);
+    ui->table_computers->setSortingEnabled(false);
     displayAllScientists();
     displayAllComputers();
+    ui->table_scientists->setSortingEnabled(true);
+    ui->table_computers->setSortingEnabled(true);
 
 }
 
@@ -21,12 +24,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::displayAllScientists()
 {
+    ui->table_scientists->setSortingEnabled(false);
     vector<Scientist> scientists = sci.getVec();
     displayScientists(scientists);
+    ui->table_scientists->setSortingEnabled(true);
 }
 
 void MainWindow::displayScientists(vector<Scientist> scientists)
 {
+    ui->table_scientists->setSortingEnabled(false);
+
     ui->table_scientists->clearContents();
 
     ui->table_scientists->setRowCount(scientists.size());
@@ -51,17 +58,24 @@ void MainWindow::displayScientists(vector<Scientist> scientists)
         ui->table_scientists->setItem(i, 4, new QTableWidgetItem(yearDied));
         ui->table_scientists->setItem(i, 5, new QTableWidgetItem(id));
         ui->table_scientists->setColumnHidden(5, true);
+
+
     }
+     ui->table_scientists->setSortingEnabled(true);
 }
 
 void MainWindow::displayAllComputers()
 {
+    ui->table_computers->setSortingEnabled(false);
     vector<Computer> computers = com.getVec();
     displayComputers(computers);
+    ui->table_computers->setSortingEnabled(true);
 }
 
 void MainWindow::displayComputers(vector<Computer> computers)
 {
+
+    ui->table_computers->setSortingEnabled(false);
     ui->table_computers->clearContents();
 
     ui->table_computers->setRowCount(computers.size());
@@ -83,7 +97,10 @@ void MainWindow::displayComputers(vector<Computer> computers)
         ui->table_computers->setItem(i, 3, new QTableWidgetItem(made));
         ui->table_computers->setItem(i, 4, new QTableWidgetItem(Id));
         ui->table_computers->setColumnHidden(4, true);
+
+
     }
+    ui->table_computers->setSortingEnabled(true);
 }
 
 

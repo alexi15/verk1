@@ -34,9 +34,9 @@ vector<Scientist>Add:: getvec()
     return addScientist.getVec();
 }
 
-
 void Add::on_Add_Scientist_clicked()
 {
+
     QString Firstname = ui->Input_Scientist_Firstname->text();
     QString Gender = "";
     if (on_click_scienstist_male_clicked())
@@ -105,4 +105,5 @@ void Add::on_Add_Scientist_clicked()
     }
     else
         this->done(-1);
+
 }
