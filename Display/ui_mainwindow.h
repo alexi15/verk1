@@ -144,6 +144,7 @@ public:
         table_scientists->setContextMenuPolicy(Qt::CustomContextMenu);
         table_scientists->setAcceptDrops(false);
         table_scientists->setStyleSheet(QLatin1String("background-color: rgb(214, 214, 214);\n"
+"color: rgb(0, 0, 127);\n"
 "font: italic 8pt \"MS Shell Dlg 2\";\n"
 "font: 75 8pt \"MS Shell Dlg 2\";\n"
 "\n"

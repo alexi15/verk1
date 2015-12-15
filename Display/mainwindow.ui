@@ -63,6 +63,7 @@ alternate-background-color: rgb(102, 128, 200);</string>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(214, 214, 214);
+color: rgb(0, 0, 127);
 font: italic 8pt &quot;MS Shell Dlg 2&quot;;
 font: 75 8pt &quot;MS Shell Dlg 2&quot;;
 
