@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.4.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -143,7 +143,7 @@ public:
         table_scientists->setMouseTracking(true);
         table_scientists->setContextMenuPolicy(Qt::CustomContextMenu);
         table_scientists->setAcceptDrops(false);
-        table_scientists->setStyleSheet(QLatin1String("background-color: rgb(220, 220, 220);\n"
+        table_scientists->setStyleSheet(QLatin1String("background-color: rgb(214, 214, 214);\n"
 "font: italic 8pt \"MS Shell Dlg 2\";\n"
 "font: 75 8pt \"MS Shell Dlg 2\";\n"
 "\n"
@@ -229,7 +229,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 811, 26));
+        menuBar->setGeometry(QRect(0, 0, 811, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
@@ -249,7 +249,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabList->setCurrentIndex(0);
+        tabList->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
