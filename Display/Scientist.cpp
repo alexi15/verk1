@@ -48,6 +48,7 @@ string Scientist::getLastName()
     return lastname;
 }
 
+
 string Scientist::getSex()
 {
 
@@ -105,3 +106,4 @@ int Scientist::GetNumbers(int tala)
     }
     return 0;
 }
+

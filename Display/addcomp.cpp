@@ -71,14 +71,16 @@ void addComp::on_Add_Computer_clicked()
     {
         return;
     }
-
+    int answer = QMessageBox::question(this, "Confirm", "Are you sure?");
+    if(QMessageBox::No)
+    {
+        this->done(-1);
+        return;
+    }
 
     bool success = addComputer.add(Computer(Name.toStdString(),BuildYear.toUInt(),Type.toStdString(),Made.toStdString()));
 
-
-
-
-    if(success)
+    if(success && QMessageBox::Yes)
     {
 
         this->done(0);

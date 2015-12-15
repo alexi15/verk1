@@ -13,6 +13,7 @@
 
 #include <QDebug>
 #include <QMenu>
+#include <QMessageBox>
 
 #include <QMainWindow>
 
@@ -32,8 +33,6 @@ public:
 
 private slots:
     void on_table_scientists_customContextMenuRequested(const QPoint &pos);
-
-    void on_table_scientists_clicked(const QModelIndex &index);
 
     void on_actionComputers_triggered();
 
@@ -58,8 +57,6 @@ private slots:
     void on_actionRemoveComputer_triggered();
 
     void on_table_computers_pressed(const QModelIndex &index);
-
-    void on_table_scientists_cellDoubleClicked(int row, int column);
 
     void on_actionRelationScientist_triggered();
 

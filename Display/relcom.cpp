@@ -13,8 +13,12 @@ relCom::~relCom()
     delete ui;
 }
 
-void relCom::addVec(vector<Scientist> sciIn)
+
+void relCom::addVec(vector<Scientist> sciIn, string name)
 {
+    QString label = QString::fromStdString(name);
+    ui->text_com->setText(label);
+    //text_comName
     scientists = sciIn;
     displayScientists();
 }

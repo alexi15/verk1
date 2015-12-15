@@ -134,6 +134,15 @@ bool ComputerService::Edit(string toedit, int tala, int inputEdit)
     return ss;
 }
 
+Computer ComputerService::getCom(int inputID)
+{
+    for(unsigned int i = 0;i < com.size(); i++)
+    {
+        if(com[i].getID() == inputID)
+            return com[i];
+    }
+}
+
 //This function returns computer relations
 vector<int> ComputerService::getComRel(int comID)
 {

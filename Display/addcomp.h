@@ -3,6 +3,7 @@
 #include "computers.h"
 #include "computerservice.h"
 
+#include <QMessageBox>
 #include <QDialog>
 
 namespace Ui {

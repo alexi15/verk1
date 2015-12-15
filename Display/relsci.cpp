@@ -13,8 +13,10 @@ relSci::~relSci()
     delete ui;
 }
 
-void relSci::addVec(vector<Computer> comIn)
+void relSci::addVec(vector<Computer> comIn, string name)
 {
+    QString label = QString::fromStdString(name);
+    ui->text_sci->setText(label);
     computers = comIn;
     displayComputers();
 }
@@ -34,7 +36,6 @@ void relSci::displayComputers()
         QString made = QString::fromStdString(current.getMade());
         QString Id = QString::number(current.getID());
 
-
         ui->table_computers->setItem(i, 0, new QTableWidgetItem(name));
         ui->table_computers->setItem(i, 1, new QTableWidgetItem(buildYear));
         ui->table_computers->setItem(i, 2, new QTableWidgetItem(type));
@@ -42,4 +43,11 @@ void relSci::displayComputers()
         ui->table_computers->setItem(i, 4, new QTableWidgetItem(Id));
         ui->table_computers->setColumnHidden(4, true);
     }
+}
+
+
+
+void relSci::on_pushButton_clicked()
+{
+
 }

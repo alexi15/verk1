@@ -86,12 +86,6 @@ void MainWindow::displayComputers(vector<Computer> computers)
     }
 }
 
-void MainWindow::on_table_scientists_clicked(const QModelIndex &index)
-{
-
-
-
-}
 
 void MainWindow::on_actionComputers_triggered()
 {
@@ -170,14 +164,37 @@ void MainWindow::on_table_scientists_pressed(const QModelIndex &index)
 void MainWindow::on_actionRemoveScientist_triggered()
 {
     if (clicked_idScientist > 0)
-     sci.Remove(clicked_idScientist);
+    {
+        int answer = QMessageBox::question(this, "Confirm", "Are you sure?");
+
+        if (answer == QMessageBox::No)
+        {
+            return;
+        }
+        else
+        {
+            sci.Remove(clicked_idScientist);
+            ui->statusBar->showMessage("Scientist succesfully removed", 3000);
+        }
+    }
     displayAllScientists();
 }
 
 void MainWindow::on_actionRemoveComputer_triggered()
 {
-    if (clicked_idComputer > 0)
-     com.Remove(clicked_idComputer);
+    if (clicked_idScientist > 0)
+    {
+        int answer = QMessageBox::question(this, "Confirm", "Are you sure?");
+        if (answer == QMessageBox::No)
+        {
+            return;
+        }
+        else
+        {
+            com.Remove(clicked_idComputer);
+            ui->statusBar->showMessage("Computer succesfully removed!", 3000);
+        }
+    }
     displayAllComputers();
 }
 
@@ -190,34 +207,31 @@ void MainWindow::on_table_computers_pressed(const QModelIndex &index)
 
 
 
-
-void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
-{
-
-}
-
-
 void MainWindow::on_actionRelationScientist_triggered()
 {
     vector<Computer> computers = com.getComputerVec(sci.getSciRel(clicked_idScientist));
+    Scientist temp = sci.getSci(clicked_idScientist);
+    string sciName = temp.getFirstName() + " " + temp.getLastName();
     if(computers.size() > 0)
     {
         relSci rel;
-        rel.addVec(computers);
+        rel.addVec(computers, sciName);
         rel.exec();
     }
     else
-        ui->statusBar->showMessage("There are no relations to this scientist", 3000);
+        ui->statusBar->showMessage("There are no relations to this scientist!", 3000);
 
 }
 
 void MainWindow::on_actionRelationComputer_triggered()
 {
     vector<Scientist> scientists = sci.getScientistVec(com.getComRel(clicked_idComputer));
+    string comName = com.getCom(clicked_idComputer).getName();
+
     if(scientists.size() > 0)
     {
         relCom rel;
-        rel.addVec(scientists);
+        rel.addVec(scientists, comName);
         rel.exec();
     }
     else

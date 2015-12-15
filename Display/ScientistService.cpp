@@ -114,6 +114,15 @@ bool ScientistService::Edit(string toedit, int tala, int inputEdit)
     return ss;
 }
 
+Scientist ScientistService::getSci(int inputID)
+{
+    for(unsigned int i = 0;i < sci.size(); i++)
+    {
+        if(sci[i].getID() == inputID)
+            return sci[i];
+    }
+}
+
 //This function returns scientis vector
 vector<Scientist> ScientistService::getVec()
 {

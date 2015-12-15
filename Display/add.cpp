@@ -90,10 +90,16 @@ void Add::on_Add_Scientist_clicked()
         return;
     }
 
+    int answer = QMessageBox::question(this, "Confirm", "Are you sure?");
+    if(QMessageBox::No)
+    {
+        this->done(-1);
+        return;
+    }
 
     bool success = addScientist.add(Scientist(Firstname.toStdString(),Lastname.toStdString(),Gender.toStdString(),yearBorn.toInt(),yearDied.toInt()));
 
-    if(success)
+    if(success && QMessageBox::Yes)
     {
         this->done(0);
     }

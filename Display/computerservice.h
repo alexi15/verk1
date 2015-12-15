@@ -7,8 +7,6 @@
 #include "ComputerData.h"
 
 
-
-
 class ComputerService
 {
 public:
@@ -25,6 +23,7 @@ public:
     bool addRelations(int comID, int sciID);
     bool removeRelation(int comID, int sciID);
     bool Edit(string toedit, int tala, int inputEdit);
+    Computer getCom(int inputID);
 
 private:
     ComputerData temp;

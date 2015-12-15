@@ -2,6 +2,7 @@
 #define ADD_H
 
 #include <QDialog>
+#include <QMessageBox>
 #include "ScientistService.h"
 #include "Scientist.h"
 
