@@ -36,6 +36,7 @@ vector<Computer> ComputerService::Search(string toSearch)
         stringstream s;
         s << current.getBuildYear();
         s >> year;
+        bool low = true;
 
 
         string searchWord = name + " " + made + " " +
@@ -44,15 +45,16 @@ vector<Computer> ComputerService::Search(string toSearch)
         if (searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(com[i]);
-            toSearch[0] = tolower(toSearch[0]);
+            low = false;
         }
-        else if (searchWord.find(toSearch) != string::npos)
+        toSearch[0] = tolower(toSearch[0]);
+        if (low && searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(com[i]);
         }
     }
     return temp;
-    return temp;
+
 }
 
 //This function return computer vector

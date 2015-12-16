@@ -14,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     displayAllComputers();
     ui->table_scientists->setSortingEnabled(true);
     ui->table_computers->setSortingEnabled(true);
-
 }
 
 MainWindow::~MainWindow()

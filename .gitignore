@@ -17,6 +17,7 @@ qlite
 *.pro.user
 *.pro.user.*
 *.moc
+ui_*.h
 moc_*.cpp
 qrc_*.cpp
 Makefile*

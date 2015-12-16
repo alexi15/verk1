@@ -42,6 +42,7 @@ vector<Scientist> ScientistService::Search(string toSearch)
         s >> born;
         ss << current.getYearDead();
         ss >> dead;
+        bool low = true;
 
         string searchWord = first + " " + last + " " + gender +
                 " " + born + " " + dead;
@@ -49,9 +50,10 @@ vector<Scientist> ScientistService::Search(string toSearch)
         if (searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(sci[i]);
-            toSearch[0] = tolower(toSearch[0]);
+            low = false;
         }
-        else if (searchWord.find(toSearch) != string::npos)
+        toSearch[0] = tolower(toSearch[0]);
+        if (low && searchWord.find(toSearch) != string::npos)
         {
             temp.push_back(sci[i]);
         }
