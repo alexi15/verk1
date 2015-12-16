@@ -94,6 +94,11 @@ Scientist ScientistService::getSci(int inputID)
     return temp;
 }
 
+void ScientistService::setVec(vector<Scientist> newVec)
+{
+        sci = newVec;
+}
+
 //This function returns scientis vector
 vector<Scientist> ScientistService::getVec()
 {

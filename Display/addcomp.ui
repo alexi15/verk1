@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add computer</string>
   </property>
   <widget class="QLabel" name="Computer_made">
    <property name="geometry">

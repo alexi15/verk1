@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add scientist</string>
   </property>
   <widget class="QRadioButton" name="click_scienstist_male">
    <property name="geometry">

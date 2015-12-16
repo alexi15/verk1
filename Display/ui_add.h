@@ -114,7 +114,7 @@ public:
 
     void retranslateUi(QDialog *Add)
     {
-        Add->setWindowTitle(QApplication::translate("Add", "Dialog", 0));
+        Add->setWindowTitle(QApplication::translate("Add", "Add scientist", 0));
         click_scienstist_male->setText(QApplication::translate("Add", "Male", 0));
         click_scientist_female->setText(QApplication::translate("Add", "Female", 0));
         Input_Scientist_Firstname->setText(QString());

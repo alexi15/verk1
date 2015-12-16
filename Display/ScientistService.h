@@ -19,6 +19,7 @@ public:
     bool Remove(int Id);
     bool Edit(string toedit, int tala, int inputEdit);
     Scientist getSci(int inputID);
+    void setVec(vector<Scientist> newVec);
 
 
 private:

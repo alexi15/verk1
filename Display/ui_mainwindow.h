@@ -253,7 +253,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Scientists and computers", 0));
         actionRemoveScientist->setText(QApplication::translate("MainWindow", "Remove", 0));
         actionRemoveComputer->setText(QApplication::translate("MainWindow", "Remove", 0));
         actionRelationScientist->setText(QApplication::translate("MainWindow", "View relations", 0));

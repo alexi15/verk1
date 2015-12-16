@@ -38,7 +38,6 @@ vector<Computer> ComputerService::Search(string toSearch)
         s >> year;
         bool low = true;
 
-
         string searchWord = name + " " + made + " " +
                 type + " " + year;
 
@@ -111,6 +110,11 @@ Computer ComputerService::getCom(int inputID)
             temp = com[i];
     }
     return temp;
+}
+
+void ComputerService::setVec(vector<Computer> newVec)
+{
+    com = newVec;
 }
 
 //This function returns computer relations

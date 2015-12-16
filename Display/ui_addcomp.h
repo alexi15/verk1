@@ -105,7 +105,7 @@ public:
 
     void retranslateUi(QDialog *addComp)
     {
-        addComp->setWindowTitle(QApplication::translate("addComp", "Dialog", 0));
+        addComp->setWindowTitle(QApplication::translate("addComp", "Add computer", 0));
         Computer_made->setText(QApplication::translate("addComp", "Made", 0));
         click_computer_yes->setText(QApplication::translate("addComp", "Yes", 0));
         Input_Computer_Type->setPlaceholderText(QApplication::translate("addComp", "Please enter computer type...", 0));

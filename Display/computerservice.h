@@ -22,6 +22,7 @@ public:
     bool removeRelation(int comID, int sciID);
     bool Edit(string toedit, int tala, int inputEdit);
     Computer getCom(int inputID);
+    void setVec(vector<Computer> newVec);
 
 private:
     ComputerData temp;

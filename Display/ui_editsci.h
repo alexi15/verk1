@@ -53,7 +53,13 @@ public:
 
     void retranslateUi(QDialog *editSci)
     {
-        editSci->setWindowTitle(QApplication::translate("editSci", "Dialog", 0));
+        editSci->setWindowTitle(QApplication::translate("editSci", "Edit", 0));
+#ifndef QT_NO_STATUSTIP
+        editSci->setStatusTip(QString());
+#endif // QT_NO_STATUSTIP
+#ifndef QT_NO_WHATSTHIS
+        editSci->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         label->setText(QString());
     } // retranslateUi
 

@@ -81,6 +81,8 @@ private:
     void displayScientists(vector<Scientist> scientist);
     void displayAllComputers();
     void displayComputers(vector<Computer> computers);
+    void addScientist();
+    void addComputer();
 
     Ui::MainWindow *ui;
 };

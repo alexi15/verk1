@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    ui->statusBar->showMessage("Welcome!", 3000);
     ui->table_scientists->setSortingEnabled(false);
     ui->table_computers->setSortingEnabled(false);
     displayAllScientists();
@@ -103,6 +103,24 @@ void MainWindow::displayComputers(vector<Computer> computers)
     ui->table_computers->setSortingEnabled(true);
 }
 
+void MainWindow::addScientist()
+{
+    Add scientist;
+    scientist.exec();
+    sci.setVec(scientist.getvec());
+    ui->statusBar->showMessage("Successfullu added", 3000);
+    displayAllScientists();
+}
+
+void MainWindow::addComputer()
+{
+    addComp computer;
+    computer.exec();
+    com.setVec(computer.getvec());
+    ui->statusBar->showMessage("Successfully added", 3000);
+    displayComputers(computer.getvec());
+}
+
 void MainWindow::on_line_filter_sci_textChanged()
 {
     string input = ui->line_filter_sci->text().toStdString();
@@ -119,20 +137,12 @@ void MainWindow::on_line_filter_com_textChanged()
 
 void MainWindow::on_add_computers_clicked()
 {
-    addComp computer;
-    computer.exec();
-
-    displayComputers(computer.getvec());
-
+    addComputer();
 }
 
 void MainWindow::on_addScientist_clicked()
 {
-    Add scientist;
-    scientist.exec();
-
-    displayScientists(scientist.getvec());
-
+    addScientist();
 }
 
 void MainWindow::on_table_scientists_customContextMenuRequested(const QPoint &pos)
@@ -153,7 +163,6 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
     menu.addAction(ui->actionRelationComputer);
     menu.addAction(ui->actionAdd_relation_computer);
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
-
 
 }
 
@@ -209,7 +218,6 @@ void MainWindow::on_table_computers_pressed(const QModelIndex &index)
 }
 
 
-
 void MainWindow::on_actionRelationScientist_triggered()
 {
     vector<Computer> computers = com.getComputerVec(sci.getSciRel(clicked_idScientist));
@@ -246,6 +254,7 @@ void MainWindow::on_actionAdd_reltation_scientist_triggered()
     addComToSci add;
     add.setID(clicked_idScientist);
     add.exec();
+    ui->statusBar->showMessage("Relation successfully added", 3000);
 }
 
 void MainWindow::on_actionAdd_relation_computer_triggered()
@@ -253,22 +262,17 @@ void MainWindow::on_actionAdd_relation_computer_triggered()
     addSciToCom add;
     add.setID(clicked_idComputer);
     add.exec();
+    ui->statusBar->showMessage("Relation successfully added", 3000);
 }
 
 void MainWindow::on_actionAdd_Scientist_triggered()
 {
-    Add scientist;
-    scientist.exec();
-
-    displayScientists(scientist.getvec());
+    addScientist();
 }
 
 void MainWindow::on_actionAdd_Computer_triggered()
 {
-    addComp computer;
-    computer.exec();
-
-    displayComputers(computer.getvec());
+    addComputer();
 }
 
 
@@ -279,7 +283,9 @@ void MainWindow::on_table_computers_cellDoubleClicked(int row, int column)
    edit et;
    et.set(mytext.toStdString(), clicked_idComputer, column);
    et.exec();
-   displayComputers(et.getVec());
+   ui->statusBar->showMessage("Successfully edited", 3000);
+   com.setVec(et.getVec());
+   displayAllComputers();
 }
 
 void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
@@ -289,10 +295,13 @@ void MainWindow::on_table_scientists_cellDoubleClicked(int row, int column)
     editSci et;
     et.set(mytext.toStdString(), clicked_idScientist, column);
     et.exec();
-    displayScientists(et.getVec());
+    ui->statusBar->showMessage("Successfully edited", 3000);
+    sci.setVec(et.getVec());
+    displayAllScientists();
 }
 
 void MainWindow::on_actionExit_triggered()
-{
-    exit(1);
+{   int answer = QMessageBox::question(this, "Confirm", "Are you sure?");
+    if(answer == QMessageBox::Yes)
+        exit(1);
 }

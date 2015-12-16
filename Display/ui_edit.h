@@ -59,7 +59,7 @@ public:
 
     void retranslateUi(QDialog *edit)
     {
-        edit->setWindowTitle(QApplication::translate("edit", "Dialog", 0));
+        edit->setWindowTitle(QApplication::translate("edit", "Edit", 0));
         error_edit->setText(QApplication::translate("edit", "TextLabel", 0));
     } // retranslateUi
 
