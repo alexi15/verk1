@@ -67,7 +67,7 @@ public:
 
     void retranslateUi(QDialog *addComToSci)
     {
-        addComToSci->setWindowTitle(QApplication::translate("addComToSci", "Dialog", 0));
+        addComToSci->setWindowTitle(QApplication::translate("addComToSci", "Add relation", 0));
         QTableWidgetItem *___qtablewidgetitem = table_computers->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("addComToSci", "Name", 0));
         QTableWidgetItem *___qtablewidgetitem1 = table_computers->horizontalHeaderItem(1);

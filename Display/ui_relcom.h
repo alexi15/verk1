@@ -93,7 +93,7 @@ public:
 
     void retranslateUi(QDialog *relCom)
     {
-        relCom->setWindowTitle(QApplication::translate("relCom", "Dialog", 0));
+        relCom->setWindowTitle(QApplication::translate("relCom", "Relations", 0));
         QTableWidgetItem *___qtablewidgetitem = table_scientists->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("relCom", "First Name", 0));
         QTableWidgetItem *___qtablewidgetitem1 = table_scientists->horizontalHeaderItem(1);

@@ -91,7 +91,7 @@ public:
 
     void retranslateUi(QDialog *relSci)
     {
-        relSci->setWindowTitle(QApplication::translate("relSci", "Dialog", 0));
+        relSci->setWindowTitle(QApplication::translate("relSci", "Relations", 0));
         QTableWidgetItem *___qtablewidgetitem = table_computers->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("relSci", "Name", 0));
         QTableWidgetItem *___qtablewidgetitem1 = table_computers->horizontalHeaderItem(1);
